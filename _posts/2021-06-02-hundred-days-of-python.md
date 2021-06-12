@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 100 Days of Code (Day 1-10)
+title: 100 Days of Code
 categories:
 - project
 ---
@@ -11,11 +11,11 @@ I'm following the Udemy course [100 Days of Code - The Python Pro Bootcamp](http
 
 My code repo is here 👉: [100DaysOfCode-Python](https://github.com/maryletteroa/100DaysOfCode-Python)
 
-I document my progress here: programming tasks, and some notes about things that made an impression:
+I document my progress post; programming tasks, and notes about things that made an impression
 
 
 #### Day 10 - Calculator
- 💡 Functions inside dictionaries. Toggle 👇
+ 💡 Functions inside dictionaries.
 
 The functions:
 ```py
