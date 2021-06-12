@@ -16,8 +16,6 @@ I document my progress here: programming tasks, and some notes about things that
 
 #### Day 10 - Calculator
  💡 Functions inside dictionaries. Toggle 👇
-<details markdown='1'>
-
 
 The functions:
 ```py
@@ -48,7 +46,6 @@ Finally, calling the functions
 ```py
 result = operators[operator](a, b)
 ```
-</details>  
 
 #### Day 9 - Blind auction
 
