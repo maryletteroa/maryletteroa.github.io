@@ -5,7 +5,11 @@ categories:
 - blog
 ---
 
-A data analysis pipeline involving machine learning looks something like this:
+Here is a repository containing template projects involving data analytics principles e.g. machine learning 👉 [Data Analytics](https://github.com/maryletteroa/data_analytics)
+
+An analysis which applies a machine learning pipeline using the Boston Housing dataset is here: [Boston housing](https://github.com/maryletteroa/data_analytics/blob/main/boston_housing/Boston%20Housing.ipynb). 
+
+A machine learning pipeline looks something like this:
 
 - Data acquisition and cleaning
 - Exploratory data analysis (EDA)
@@ -26,6 +30,5 @@ Cloud technologies also makes it possible to develop and deploy data products, w
 - Model deployment
 - Batch prediction
 
-Here is repository containing template projects involving data analytics principles e.g. machine learning templates 👉 [Data Analytics](https://github.com/maryletteroa/data_analytics)
 
-Still fairly unfamiliar with cloud technologies so currently looking into Google Cloud Products as well. 
+Still fairly new to cloud technologies (I used Google Map API, and DialogFlow before) and so currently looking into Google Cloud Products ☁️. 
