@@ -13,6 +13,33 @@ My code repo is here 👉: [100DaysOfCode-Python](https://github.com/marylettero
 
 I document my progress in this post: programming tasks, and notes about things that made an impression.
 
+#### Day 11 (Capstone) - Blackjack
+
+Play my solution 🎮: [blackjack](https://replit.com/@maryletteroa/blackjack)
+
+You win if you score 21 or closer to 21 than the dealer. You lose if you score over 21. Full game rules are [here](https://bicyclecards.com/how-to-play/blackjack/). In this version, the deck is infinite.
+
+1. Sample without replacement:
+
+    ```python
+    random.sample(seq, n)
+```
+2. Difference between append and extend:
+    - both add to the end of a list, but e.g. given a list `l = [1,2]`
+    - `l.append([3]])` adds the object as is e.g. `[1,2,[3]]`
+    - `l.extend(3)` unpacks the object and will result in `[1,2,3]`
+    - `.extend()` only accepts iterables
+
+    In the code I used `.extend()` to add a card since the result of `random.sample(seq,1)` from a list is a list.
+
+    ```python
+    player_cards.extend(draw(1))
+    ```
+
+3. While loops, should still be wary of while loops! 
+
+4. Formulating the evaluation (if/else statements) to decide the game was tough!
+
 
 #### Day 10 - Calculator
  💡 Functions inside dictionaries.
