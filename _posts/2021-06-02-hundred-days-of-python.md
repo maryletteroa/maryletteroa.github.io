@@ -30,11 +30,7 @@ You win if you score 21 or closer to 21 than the dealer. You lose if you score o
     - `l.extend(3)` unpacks the object and will result in `[1,2,3]`
     - `.extend()` only accepts iterables
 
-    In the code I used `.extend()` to add a card since the result of `random.sample(seq,1)` from a list is a list.
-
-    ```python
-    player_cards.extend(draw(1))
-    ```
+    In the code I used `.extend()` to add a card since the result of `random.sample(seq,n)` from a list is a list.
 
 3. While loops, should still be wary of while loops! 
 
@@ -94,6 +90,7 @@ and using them inside the code
 ```py
 print(logo)
 print(stages[lives])
+chosen_word = random.choice(word_list)
 ```
 
 #### Day 6 - Reeborg Maze
