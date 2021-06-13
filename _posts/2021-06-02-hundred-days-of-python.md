@@ -34,7 +34,7 @@ You win if you score 21 or closer to 21 than the dealer. You lose if you score o
 
 3. While loops, should still be wary of while loops! 
 
-4. Formulating the evaluation (if/else statements) to decide the game was tough!
+4. Formulating the `evaluation` function (if/else statements) to decide the game was nuanced.
 
 
 #### Day 10 - Calculator
