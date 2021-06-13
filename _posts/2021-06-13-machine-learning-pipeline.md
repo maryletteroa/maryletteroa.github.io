@@ -9,7 +9,7 @@ Here is a repository containing template projects involving data analytics princ
 
 An analysis which applies a machine learning pipeline using the Boston Housing dataset is here: [Boston housing](https://github.com/maryletteroa/data_analytics/blob/main/boston_housing/Boston%20Housing.ipynb). 
 
-A machine learning pipeline looks something like this:
+An ML pipeline can look something like this:
 
 - Data acquisition and cleaning
 - Exploratory data analysis (EDA)
