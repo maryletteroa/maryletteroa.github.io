@@ -13,6 +13,44 @@ My code repo is here 👉: [100DaysOfCode-Python](https://github.com/marylettero
 
 I document my progress in this post: programming tasks, and notes about things that made an impression.
 
+#### Day 12 - Guess the number
+
+Play my solution 🎮: [guess the number](https://replit.com/@maryletteroa/guess-the-number)
+
+Today's topic is scope: Global, local, block (same as enclosed scope?).
+
+See Figures [1](https://res.cloudinary.com/dyd911kmh/image/upload/f_auto,q_auto:best/v1588956604/code_dmeddc.png) & [2](https://res.cloudinary.com/dyd911kmh/image/upload/f_auto,q_auto:best/v1588956604/Scope_fbrzcw.png).
+
+1. Using and not using `global`
+    ```py
+    enemies = 1
+    def increase_enemies():
+       global enemies
+       enemies +=1
+       return enemies
+
+    print(increase_enemies())
+    ```
+    ```py
+    enemies = 1
+    def increase_enemies():
+         return enemies + 1
+    enemies = increase_enemies()
+    ```
+    For the first version of the code, I was able to use `global` but second/final version went for a functional code which looks like the second one. Because of enclosed scoping, I cannot call the variable out of a nested function.
+
+2. Constants written in capital letters. 👈 Something that still does not come to me automatically.
+    ```py
+    PI = 3.14159
+    URL = "google.com"
+    ```
+
+3. [ASCII fonts](http://patorjk.com/software/taag/#p=display&f=Graffiti&t=Guess%20the%20number) 👍
+
+
+4. ✨Functional coding✨, and writing Docstrings!
+
+
 #### Day 11 (Capstone) - Blackjack
 
 Play my solution 🎮: [blackjack](https://replit.com/@maryletteroa/blackjack)
