@@ -37,7 +37,7 @@ See Figures [1](https://res.cloudinary.com/dyd911kmh/image/upload/f_auto,q_auto:
          return enemies + 1
     enemies = increase_enemies()
     ```
-    For the first version of the code, I was able to use `global` but second/final version went for a functional code which looks like the second one. Because of enclosed scoping, I cannot call the variable out of a nested function.
+    For the first version of the code, I was able to use `global` but final version went for a functional code which looks like the second one. Because of enclosed scoping, I cannot call the variable out of a nested function.
 
 2. Constants written in capital letters. 👈 Something that still does not come to me automatically.
     ```py
