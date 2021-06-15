@@ -13,6 +13,23 @@ My code repo is here 👉: [100DaysOfCode-Python](https://github.com/marylettero
 
 I document my progress in this post: programming tasks, and notes about things that made an impression.
 
+#### Day 13 - Debugging
+
+🐞🚫 Tips: 
+1. Describe the problem, challenge your assumptions!
+2. Reproduce the error, notice when it happens! See if the code can be changed so it reproduces the error.
+3. Play computer. Evaluate each line to figure out the problem.
+4. Fix the erros as they come. Watch out the red underlines. Watch out for silent errors.
+5. Use your friend `print()`
+6. Use a debugger e.g. [Python Tutor](http://www.pythontutor.com/visualize.html#mode=edit)
+7. Take a break. 😴
+8. Ask a real human friend (not `print()`).
+9. Run your code often. Confirm that the code runs like it's intended.
+10. Ask StackOverflow (other developers) but only if you think that the bug is unique. Otherwise, check existing solutions.
+
+☝ The more bugs you solve, the better you get at it.
+
+
 #### Day 12 - Guess the number
 
 Play my solution 🎮: [guess the number](https://replit.com/@maryletteroa/guess-the-number)
