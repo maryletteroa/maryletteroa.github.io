@@ -13,6 +13,14 @@ My code repo is here 👉: [100DaysOfCode-Python](https://github.com/marylettero
 
 I document my progress in this post: programming tasks, and notes about things that made an impression.
 
+#### Day 15 - Coffee Machine
+
+Get your own coffee here ☕: [coffee-machine](https://replit.com/@maryletteroa/coffee-machine)
+
+Imagine the amount of coffee I ordered to get this to work. Had a hard time ordering "cappuccino" since the spelling is difficult (I then added a condition). I thought about being in a real café -- what would the transactions be -- and wrote that in the code.
+
+Ahh 💭 good times.
+
 #### Day 14 - Higher-lower
 
 Play my solution 🎮: [higher-lower](https://replit.com/@maryletteroa/higher-lower)
