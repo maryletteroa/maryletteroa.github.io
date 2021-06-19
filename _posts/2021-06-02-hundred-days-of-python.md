@@ -13,6 +13,23 @@ My code repo is here 👉: [100DaysOfCode-Python](https://github.com/marylettero
 
 I document my progress in this post: programming tasks, and notes about things that made an impression.
 
+#### Day 16 - OOP Coffee Machine
+
+Code here: [oop-coffee-machine](https://replit.com/@maryletteroa/oop-coffee-machine)
+
+This day was a bit more challenging. But I've ventured into the Intermediate level so 🙌. Between going over the stub code and reading the documentation, there were a few snags. But the main program looks clean with the help of Python classes.
+
+There's this article about the [Four Programming Styles in Python](https://newrelic.com/blog/nerd-life/python-programming-styles):
+
+1. Functional
+2. Imperative
+3. Object-oriented
+4. Procedural
+
+When I work, I tend to use 1, 2, and 4, and seldom object-oriented. Today (and until September/October this year 2021), we are learning about [web development using Django in WWCode Manila](https://wwcodemanila.github.io/WWCodeManila-Python/#/django/01_introduction). The codes are heavily OOP because we are using a framework. 
+
+So, this lesson and a few more after this, is something that I look forward to. There is also an element of code design which is fun.
+
 #### Day 15 - Coffee Machine
 
 Get your own coffee here ☕: [coffee-machine](https://replit.com/@maryletteroa/coffee-machine)
