@@ -13,6 +13,66 @@ My code repo is here 👉: [100DaysOfCode-Python](https://github.com/marylettero
 
 I document my progress in this post: programming tasks, and notes about things that made an impression.
 
+#### Day 17 - Quiz Game
+Play the game here: [quiz-game](https://replit.com/@maryletteroa/quiz-game)
+
+Generate trivia questions here 👉 [Open Trivia Database](https://opentdb.com)
+
+Run for the bus! 🚌🏃‍
+
+Different types of cases:
+- PascalCase
+- camelCase
+- snake_case
+
+Attaching an attribute to an object
+```python
+class User:
+    speed = 4
+
+user_1 = User()
+user_1.id = "001"
+user_1.username = "angela"
+print(user_1.username)
+```
+
+Constructor function `__init__(self)` initializes the Classes:
+```python
+class Car:
+    def __init__(self, seats):
+    self.seats = seats
+
+my_car = Car(5)
+```
+
+Classes, attributes, methods, objects
+
+```python
+class User:
+    def __init__(self, user_id, username):
+        # attributes
+        self.id = user_id
+        self.username = username
+        self.followers = 0 # default value
+        self.following = 0
+
+    # method
+    def follow(self, user):
+        user.followers += 1
+        user.following += 1
+
+# objects
+user_1 = User("001", "angela")
+user_2 = User("002", "jack")
+
+user_1.follow(user_2)
+print(user_1.followers)
+print(user_1.following)
+print(user_2.followers)
+print(user_2.following)
+
+```
+
 #### Day 16 - OOP Coffee Machine
 
 Code here: [oop-coffee-machine](https://replit.com/@maryletteroa/oop-coffee-machine)
