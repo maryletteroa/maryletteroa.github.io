@@ -13,6 +13,14 @@ My code repo is here 👉: [100DaysOfCode-Python](https://github.com/marylettero
 
 I document my progress in this post: programming tasks, and notes about things that made an impression.
 
+#### Day 18 - Hirst Painting
+
+See it here 🎨: [Hirst painting](https://replit.com/@maryletteroa/hirst-painting)
+
+[Trinket](https://trinket.io/docs/colors)  
+[Colorgram.py](https://pypi.org/project/colorgram.py/)  
+[RGB Calculator](https://www.w3schools.com/colors/colors_rgb.asp)
+
 #### Day 17 - Quiz Game
 Play the game here: [quiz-game](https://replit.com/@maryletteroa/quiz-game)
 
