@@ -13,6 +13,29 @@ My code repo is here 👉: [100DaysOfCode-Python](https://github.com/marylettero
 
 I document my progress in this post: programming tasks, and notes about things that made an impression.
 
+#### Day 19 - Etch-A-Sketch App
+
+🐢 [Turtle Race](https://replit.com/@maryletteroa/turtle-race)  
+[Etch-A-Sketch](https://replit.com/@maryletteroa/etch-a-sketch)
+
+
+I had a great time making the turtle race game! 🐢
+
+Higher order functions
+
+```python
+def calculator(n1, n2, func):
+    return func(n1, n2)
+```
+
+States, different versions of the same Object
+```python
+timmy.color = green
+tommy.color = purple
+
+```
+
+
 #### Day 18 - Hirst Painting
 
 See it here 🎨: [Hirst painting](https://replit.com/@maryletteroa/hirst-painting)
