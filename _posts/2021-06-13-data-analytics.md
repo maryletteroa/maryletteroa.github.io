@@ -1,13 +1,12 @@
 ---
 layout: post
-title: Machine learning pipeline
+title: Data Analytics
 categories:
 - blog
 ---
 
-Here is a repository containing template projects involving data analytics principles e.g. machine learning 👉 [Data Analytics](https://github.com/maryletteroa/data_analytics)
+Here is a repository containing template projects and exercises involving data analytics 👉 [Data Analytics](https://github.com/maryletteroa/data_analytics)
 
-An analysis which applies a machine learning pipeline using the Boston Housing dataset is here: [Boston housing](https://github.com/maryletteroa/data_analytics/blob/main/boston_housing/Boston%20Housing.ipynb). 
 
 An ML pipeline can look something like this:
 
