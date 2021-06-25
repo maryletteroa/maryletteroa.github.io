@@ -23,10 +23,10 @@ To dos for this game:
 - [x] Create a body
 - [x] Move the snake
 - [x] Control the snake
-- [ ] Dectect collision with food
+- [ ] Detect collision with food
 - [ ] Create a scoreboard
-- [ ] Dectect collision with wall
-- [ ] Dectect collision with tail
+- [ ] Detect collision with wall
+- [ ] Detect collision with tail
 
 💡 Focus on understanding, not on memorising.
 
