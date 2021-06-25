@@ -15,4 +15,4 @@ A programming win to celebrate today! 😉
 
 (The awesome Lagom theme [here](https://github.com/swanson/lagom)! )
 
-<iframe src="https://giphy.com/embed/6brH8dM3zeMyA" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/success-6brH8dM3zeMyA">via GIPHY</a></p>
+<iframe src="https://giphy.com/embed/6brH8dM3zeMyA" width="250" height="250" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/success-6brH8dM3zeMyA">via GIPHY</a></p>

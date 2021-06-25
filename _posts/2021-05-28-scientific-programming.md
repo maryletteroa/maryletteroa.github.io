@@ -5,7 +5,7 @@ categories:
 - project
 ---
 
-I've finished the [Scientific Programming with Python](https://www.freecodecamp.org/learn/scientific-computing-with-python/) course in [freeCodeCamp](https://www.freecodecamp.org) and earned a Certificate! 
+I've finished the [Scientific Programming with Python](https://www.freecodecamp.org/learn/scientific-computing-with-python/) course in [freeCodeCamp](https://www.freecodecamp.org) and earned a [Certificate](https://www.linkedin.com/redir/redirect?url=https%3A%2F%2Ffreecodecamp%2Eorg%2Fcertification%2Ffcc58a47023-eefd-4bab-9957-2e31f614ba97%2Fscientific-computing-with-python-v7&urlhash=YwDK&trk=public_profile-settings_see-credential)! 
 
 Here is my repo 👉: [freeCodeCamp Projects](https://github.com/maryletteroa/freecodecamp-projects).  
 
@@ -23,5 +23,5 @@ The codes can be run from my [Replit account](https://replit.com/@maryletteroa)
 
 (btw Replit is awesome)
 
-Here is my ✨[Certificate](https://www.linkedin.com/redir/redirect?url=https%3A%2F%2Ffreecodecamp%2Eorg%2Fcertification%2Ffcc58a47023-eefd-4bab-9957-2e31f614ba97%2Fscientific-computing-with-python-v7&urlhash=YwDK&trk=public_profile-settings_see-credential).✨
 
+  <iframe src="https://giphy.com/embed/dXKiD8XysOuhFAJB1f" width="250" height="250" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/moodman-dXKiD8XysOuhFAJB1f">via GIPHY</a></p>
