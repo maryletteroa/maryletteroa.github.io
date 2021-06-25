@@ -13,10 +13,30 @@ My code repo is here 👉: [100DaysOfCode-Python](https://github.com/marylettero
 
 I document my progress in this post: programming tasks, and notes about things that made an impression.
 
+
+#### Day 20 - Snake Game Part 1
+
+Snake Game Part 1 here 🐍: [Snake game Part 1](https://replit.com/@maryletteroa/snake-game-part-1)
+
+To dos for this game:
+
+- [x] Create a body
+- [x] Move the snake
+- [x] Control the snake
+- [ ] Dectect collision with food
+- [ ] Create a scoreboard
+- [ ] Dectect collision with wall
+- [ ] Dectect collision with tail
+
+💡 Focus on understanding, not on memorising.
+
+Getting the hangout of OOP. Also need to consider how to make future modifications of the code easier -- CONSTANTS (at the top of the code) helps!
+
 #### Day 19 - Etch-A-Sketch App
 
 🐢 [Turtle Race](https://replit.com/@maryletteroa/turtle-race)  
 [Etch-A-Sketch](https://replit.com/@maryletteroa/etch-a-sketch)
+
 
 
 I had a great time making the turtle race game! 🐢
@@ -193,6 +213,11 @@ See Figures [1](https://res.cloudinary.com/dyd911kmh/image/upload/f_auto,q_auto:
 #### Day 11 (Capstone) - Blackjack
 
 Play my solution 🎮: [blackjack](https://replit.com/@maryletteroa/blackjack)
+
+<iframe
+    src="https://replit.com/@maryletteroa/blackjack?embed=True&outputonly=1"
+    style="width:600px; height:400px;"
+></iframe>
 
 You win if you score 21 or closer to 21 than the dealer. You lose if you score over 21. Full game rules are [here](https://bicyclecards.com/how-to-play/blackjack/). In this version, the deck is infinite.
 
