@@ -30,7 +30,7 @@ To dos for this game:
 
 💡 Focus on understanding, not on memorising.
 
-Getting the hangout of OOP. Also need to consider how to make future modifications of the code easier -- CONSTANTS (at the top of the code) helps!
+Getting the hangout of OOP. Also need to consider how to make future modifications of the code easier -- CONSTANTS (at the top of the code) help!
 
 #### Day 19 - Etch-A-Sketch App
 
