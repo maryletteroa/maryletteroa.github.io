@@ -14,6 +14,27 @@ My code repo is here 👉: [100DaysOfCode-Python](https://github.com/marylettero
 I document my progress in this post: programming tasks, and notes about things that made an impression.
 
 
+#### Day 21 - Snake Game Part 2
+
+The full Snake Game here 🐍: [Snake game](https://replit.com/@maryletteroa/snake-game)
+
+- [x] Detect collision with food
+- [x] Create a scoreboard
+- [x] Detect collision with wall
+- [x] Detect collision with tail
+
+
+Inheritance 
+```python
+class Fish(Animal):
+    def __init__(self):
+        super().__init__()
+    def breathe(self):
+        super().breathe()
+        # add something
+```
+
+
 #### Day 20 - Snake Game Part 1
 
 Snake Game Part 1 here 🐍: [Snake game Part 1](https://replit.com/@maryletteroa/snake-game-part-1)
