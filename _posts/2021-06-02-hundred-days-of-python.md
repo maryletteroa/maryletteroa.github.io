@@ -14,6 +14,21 @@ My code repo is here 👉: [100DaysOfCode-Python](https://github.com/marylettero
 I document my progress in this post: programming tasks, and notes about things that made an impression.
 
 
+#### Day 22 - Pong
+
+Play Pong here 🎮: [Pong](https://replit.com/@maryletteroa/pong)
+
+To dos for this game:
+
+- [x] Create the screen
+- [x] Create and move a paddle
+- [x] Create another paddle
+- [x] Create the ball and make it move
+- [x] Detect collision with wall and bounce
+- [x] Detect collision with paddle
+- [x] Detect when paddle misses
+- [x] Keep score
+
 #### Day 21 - Snake Game Part 2
 
 The full Snake Game here 🐍: [Snake game](https://replit.com/@maryletteroa/snake-game)
