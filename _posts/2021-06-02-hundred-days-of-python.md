@@ -7,12 +7,29 @@ categories:
 
 I've finally gotten around to doing the 100 Days of Code Challenge. This was popular a few years back, and as usual, I caught up with the trend just now. 😅 
 
-I'm following the Udemy course [100 Days of Code - The Python Pro Bootcamp](https://www.udemy.com/course/100-days-of-code/) by Dr. Angela Yu.
+This journey is based on the Udemy course [100 Days of Code - The Python Pro Bootcamp](https://www.udemy.com/course/100-days-of-code/) by Dr. Angela Yu.
 
 My code repo is here 👉: [100DaysOfCode-Python](https://github.com/maryletteroa/100DaysOfCode-Python)
 
 I document my progress in this post: programming tasks, and notes about things that made an impression.
 
+
+#### Day 23 (Capstone) - Turtle crossing
+
+🛣🐢: [Turtle crossing](https://replit.com/@maryletteroa/turtle-crossing)
+
+It's another capstone, another landmark! 🎉 This game brings back a lot of memories!
+
+💡 Using random chance to slow down the generation of cars can be done this way:
+```python
+    def create_car(self):
+        random_chance = random.randint(1, 6)
+        if random_chance == 1:
+            # rest of the code
+```
+Needed help on the car manager bit.. but it was interesting. Got confused about when to inherit or not. 
+
+Programming is a way to test one's thinking! 😵💫
 
 #### Day 22 - Pong
 
