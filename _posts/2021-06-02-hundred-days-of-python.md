@@ -25,7 +25,7 @@ It's another capstone, another landmark! 🎉 This game brings back a lot of mem
     def create_car(self):
         random_chance = random.randint(1, 6)
         if random_chance == 1:
-            # rest of the code
+            # generate car
 ```
 Needed help on the car manager bit.. but it was interesting. Got confused about when to inherit or not. 
 
