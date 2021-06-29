@@ -13,6 +13,17 @@ My code repo is here 👉: [100DaysOfCode-Python](https://github.com/marylettero
 
 I document my progress in this post: programming tasks, and notes about things that made an impression.
 
+#### Day 24
+
+🐍 Snake but you can retain the high scores:  [Snake High Score](https://replit.com/@maryletteroa/snake-high-score)  
+📧 Mail merge - an automatic letter generator: [Mail merge](https://replit.com/@maryletteroa/mail-merge)
+
+Mail merge reminds me of the time I wrote a script in Python/Latex that created name tags automatically. It took a bit to generate the code but worth the effort for the number of events x participants that we had.
+
+Optimized readability > Premature optimization (Efficient code as soon as possible)
+
+"You write so that people understand what you say."
+
 
 #### Day 23 (Capstone) - Turtle crossing
 
