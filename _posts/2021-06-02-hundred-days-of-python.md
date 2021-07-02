@@ -14,6 +14,35 @@ My code repo is here 👉: [100DaysOfCode-Python](https://github.com/marylettero
 I document my progress in this post: programming tasks, and notes about things that made an impression.
 
 
+#### Day 26 - NATO Alphabet
+
+Translate any word to the NATO alphabet here: [NATO alphabet](https://replit.com/@maryletteroa/nato-alphabet)
+
+This is actually helpful for me! (Also, isn't spelling out the letters easier?)
+
+List comprehension
+
+```python
+new_list  = [new_item for item in list if test]
+```
+
+Dictionary comprehension
+```python
+new_dict = {new_key:new_value for (key,value) in dict.items if test}
+
+```
+
+Iterate over a Pandas DataFrame: use `iterrows()`
+```python
+for (index, row) in df.iterrows():
+    print(index)
+    print(row)
+        # each row is a pandas.Series object so dot-notation can be used
+    print(row.col1)
+    print(row.col2)
+```
+
+
 #### Day 25
 
 Guess US States here 👉: [US States](https://replit.com/@maryletteroa/us-states)
