@@ -13,6 +13,22 @@ My code repo is here 👉: [100DaysOfCode-Python](https://github.com/marylettero
 
 I document my progress in this post: programming tasks, and notes about things that made an impression.
 
+
+#### Day 25
+
+Guess US States game here 👉: [US States](https://replit.com/@maryletteroa/us-states)
+
+Website for quizzes: [Sporkle](https://www.sporcle.com/)
+
+Code to get coordinates of mouseclick in `turtle`
+
+```python
+def get_mouse_click_coor(x,y):
+    print(x,y)
+turtle.onscreenclick(get_mouse_click_coor)
+turtle.mainloop()
+```
+
 #### Day 24
 
 🐍 Snake but you can retain the high scores:  [Snake High Score](https://replit.com/@maryletteroa/snake-high-score)  
