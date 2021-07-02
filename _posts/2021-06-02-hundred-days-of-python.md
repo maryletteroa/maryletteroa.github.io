@@ -16,7 +16,7 @@ I document my progress in this post: programming tasks, and notes about things t
 
 #### Day 25
 
-Guess US States game here 👉: [US States](https://replit.com/@maryletteroa/us-states)
+Guess US States here 👉: [US States](https://replit.com/@maryletteroa/us-states)
 
 Website for quizzes: [Sporkle](https://www.sporcle.com/)
 
@@ -26,8 +26,9 @@ Code to get coordinates of mouseclick in `turtle`
 def get_mouse_click_coor(x,y):
     print(x,y)
 turtle.onscreenclick(get_mouse_click_coor)
-turtle.mainloop()
+turtle.mainloop() # instead of `exitonclick()`
 ```
+
 
 #### Day 24
 
