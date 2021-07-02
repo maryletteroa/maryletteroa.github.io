@@ -13,8 +13,78 @@ My code repo is here 👉: [100DaysOfCode-Python](https://github.com/marylettero
 
 I document my progress in this post: programming tasks, and notes about things that made an impression.
 
+## Day 27
 
-#### Day 26 - NATO Alphabet
+Convert miles to kilometer 🛣: [Miles to Kilometer](https://replit.com/@maryletteroa/miles-to-kilometerpy)
+
+Moving on to GUI✨ using [tKinter](https://docs.python.org/3/library/tkinter.htm)
+
+Tk commands: [Tk commands](http://tcl.tk/man/tcl8.6/TkCmd/contents.htm)
+
+Steps to add components on the screen:
+1. Make a component
+2. Specify how that component will be laid out on the screen
+```python
+my_label = tkinter.Label(text="I am a label")
+my_label.pack() # The Packer
+```
+
+tkinter layouts:
+1. Pack
+2. Place
+3. Grid
+```python
+my_label.pack(side="left")
+my_label.place(x=0,y=0)
+my_label.place(x=100, y=100) # x moves to right, y moves down
+my_label.grid(column=0, row=0)
+```
+Pack and place are incompatible
+
+Advanced arguments 😡💢😠
+<iframe src="https://giphy.com/embed/1w2vvSVgAu3Ti" width="250" height="" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/fighting-power-rangers-argument-1w2vvSVgAu3Ti">via GIPHY</a></p>
+
+Unlimited positional arguments: `*args` -> tuple
+```python
+def add(*args):
+    print(sum(args))
+add(3,5,8,10,12) # 38
+```
+
+Unlimited keyword arguments: `**kwargs` -> dictionary
+```python
+def calculate(n, **kwargs):
+    n += kwargs["add"]
+    n *= kwargs["multiply"]
+    print(n)
+
+calculate(2, add=3, multiply=5) # (2+3)*5 = 25
+```
+Use in a class:
+```python
+class Car:
+    def __init__(self, **kw) :
+        self.make = kw.get("make")
+        self.model = kw.get("model")
+        self.color = kw.get("color")
+        self.seats = kw.get("seats")
+
+my_car = Car(make="Nissan", model="Skyline")
+print(my_car.color)
+    # None
+```
+
+Mixed
+```python
+def all_aboard(a, *args, **kw): 
+    print(a, args, kw)
+ 
+all_aboard(4, 7, 3, 0, x=10, y=64)
+    # 4 (7,3,5) {'x: 10, 'y': 64}
+```
+
+
+## Day 26 - NATO Alphabet
 
 Translate any word to the NATO alphabet here: [NATO alphabet](https://replit.com/@maryletteroa/nato-alphabet)
 
@@ -43,7 +113,7 @@ for (index, row) in df.iterrows():
 ```
 
 
-#### Day 25
+## Day 25
 
 Guess US States here 👉: [US States](https://replit.com/@maryletteroa/us-states)
 
@@ -59,7 +129,7 @@ turtle.mainloop() # instead of `exitonclick()`
 ```
 
 
-#### Day 24
+## Day 24
 
 🐍 Snake but you can retain the high scores:  [Snake High Score](https://replit.com/@maryletteroa/snake-high-score)  
 📧 Mail merge - an automatic letter generator: [Mail merge](https://replit.com/@maryletteroa/mail-merge)
@@ -71,7 +141,7 @@ Optimized readability > Premature optimization (Efficient code as soon as possib
 "You write so that people understand what you say."
 
 
-#### Day 23 (Capstone) - Turtle crossing
+## Day 23 (Capstone) - Turtle crossing
 
 🛣🐢: [Turtle crossing](https://replit.com/@maryletteroa/turtle-crossing)
 
@@ -88,7 +158,7 @@ Needed help on the car manager bit.. but it was interesting. Got confused about 
 
 Programming is a way to test one's thinking! 😵💫
 
-#### Day 22 - Pong
+## Day 22 - Pong
 
 Play Pong here 🎮: [Pong](https://replit.com/@maryletteroa/pong)
 
@@ -103,7 +173,7 @@ To dos for this game:
 - [x] Detect when paddle misses
 - [x] Keep score
 
-#### Day 21 - Snake Game Part 2
+## Day 21 - Snake Game Part 2
 
 The full Snake Game here 🐍: [Snake game](https://replit.com/@maryletteroa/snake-game)
 
@@ -124,7 +194,7 @@ class Fish(Animal):
 ```
 
 
-#### Day 20 - Snake Game Part 1
+## Day 20 - Snake Game Part 1
 
 Snake Game Part 1 here 🐍: [Snake game Part 1](https://replit.com/@maryletteroa/snake-game-part-1)
 
@@ -142,7 +212,7 @@ To dos for this game:
 
 Getting the hangout of OOP. Also need to consider how to make future modifications of the code easier -- CONSTANTS (at the top of the code) help!
 
-#### Day 19 - Etch-A-Sketch App
+## Day 19 - Etch-A-Sketch App
 
 🐢 [Turtle Race](https://replit.com/@maryletteroa/turtle-race)  
 [Etch-A-Sketch](https://replit.com/@maryletteroa/etch-a-sketch)
@@ -166,7 +236,7 @@ tommy.color = purple
 ```
 
 
-#### Day 18 - Hirst Painting
+## Day 18 - Hirst Painting
 
 See it here 🎨: [Hirst painting](https://replit.com/@maryletteroa/hirst-painting)
 
@@ -174,7 +244,7 @@ See it here 🎨: [Hirst painting](https://replit.com/@maryletteroa/hirst-painti
 [Colorgram.py](https://pypi.org/project/colorgram.py/)  
 [RGB Calculator](https://www.w3schools.com/colors/colors_rgb.asp)
 
-#### Day 17 - Quiz Game
+## Day 17 - Quiz Game
 Play the game here: [quiz-game](https://replit.com/@maryletteroa/quiz-game)
 
 Generate trivia questions here 👉 [Open Trivia Database](https://opentdb.com)
@@ -234,7 +304,7 @@ print(user_2.following)
 
 ```
 
-#### Day 16 - OOP Coffee Machine
+## Day 16 - OOP Coffee Machine
 
 Code here: [oop-coffee-machine](https://replit.com/@maryletteroa/oop-coffee-machine)
 
@@ -251,7 +321,7 @@ When I work, I tend to use 1, 2, and 4, and seldom object-oriented. Today (and u
 
 So, this lesson and a few more after this, is something that I look forward to. There is also an element of code design which is fun.
 
-#### Day 15 - Coffee Machine
+## Day 15 - Coffee Machine
 
 Get your own coffee here ☕: [coffee-machine](https://replit.com/@maryletteroa/coffee-machine)
 
@@ -259,13 +329,13 @@ Imagine the amount of coffee I ordered to get this to work. Had a hard time orde
 
 Ahh 💭 good times.
 
-#### Day 14 - Higher-lower
+## Day 14 - Higher-lower
 
 Play my solution 🎮: [higher-lower](https://replit.com/@maryletteroa/higher-lower)
 
 ⚠ Might need to refactor this code. Was so sleepy when I wrote this.
 
-#### Day 13 - Debugging
+## Day 13 - Debugging
 
 🐞🚫 Tips: 
 1. Describe the problem, challenge your assumptions!
@@ -282,7 +352,7 @@ Play my solution 🎮: [higher-lower](https://replit.com/@maryletteroa/higher-lo
 ☝ The more bugs you solve, the better you get at it.
 
 
-#### Day 12 - Guess the number
+## Day 12 - Guess the number
 
 Play my solution 🎮: [guess the number](https://replit.com/@maryletteroa/guess-the-number)
 
@@ -320,7 +390,7 @@ See Figures [1](https://res.cloudinary.com/dyd911kmh/image/upload/f_auto,q_auto:
 4. ✨Functional coding✨, and writing Docstrings!
 
 
-#### Day 11 (Capstone) - Blackjack
+## Day 11 (Capstone) - Blackjack
 
 Play my solution 🎮: [blackjack](https://replit.com/@maryletteroa/blackjack)
 
@@ -349,7 +419,7 @@ You win if you score 21 or closer to 21 than the dealer. You lose if you score o
 4. Formulating the `evaluation` function (if/else statements) to decide the game was nuanced.
 
 
-#### Day 10 - Calculator
+## Day 10 - Calculator
  💡 Functions inside dictionaries.
 
 The functions:
@@ -382,13 +452,13 @@ Finally, calling the functions
 result = operators[operator](a, b)
 ```
 
-#### Day 9 - Blind auction
+## Day 9 - Blind auction
 
-#### Day 8 - Caesar cipher
+## Day 8 - Caesar cipher
 
 TIL That Caesar was into ciphers!
 
-#### Day 7 - Hangman
+## Day 7 - Hangman
 
 Importing from an external python code
 
@@ -405,15 +475,15 @@ print(stages[lives])
 chosen_word = random.choice(word_list)
 ```
 
-#### Day 6 - Reeborg Maze
+## Day 6 - Reeborg Maze
 
 The [Reeborg's World](https://reeborg.ca/reeborg.html) website fun coding puzzles! 🤖
 
-#### Day 5 - Password generator
+## Day 5 - Password generator
 
-#### Day 4 - Rock paper scissors
+## Day 4 - Rock paper scissors
 
-#### Day 3 - Treasure Island
+## Day 3 - Treasure Island
 
 [Asci art ](https://ascii.co.uk/art) 🎨
 
@@ -440,6 +510,6 @@ _______________''.--o/___  \_______________(_)___________
 
 ```
 
-#### Day 2 - Tip calculator
+## Day 2 - Tip calculator
 
-#### Day 1 - Band name generator
+## Day 1 - Band name generator
