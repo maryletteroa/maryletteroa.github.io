@@ -13,9 +13,32 @@ My code repo is here 👉: [100DaysOfCode-Python](https://github.com/marylettero
 
 I document my progress in this post: programming tasks, and notes about things that made an impression.
 
+## Day 28
+
+Tomato timere 🍅: [Pomodoro](https://replit.com/@maryletteroa/pomodoro)
+
+Event Driven programs watches the screen; a while loop before the `mainloop()` program will result in an error.
+
+Recursion
+```python
+def count_down(count):
+    print(count)
+    if count > 0:
+        window.after(1000, count_down, count-1)
+```
+
+Dynaminc typing
+```python
+count_down = 0
+count_down = "00"
+    # change type from int to str
+```
+
+[Python is a **strongly, dynamically typed** language](https://stackoverflow.com/questions/11328920/is-python-strongly-typed)
+
 ## Day 27
 
-Convert miles to kilometer 🛣: [Miles to Kilometer](https://replit.com/@maryletteroa/miles-to-kilometerpy)
+Convert miles to kilometer 🛣: [Miles to Kilometer](https://replit.com/@maryletteroa/miles-to-kilometer)
 
 Moving on to GUI✨ using [tKinter](https://docs.python.org/3/library/tkinter.htm)
 
