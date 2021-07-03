@@ -15,9 +15,9 @@ I document my progress in this post: programming tasks, and notes about things t
 
 ## Day 28
 
-Tomato timere 🍅: [Pomodoro](https://replit.com/@maryletteroa/pomodoro)
+Tomato timer here 🍅: [Pomodoro](https://replit.com/@maryletteroa/pomodoro)
 
-Event Driven programs watches the screen; a while loop before the `mainloop()` program will result in an error.
+Event Driven programs watch the screen -- a while loop before the `mainloop()` program will result in an error since the program will listening when it encounters the while loop.
 
 Recursion
 ```python
