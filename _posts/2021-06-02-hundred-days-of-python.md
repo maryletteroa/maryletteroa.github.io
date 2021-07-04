@@ -13,11 +13,18 @@ My code repo is here 👉: [100DaysOfCode-Python](https://github.com/marylettero
 
 I document my progress in this post: programming tasks, and notes about things that made an impression.
 
+## Day 29
+
+Password manager/ generator 🔒 : [Password manager](https://replit.com/@maryletteroa/password-manager)
+
+Also learned about [pyperclip](https://pypi.org/project/pyperclip), a clipboard module in Python.
+
+
 ## Day 28
 
 Tomato timer here 🍅: [Pomodoro](https://replit.com/@maryletteroa/pomodoro)
 
-Event Driven programs watch the screen -- a while loop before the `mainloop()` program will result in an error since the program will listening when it encounters the while loop.
+Event Driven programs watch the screen -- a while loop before the `mainloop()` program will result in an error since the program will stop listening when it encounters the while loop.
 
 Recursion
 ```python
