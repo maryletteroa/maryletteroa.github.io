@@ -13,6 +13,53 @@ My code repo is here 👉: [100DaysOfCode-Python](https://github.com/marylettero
 
 I document my progress in this post: programming tasks, and notes about things that made an impression.
 
+## Day 30
+
+🔒🔎 [Password manager with search](https://replit.com/@maryletteroa/password-manager-with-search)
+
+Catching exceptions
+
+```python
+try:
+    # something that might cause an exception
+except:
+    # do this if there was an exception
+else:
+    # do this if there were no exceptions
+finally:
+    # do this no matter what happens
+```
+
+Use Exceptions if there is no other way (i.e. an easy alternative) to handle an error or if the error happens in *exceptional* cases. Otherwise, an `if-else` statement can be used.
+
+Error handling with recursions
+```python
+def generate_phonetic():
+    word = input("Enter a word: ").upper()
+    try:
+        output_list = [phonetic_dict[letter] for letter in word]
+    except KeyError:
+        print("Sorry, only letters in the alphabet please.")
+        generate_phonetic()
+    else:
+        print(output_list)
+generate_phonetic()
+```
+
+JSON - `update()` and `dump()` are a bit confusing 
+```python
+import json
+new_file = {"key":"value"}
+with open("file.json") as data_file:
+    # read a json file
+    data = json.load(data_file)
+    # update a json file
+    data.update(new_data) 
+    # write in a json file
+    json.dump(new_data, data_file) 
+```
+
+
 ## Day 29
 
 Password manager/ generator 🔒 : [Password manager](https://replit.com/@maryletteroa/password-manager)
