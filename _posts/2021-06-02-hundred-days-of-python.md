@@ -13,6 +13,20 @@ My code repo is here 👉: [100DaysOfCode-Python](https://github.com/marylettero
 
 I document my progress in this post: programming tasks, and notes about things that made an impression.
 
+## Day 31
+
+Flash card app: [Flash card](https://replit.com/@maryletteroa/flash-card)
+
+It's another capstone project! 
+
+Timer in `tkinter`
+```python
+# set the timer
+flip_timer = window.after(3000, func=flip_card)
+# stop the timer
+window.after_cancel(flip_timer)
+```
+
 ## Day 30
 
 🔒🔎 [Password manager with search](https://replit.com/@maryletteroa/password-manager-with-search)
