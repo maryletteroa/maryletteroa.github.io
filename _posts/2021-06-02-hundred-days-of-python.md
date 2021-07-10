@@ -13,6 +13,63 @@ My code repo is here 👉: [100DaysOfCode-Python](https://github.com/marylettero
 
 I document my progress in this post: programming tasks, and notes about things that made an impression.
 
+## Day 34
+
+Play the Quizzler App here 🎓: [Quizzler app](https://replit.com/@maryletteroa/quizzler-app)
+
+[Open Trivia Database](https://opentdb.com/api_config.php)
+
+[HTML Entities](https://www.w3schools.com/html/html_entities.asp) - a way to replace characters in text so they are not confused with HTML characters
+
+[HTML Escape](https://www.freeformatter.com/html-escape.html) to convert into human-readable format
+
+Or using the `html` module
+```python
+import html
+text = "It's <tag>"
+q_text = html.unescape(text)
+```
+
+Specify paramater as type: 'Class'
+```python
+from quiz_brain import QuizBrain
+
+def __init__(self, quiz_brain: QuizBrain):
+    # code here
+```
+Usage in `main.py`
+```python
+quiz = QuizBrain()
+quiz_ui = QuizInterface(quiz)
+
+```
+
+Type hints
+```python
+age: int
+name: str
+height: float
+is_human: bool
+
+def police_check(age: int) -> bool:
+    if age > 18:
+        can_drive = True
+    else:
+        can_drive = False
+    return can_drive
+
+if print(police_check(19)):
+    print("You may pass")
+else:
+    print("Pay a fine")
+
+
+# will crash code
+if print(police_check("twelve")):
+    print("You may pass")
+else:
+    print("Pay a fine")
+```
 
 ## Day 33
 
