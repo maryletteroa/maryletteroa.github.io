@@ -13,6 +13,51 @@ My code repo is here 👉: [100DaysOfCode-Python](https://github.com/marylettero
 
 I document my progress in this post: programming tasks, and notes about things that made an impression.
 
+## Day 32
+
+SMTP stands for Simple Mail Transfer Protocol
+```sh
+Gmail(smtp.gmail.com)
+Yahoo(smtp.mail.yahoo.com) 
+Hotmail(smtp.live.com)
+Outlook(smtp-mail.outlook.com)
+```
+
+Template code for sending an email
+```python
+import smtplib
+
+my_email = "test@gmail.com"
+password = "abc123()"
+
+with smtplib.SMTP("smtp.gmail.com") as connection:
+    connection.starttls()
+    connection.login(user=my_email, password=password)
+    connection.sendemail(
+        from_addr=my_email, 
+        to_addrs="test@yahoo.com", 
+        msg="Subject:Hello\n\nThis is the body of my email."
+    )
+```
+
+
+Some `datetime` codes
+```python
+import datetime as dt
+
+now = dt.datetime.now()
+year = now.year
+print(year)
+print(now.weekday())
+date_of_birth = dt.datetime(year = 1995, month = 12, day = 15, hour=4)
+print(date_of_birth)
+```
+
+[101 Monday Motivation Quotes](https://www.positivityblog.com/monday-motivation-quotes)
+
+Host code in [Python Anywhere](https://www.pythonanywhere.com)
+
+
 ## Day 31
 
 Flash card app: [Flash card](https://replit.com/@maryletteroa/flash-card)
