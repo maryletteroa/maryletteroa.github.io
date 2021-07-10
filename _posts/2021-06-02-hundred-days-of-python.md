@@ -13,7 +13,40 @@ My code repo is here 👉: [100DaysOfCode-Python](https://github.com/marylettero
 
 I document my progress in this post: programming tasks, and notes about things that made an impression.
 
+
+## Day 33
+
+Send an email if the International Space Station is overhead 🌟: [ISS Overhead](https://replit.com/@maryletteroa/iss-overhead)
+
+API (Application Programming Interface): a set of commands, functions, protocols, and objects that programmers can use to create software or interact with an external system
+
+API Endpoint: where to extract data; e.g. url `api.coinbase.com`
+
+API Request: get a piece of data from a website 
+
+API Parameters: inputs
+
+[International Space Station Current Location](http://open-notify.org/Open-Notify-API/ISS-Location-Now)
+
+[Kanye Quotes API](https://kanye.rest/)
+
+[Sunrise-Sunset API](https://sunrise-sunset.org/api)
+
+[JSON Viewer Chrome plugin](https://chrome.google.com/webstore/detail/json-viewer/gbmdgpbipfallnflgajpaliibnhdgobh/related)
+
+[HTTP Status Codes](https://httpstatuses.com)
+ - 1xx: Hold on
+ - 2xx: Here you go
+ - 3xx: Go away
+ - 4xx: You screwed up
+ - 5xx: I screwed up
+
+[Latitude-Longitude To Address](https://www.latlong.net/Show-Latitude-Longitude.html)
+[Address to Latitude-Longitude](https://www.latlong.net)
+
 ## Day 32
+
+Email a birthday greeting 🎂: [Birthday greeting](https://replit.com/@maryletteroa/birthday-greeting)
 
 SMTP stands for Simple Mail Transfer Protocol
 ```sh
