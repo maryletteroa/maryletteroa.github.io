@@ -13,6 +13,33 @@ My code repo is here 👉: [100DaysOfCode-Python](https://github.com/marylettero
 
 I document my progress in this post: programming tasks, and notes about things that made an impression.
 
+
+## Day 35
+
+Rain Alert app ☔: [Rain Alert](https://replit.com/@maryletteroa/rain-alert)
+
+API authentication using API key: way for API providers to track usage and/or deny access past limit
+
+Weather related websites:
+- [Open Weather Map](https://openweathermap.org)
+- [OWM Weather Conditions ID](https://openweathermap.org/weather-conditions#Weather-Condition-Codes-2)
+- [Live Weather](https://www.ventusky.com)
+
+Visual parsing of JSON texts: [Online JSON Viewer](http://jsonviewer.stack.hu)
+
+Send text messages using [Twillio](https://www.twilio.com/try-twilio)
+
+Retrieve variables from environment
+```python
+import os
+
+API_KEY = os.environ.get("API_KEY")
+```
+In the commandline
+```shell
+export API_KEY="thisIsASecret"
+```
+
 ## Day 34
 
 Play the Quizzler App here 🎓: [Quizzler app](https://replit.com/@maryletteroa/quizzler-app)
