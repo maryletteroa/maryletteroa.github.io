@@ -14,6 +14,16 @@ My code repo is here 👉: [100DaysOfCode-Python](https://github.com/marylettero
 I document my progress in this post: programming tasks, and notes about things that made an impression.
 
 
+## Day 36
+
+A script to send stock updates 📈: [Stock trading news alert](https://replit.com/@maryletteroa/stock-trading-news-alert)
+
+\* sends a text when stock price of a certain company changes 5% or more between the present day and the day before
+
+API sources:
+- [Alphavantage](https://www.alphavantage.co)
+- [NewsAPI](https://newsapi.org/)
+
 ## Day 35
 
 Rain Alert app ☔: [Rain Alert](https://replit.com/@maryletteroa/rain-alert)
