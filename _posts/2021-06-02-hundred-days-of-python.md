@@ -14,6 +14,21 @@ My code repo is here 👉: [100DaysOfCode-Python](https://github.com/marylettero
 I document my progress in this post: programming tasks, and notes about things that made an impression.
 
 
+## Day 38
+
+Workout tracker using Google Sheets 🏊‍♀️ : [Workout tracker](https://replit.com/@maryletteroa/workout-tracker)
+
+This tracker uses NLP capabilities from [OpenAI API](https://openai.com/blog/openai-api/).
+
+This was a lot of fun to make and certainly challenging in terms of reading documentations.
+
+
+API resources:
+ - [Nutritionix](https://www.nutritionix.com/business/api)
+ - [Sheety](sheety.co)
+
+Storing `.env` in Replit: [Storing secrets in .env](https://docs.replit.com/archive/secret-keys)
+
 ## Day 37
 
 Template for the Pixela habit tracker here🧘‍♀️: [Pixela habit tracker](https://replit.com/@maryletteroa/pixela-habit-tracker)
