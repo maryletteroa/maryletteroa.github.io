@@ -14,6 +14,32 @@ My code repo is here 👉: [100DaysOfCode-Python](https://github.com/marylettero
 I document my progress in this post: programming tasks, and notes about things that made an impression.
 
 
+## Day 37
+
+Template for the Pixela habit tracker here🧘‍♀️: [Pixela habit tracker](https://replit.com/@maryletteroa/pixela-habit-tracker)
+
+Advanced authentication and POST / PUT / DELETE Requests
+
+```python
+# get data
+requests.get()
+# post data
+requests.post(url=endpoint, json=params)
+# update a piece of data
+requests.put()
+# delete a piece of data
+requests.delete()
+```
+
+Website: [Pixela](https://pixe.la), [API Documentation](https://docs.pixe.la/)
+
+`.strftime()` to specific date string formats
+
+```python
+today = datetime.now().strftime("%Y%m%d")
+yesterday = datetime(year=2020, month=7, day=12).strftime("%Y%m%d")
+```
+
 ## Day 36
 
 A script to send stock updates 📈: [Stock trading news alert](https://replit.com/@maryletteroa/stock-trading-news-alert)
