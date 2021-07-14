@@ -14,6 +14,17 @@ My code repo is here 👉: [100DaysOfCode-Python](https://github.com/marylettero
 I document my progress in this post: programming tasks, and notes about things that made an impression.
 
 
+## Day 39 (Capstone Part 1) - Flight deal finder
+
+Flight deal finder ✈: [Flight deal finder](https://replit.com/@maryletteroa/flight-deal-finder)
+
+Sends a message when flights are equal to or cheaper than a set price
+
+This took longer than I thought: getting through the API documentation and writing models.
+
+Flight search API: [Tequila](https://tequila.kiwi.com/)
+
+
 ## Day 38
 
 Workout tracker using Google Sheets 🏊‍♀️ : [Workout tracker](https://replit.com/@maryletteroa/workout-tracker)
