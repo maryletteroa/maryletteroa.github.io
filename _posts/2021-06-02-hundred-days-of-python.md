@@ -13,10 +13,25 @@ My code repo is here 👉: [100DaysOfCode-Python](https://github.com/marylettero
 
 I document my progress in this post: programming tasks, and notes about things that made an impression.
 
+## Day 40 (Capstone Part 2) - Flight club
+
+Join the flight club here 🤜🛫: [Flight club](https://replit.com/@maryletteroa/flight-club)
+
+This sends a text and an email (a user can be added) when there are flights cheaper than a certain price. If direct flights are not avialable, it looks for flights with at most one (1) stop-over.
+
+Flights are limited at the moment, so testing was challenging. 
+
+I also encountered a weird bug because I was passing an entire class as an argument.
+
+⚠ Sheety has a cap of 200 requests per month in its free tier.
+
+
+Historic low prices for airfare: [Fare Detective](https://www.faredetective.com/farehistory)
+
 
 ## Day 39 (Capstone Part 1) - Flight deal finder
 
-Flight deal finder ✈: [Flight deal finder](https://replit.com/@maryletteroa/flight-deal-finder)
+Flight deal finder 🛫: [Flight deal finder](https://replit.com/@maryletteroa/flight-deal-finder)
 
 Sends a message when flights are equal to or cheaper than a set price
 
