@@ -5,13 +5,120 @@ categories:
 - project
 ---
 
-I've finally gotten around to doing the 100 Days of Code Challenge. This was popular a few years back, and as usual, I caught up with the trend just now. 😅 
-
+<!-- I've finally gotten around to doing the 100 Days of Code Challenge. This was popular a few years back, and as usual, I caught up with the trend just now. 😅 
+ -->
 This journey is based on the Udemy course [100 Days of Code - The Python Pro Bootcamp](https://www.udemy.com/course/100-days-of-code/) by Dr. Angela Yu.
 
 My code repo is here 👉: [100DaysOfCode-Python](https://github.com/maryletteroa/100DaysOfCode-Python)
 
 I document my progress in this post: programming tasks, and notes about things that made an impression.
+
+## Day 45 - Greatest Movies
+
+Top 100 Greatest Movies according to Empire Online 📽: [Greatest Movies](https://replit.com/@maryletteroa/greatest-movies)
+
+(I actually haven't been able to sit through The Godfather try as I may 😅)
+
+The script is a bit complex because the source website has transitioned out of vanilla HTML -- essentially, contents were loaded using Javascript on an almost empty HTML plate. Movie names had to be parsed from the `<script>` tag, and then further re-formatted.
+
+I've skipped over several days since days 41-44 were about HTML and CSS (which I feel at this point I'm already familiar with).
+
+Is Web Scraping legal? 🤔
+ - [Web scraping is now legal: Here's what that means for Data Scientists](https://medium.com/@tjwaterman99/web-scraping-is-now-legal-6bf0e5730a78)  
+ - ✅ Publicly available  
+ - ✅ Not copyrighted   
+ - ✅ Using data privately  
+ - ❌ Using data for commercial purposes (business)  
+ - ❌ Data behind authentication (e.g. scraping  from social media sites where you need to login - see fine print)
+
+❗ Just because it's legal, doesn't mean you can do it - CAPTCHA / reCAPTCHA  
+
+💭 Ethics: think about if it's right or wrong; putting aside whether it's legal or not.
+
+👍 Go for the API if possible  
+👍 Respect the owner - don't scrape every few ms  (e.g. try < 1 per minute)  
+👍 Check `<website>/robots.txt`. e.g `https://news.ycombinator.com/robots.txt` specifies which endpoints are not allowed to be scraped
+
+```
+User-Agent: * # person or bot scraping
+Disallow: /x?
+Disallow: /r?
+Disallow: /vote?
+Disallow: /reply?
+Disallow: /submitted?
+Disallow: /submitlink?
+Disallow: /threads?
+Crawl-delay: 30 
+    # the number of seconds that to wait each time 
+    # the website is accessed
+```
+Compare this to [LinkIn's `robot.txt`](https://www.linkedin.com/robots.txt) statement
+
+
+Read a website using `requests`
+```python
+response = requests.get("https://news.ycombinator.com")
+yc_combinator = response.text
+soup = BeautifulSoup(yc_webpage, "html.parser")
+```
+
+👇 Can use `html.parser` or `lxml`  which needs to be imported `import lxml`; sometimes `lxml` works better than `html.parser` 
+
+Some syntax reference:
+```python
+from bs4 import BeautifulSoup
+# import lxml
+
+with open("./website.html") as file:
+    contents = file.read()
+
+soup = BeautifulSoup(contents, "html.parser") #or "lxml"
+print(soup.title)
+    # <title>Angela's Personal Site</title
+print(soup.title.name)
+    # title
+print(soup.title.string)
+    # Angela's Personal Site
+
+# matches first instance
+print(soup.p)
+
+# pretty printing
+print(soup.prettify())
+
+# list of all anchor tags
+all_anchor_tags = soup.find_all(name="a")
+for tag in all_anchor_tags:
+    print(tag.getText())
+    print(tag.get("href"))
+
+# isolate by name tag
+heading = soup.find(name="h1", id="name")
+print(heading)
+    # <h1 id="name">Angela Yu</h1>
+
+# same for isolating by class name
+section_heading = soup.find(name="h3", class_="heading") 
+    # "class" is a reserved word in Python
+print(section_heading)
+    # <h3 class="heading">Books and Teaching</h3>
+
+# using selector
+company_url = soup.select_one(selector="p a")
+print(company_url)
+    # <a href="https://www.appbrewery.co/">The App Brewery</a>
+
+# using selector
+name = soup.select_one(selector="#name")
+print(name)
+    # <h1 id="name">Angela Yu</h1>
+headings = soup.select(".heading")
+print(headings)
+    # [<h3 class="heading">Books and Teaching</h3>, 
+    # <h3 class="heading">Other Pages</h3>]
+```
+
+
 
 ## Day 40 (Capstone Part 2) - Flight club
 
