@@ -147,7 +147,7 @@ This took longer than I thought: getting through the API documentation and writi
 Flight search API: [Tequila](https://tequila.kiwi.com/)
 
 
-## Day 38
+## Day 38 - Workout Tracker
 
 Workout tracker using Google Sheets 🏊‍♀️ : [Workout tracker](https://replit.com/@maryletteroa/workout-tracker)
 
@@ -162,7 +162,7 @@ API resources:
 
 Storing `.env` in Replit: [Storing secrets in .env](https://docs.replit.com/archive/secret-keys)
 
-## Day 37
+## Day 37 - Pixela Habit Tracker
 
 Template for the Pixela habit tracker here🧘‍♀️: [Pixela habit tracker](https://replit.com/@maryletteroa/pixela-habit-tracker)
 
@@ -188,7 +188,7 @@ today = datetime.now().strftime("%Y%m%d")
 yesterday = datetime(year=2020, month=7, day=12).strftime("%Y%m%d")
 ```
 
-## Day 36
+## Day 36 - Stock Trading News Alert
 
 A script to send stock updates 📈: [Stock trading news alert](https://replit.com/@maryletteroa/stock-trading-news-alert)
 
@@ -198,7 +198,7 @@ API sources:
 - [Alphavantage](https://www.alphavantage.co)
 - [NewsAPI](https://newsapi.org/)
 
-## Day 35
+## Day 35 - Rain Alert App
 
 Rain Alert app ☔: [Rain Alert](https://replit.com/@maryletteroa/rain-alert)
 
@@ -224,7 +224,7 @@ In the commandline
 export API_KEY="thisIsASecret"
 ```
 
-## Day 34
+## Day 34 - Quizzler App
 
 Play the Quizzler App here 🎓: [Quizzler app](https://replit.com/@maryletteroa/quizzler-app)
 
@@ -282,7 +282,7 @@ else:
     print("Pay a fine")
 ```
 
-## Day 33
+## Day 33 - ISS Overhead
 
 Send an email if the International Space Station is overhead 🌟: [ISS Overhead](https://replit.com/@maryletteroa/iss-overhead)
 
@@ -312,7 +312,7 @@ API Parameters: inputs
 [Latitude-Longitude To Address](https://www.latlong.net/Show-Latitude-Longitude.html)
 [Address to Latitude-Longitude](https://www.latlong.net)
 
-## Day 32
+## Day 32 - Birthday Greeting
 
 Email a birthday greeting 🎂: [Birthday greeting](https://replit.com/@maryletteroa/birthday-greeting)
 
@@ -359,7 +359,7 @@ print(date_of_birth)
 Host code in [Python Anywhere](https://www.pythonanywhere.com)
 
 
-## Day 31
+## Day 31 - Flash Card App
 
 Flash card app: [Flash card](https://replit.com/@maryletteroa/flash-card)
 
@@ -373,7 +373,7 @@ flip_timer = window.after(3000, func=flip_card)
 window.after_cancel(flip_timer)
 ```
 
-## Day 30
+## Day 30 - Password Manager with Search
 
 🔒🔎 [Password manager with search](https://replit.com/@maryletteroa/password-manager-with-search)
 
@@ -420,14 +420,14 @@ with open("file.json") as data_file:
 ```
 
 
-## Day 29
+## Day 29 - Password Manager
 
 Password manager/ generator 🔒 : [Password manager](https://replit.com/@maryletteroa/password-manager)
 
 Also learned about [pyperclip](https://pypi.org/project/pyperclip), a clipboard module in Python.
 
 
-## Day 28
+## Day 28 - Pomodoro Timer
 
 Tomato timer here 🍅: [Pomodoro](https://replit.com/@maryletteroa/pomodoro)
 
@@ -450,7 +450,7 @@ count_down = "00"
 
 [Python is a **strongly, dynamically typed** language](https://stackoverflow.com/questions/11328920/is-python-strongly-typed)
 
-## Day 27
+## Day 27 - Miles to Kilometer Converter
 
 Convert miles to kilometer 🛣: [Miles to Kilometer](https://replit.com/@maryletteroa/miles-to-kilometer)
 
@@ -550,7 +550,7 @@ for (index, row) in df.iterrows():
 ```
 
 
-## Day 25
+## Day 25 - Guess US States
 
 Guess US States here 👉: [US States](https://replit.com/@maryletteroa/us-states)
 
@@ -566,7 +566,7 @@ turtle.mainloop() # instead of `exitonclick()`
 ```
 
 
-## Day 24
+## Day 24 - Snake with High Score
 
 🐍 Snake but you can retain the high scores:  [Snake High Score](https://replit.com/@maryletteroa/snake-high-score)  
 📧 Mail merge - an automatic letter generator: [Mail merge](https://replit.com/@maryletteroa/mail-merge)
