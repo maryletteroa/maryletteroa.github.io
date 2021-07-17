@@ -13,6 +13,19 @@ My code repo is here 👉: [100DaysOfCode-Python](https://github.com/marylettero
 
 I document my progress in this post: programming tasks, and notes about things that made an impression.
 
+## Day 46 - Music Time Machine
+
+Travel back in time through music! 🎵: [Music Time Machine](https://replit.com/@maryletteroa/music-time-machine)
+
+This is so cool! ⭐ And I get to have new playlists while working.
+
+This code uses the `spotipy` library. I had some hiccups with authentication (my systems' config). Otherwise the [documentation](https://spotipy.readthedocs.io) is pretty good.
+
+This is the [Developer page](https://developer.spotify.com) for Spotify.
+
+Here's the [spotify Github repo](https://github.com/plamere/spotipy) which contains [code examples](https://github.com/plamere/spotipy/tree/master/examples).
+
+
 ## Day 45 - Greatest Movies
 
 Top 100 Greatest Movies according to Empire Online 📽: [Greatest Movies](https://replit.com/@maryletteroa/greatest-movies)
