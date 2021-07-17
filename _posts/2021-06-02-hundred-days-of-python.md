@@ -23,7 +23,7 @@ This code uses the `spotipy` library. I had some hiccups with authentication (my
 
 This is the [Developer page](https://developer.spotify.com) for Spotify.
 
-Here's the [spotify Github repo](https://github.com/plamere/spotipy) which contains [code examples](https://github.com/plamere/spotipy/tree/master/examples).
+Here's the [`spotipy` Github repo](https://github.com/plamere/spotipy) which contains [code examples](https://github.com/plamere/spotipy/tree/master/examples).
 
 
 ## Day 45 - Greatest Movies
