@@ -14,7 +14,7 @@ My code repo is here 👉: [100DaysOfCode-Python](https://github.com/marylettero
 I document my progress in this post: programming tasks, and notes about things that made an impression.
 
 
-## Day 47 
+## Day 47 - Amazon Price Tracker
 
 Get sales alert here 🛒: [Amazon Price Tracker](https://replit.com/@maryletteroa/amazon-price-tracker)
 
