@@ -13,6 +13,17 @@ My code repo is here 👉: [100DaysOfCode-Python](https://github.com/marylettero
 
 I document my progress in this post: programming tasks, and notes about things that made an impression.
 
+
+## Day 47 
+
+Get sales alert here 🛒: [Amazon Price Tracker](https://replit.com/@maryletteroa/amazon-price-tracker)
+
+Sends an email when an item in Amazon is equal to or below a price. (May be adapted to other websites.)
+
+See current browser's headers here: [MY HTTP Header](http://myhttpheader.com/). Pass the entire string as values in headers.
+
+Web article on [the difference between HTML and XML](https://techdifferences.com/difference-between-xml-and-html.html).
+
 ## Day 46 - Music Time Machine
 
 Travel back in time through music! 🎵: [Music Time Machine](https://replit.com/@maryletteroa/music-time-machine)
