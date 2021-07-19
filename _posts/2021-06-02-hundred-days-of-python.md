@@ -14,6 +14,96 @@ My code repo is here 👉: [100DaysOfCode-Python](https://github.com/marylettero
 I document my progress in this post: programming tasks, and notes about things that made an impression.
 
 
+## Day 48 - Game Clicker Bot
+
+Cookie world domination here 🍪: [Game Clicker Bot](https://replit.com/@maryletteroa/game-cliker-bot)
+
+Automates the game (click and purchase) for five minutes.
+
+Got the following score:
+```bash
+Total score: 1239
+Cookies per second: cookies/second : 97.4
+```
+
+Uses [Selenium](https://www.selenium.dev) web driver.
+
+Download the Chrome Driver that matches Chrome browser's version: [ChromeDriver WebDriver for Chrome](https://chromedriver.chromium.org/downloads)
+
+Read the docs for [locating elements in Selenium](https://selenium-python.readthedocs.io/locating-elements.html)
+
+```python
+chrome_driver_path="/path/to/exec"
+driver = webdriver.Chrome(executable_path=chrome_driver_path)
+url = "https://www.amazon.com/Legend-Zelda-Skyward-Sword-Nintendo-Switch/dp/B08WWFWRY6"
+
+# open the url in browser
+driver.get(url)
+
+# get element
+price = driver.find_element_by_id("priceblock_ourprice")
+print(price.text)
+
+# quit tab or program
+# driver.close() # quits particular tab
+driver.quit() # quits entire program
+```
+
+BeautifulSoup scrapes data from website HTML/XML but gets stuck if website uses Javascript to load (or other conditions) whereas Selenium would do the same thing as humans i.e. opening websites, grabbing the needed info. Can do a lot more using Selenium.
+
+```python
+# url = "python.org"
+
+search_bar = driver.find_element_by_name("q")
+print(search_bar) # a Selenium object
+
+print(search_bar.tag_name)
+print(search_bar.get_attribute("placeholder"))
+
+logo = driver.find_element_by_class_name("logo")
+print(logo.size)
+
+documentation_link = driver.find_elements_by_css_selector(".documentation-widget a") # list
+print(documentation_link.text)
+```
+
+XPath - [What is XPath](https://www.w3schools.com/xml/xpath_intro.asp)
+
+```python
+bug_link = driver.find_element_by_xpath('//*[@id="site-map"]/div[2]/div/ul/li[3]/a')
+print(bug_link.text)
+```
+
+To get more than one elements, use `find_elments*` in method name, as in e.g. `.find_elements_by_xpath` or `find_elements_by_name`
+
+Interactions
+```python
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+
+chrome_driver_path="/mnt/d/Programs/Chromedriver_win32/chromedriver.exe"
+driver = webdriver.Chrome(executable_path=chrome_driver_path)
+url = "https://en.wikipedia.org/wiki/Main_Page"
+driver.get(url)
+
+# selecting through tag
+article_count = driver.find_element_by_css_selector("#articlecount a")
+article_count.click()
+
+
+# selecting through linked text (text inside link tag)
+all_portals = driver.find_element_by_link_text("All portals")
+all_portals.click()
+
+# write in input bar
+search = driver.find_element_by_name("search")
+search.send_keys("Python")
+# enter in keyboard
+search.send_keys(Keys.ENTER)
+
+
+```
+
 ## Day 47 - Amazon Price Tracker
 
 Get sales alert here 🛒: [Amazon Price Tracker](https://replit.com/@maryletteroa/amazon-price-tracker)
