@@ -14,6 +14,13 @@ My code repo is here 👉: [100DaysOfCode-Python](https://github.com/marylettero
 I document my progress in this post: programming tasks, and notes about things that made an impression.
 
 
+## Day 49 - Automate Job Application
+
+Automate LinkedIn job application (template) code 💼:  [Automate Job Applications](https://replit.com/@maryletteroa/automate-job-applications)
+
+
+Used XPaths generously, and also `time.sleep()` function which waits for the page to load before executing the next part of the code
+
 ## Day 48 - Game Clicker Bot
 
 Cookie world domination here 🍪: [Game Clicker Bot](https://replit.com/@maryletteroa/game-cliker-bot)
