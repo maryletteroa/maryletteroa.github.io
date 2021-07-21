@@ -22,7 +22,7 @@ Goes through Zillow (a website containing listings of properties), scrapes all r
 Pass a `header` in requests in order to access the website without CAPTCHA. Supply headers of the default browser.
 
 Since BeautifulSoup can only parse the first 9 listings, I've used Selenium all throughout:
- - Clicked / unclicked an element on the left pane (I used the dropdown element since it's clickable; trying this on any other element raises an exception)
+ - Clicked / unclicked an element on the right panel (I used the dropdown element since it's clickable; trying this on any other element raises an exception)
  - Scrolled down using `Key.DOWN` for n seconds (this hopefully gets the page to load until the end; otherwise increase n)
     - I tried scrolling until an element but all the listing information do not tend to load with the speed of the scroll
 - Maximizing the window also helped with the speed
