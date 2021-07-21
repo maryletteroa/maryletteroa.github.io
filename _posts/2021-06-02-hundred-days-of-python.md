@@ -13,6 +13,29 @@ My code repo is here 👉: [100DaysOfCode-Python](https://github.com/marylettero
 
 I document my progress in this post: programming tasks, and notes about things that made an impression.
 
+## Day 53 (Capstone) - Data Entry Automation
+
+Automated data entry 🏦: [Data entry automation](https://replit.com/@maryletteroa/data-entry-automation)
+
+Goes through Zillow (a website containing listings of properties), scrapes all results for a certain search, then fills up a Google Form with these information.
+
+Pass a `header` in requests in order to access the website without CAPTCHA. Supply headers of the default browser.
+
+Since BeautifulSoup can only parse the first 9 listings, I've used Selenium all throughout:
+ - Clicked / unclicked an element on the left pane (I used the dropdown element since it's clickable; trying this on any other element raises an exception)
+ - Scrolled down using `Key.DOWN` for n seconds (this hopefully gets the page to load until the end; otherwise increase n)
+    - I tried scrolling until an element but all the listing information do not tend to load with the speed of the scroll
+- Maximizing the window also helped with the speed
+
+I also scraped until the end of the results (e.g. until page 20). I can only get until page 20 (800 listings) even though Zillow indicates there are >1,600 properties.
+
+Zillow still checks for a human now and again so this script fails when that happens.
+
+I skipped Days 50-52 because I didn't want to deal with social media right now. Here's some interesting links:
+- [Does Tweeting at Companies Really Work?](https://time.com/4894182/twitter-company-complaints)
+- [This person does not exist](https://www.thispersondoesnotexist.com)
+- Translate URL to human-readable form: [URL Decoder/Encoder](https://meyerweb.com/eric/tools/dencoder)
+
 
 ## Day 49 - Automate Job Application
 
@@ -33,11 +56,11 @@ Total score: 1239
 Cookies per second: cookies/second : 97.4
 ```
 
-Uses [Selenium](https://www.selenium.dev) web driver.
+Uses [Selenium](https://www.Selenium.dev) web driver.
 
 Download the Chrome Driver that matches Chrome browser's version: [ChromeDriver WebDriver for Chrome](https://chromedriver.chromium.org/downloads)
 
-Read the docs for [locating elements in Selenium](https://selenium-python.readthedocs.io/locating-elements.html)
+Read the docs for [locating elements in Selenium](https://Selenium-python.readthedocs.io/locating-elements.html)
 
 ```python
 chrome_driver_path="/path/to/exec"
@@ -85,8 +108,8 @@ To get more than one elements, use `find_elments*` in method name, as in e.g. `.
 
 Interactions
 ```python
-from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
+from Selenium import webdriver
+from Selenium.webdriver.common.keys import Keys
 
 chrome_driver_path="/mnt/d/Programs/Chromedriver_win32/chromedriver.exe"
 driver = webdriver.Chrome(executable_path=chrome_driver_path)
