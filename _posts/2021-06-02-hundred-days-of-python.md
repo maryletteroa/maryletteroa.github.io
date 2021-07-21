@@ -29,7 +29,14 @@ Since BeautifulSoup can only parse the first 9 listings, I've used Selenium all 
 
 I also scraped until the end of the results (e.g. until page 20). I can only get until page 20 (800 listings) even though Zillow indicates there are >1,600 properties.
 
-Zillow still checks for a human now and again so this script fails when that happens.
+Time:
+```bash
+real    32m40.976s
+user    0m18.578s
+sys     0m3.234s
+```
+
+Zillow still checks for a human now and again so the script above fails when that happens.
 
 I skipped Days 50-52 because I didn't want to deal with social media right now. Here's some interesting links:
 - [Does Tweeting at Companies Really Work?](https://time.com/4894182/twitter-company-complaints)
