@@ -15,6 +15,10 @@ I document my progress in this post: programming tasks, and notes about things t
 
 ## Day 56 - Name Card
 
+Name card flask template: [Name Card](https://replit.com/@maryletteroa/name-card)
+
+HTML Source: [Identity](https://github.com/html5up/identity)
+
 How to render HTML and statifiles:
 
 HTML files should be inside the folder `templates`.
