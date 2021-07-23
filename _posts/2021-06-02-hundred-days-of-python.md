@@ -13,6 +13,72 @@ My code repo is here 👉: [100DaysOfCode-Python](https://github.com/marylettero
 
 I document my progress in this post: programming tasks, and notes about things that made an impression.
 
+## Day 57 (Capstone Part 1) - Blog
+
+Simple blog template 📝: [Blog](https://replit.com/@maryletteroa/blog)
+
+[Rendering Templates in Flask](https://flask.palletsprojects.com/en/1.1.x/quickstart/#rendering-templates)
+
+[Jinja](https://jinja.palletsprojects.com/en/2.11.x/templates) - used for templating in Python; already installed with Flask
+
+{% raw %}
+```html
+<h1>{{ 5 * 6 }}</h1>
+<h1>Hey {{ name.title() }},</h1>
+```
+{% endraw %}
+
+```python
+from flask import Flask, render_template
+import random
+
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    random_number = random.randint(1,10)
+    return render_template("index.html", num=random_number)
+```
+{% raw %}
+```html
+<h3>Random Number: {{ num }}</h3>
+```
+{% endraw %}
+
+Multi-line python codes in HTML
+{% raw %}
+```html
+{% for blog_post in posts: %}
+    {% if blog_post["id"] == 2: %}
+        <h1>{{ blog_post["title"] }}</h1>
+        <h2>{{ blog_post["subtitle"] }}</h2>
+    {% endif %}
+{% endfor %}
+```
+{% endraw %}
+
+URL building
+{% raw %}
+```html
+<a href="{{ url_for('get_blog', num=3) }}">Go to blog</a>
+```
+{% endraw %}
+
+Where `get_blog` is a function in `app.py` that renders a page, and `num` is a keyword argument that can be passed:
+```python
+@app.route("/blog/<num>")
+def get_blog(num):
+    # some code here
+    return render_template("blog.html", posts=all_posts)
+```
+
+Resources:
+- [Update your footer](https://updateyourfooter.com)
+- [Genderize.io](https://genderize.io) - predict the gender of a name
+- [Agify.io](https://agify.io) - predict the age of a name
+- [Npoint.io](https://www.npoint.io/) - create own API endpoint
+
+
 ## Day 56 - Name Card
 
 Name card flask template: [Name Card](https://replit.com/@maryletteroa/name-card)
