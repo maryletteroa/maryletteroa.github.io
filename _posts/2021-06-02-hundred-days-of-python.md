@@ -13,7 +13,113 @@ My code repo is here 👉: [100DaysOfCode-Python](https://github.com/marylettero
 
 I document my progress in this post: programming tasks, and notes about things that made an impression.
 
-## Day 55 - Higher Lower Game Website
+## Day 55 - Higher Lower Web Game
+
+Higher-lower game in web form: [Higher Lower Web Game](https://replit.com/@maryletteroa/higher-lower-game-web)
+
+Parse a URL in Flask
+```python
+@app.route("/username/<name>/1") # can add before or after or leave as /<name>
+def greet(name):
+    return f"Hello {name}"
+```
+
+Run on debug mode to reload server automatically; Errors are outputed in View
+```python
+if __name__ == "__main__":
+    app.run(debug=True)
+```
+Can open an interactive shell (via icon on right), enter debugging PIN to continue.
+
+Converter - converts url variable name to a datatype
+```python
+@app.route("/username/<path:name>")
+def greet(name):
+    return f"Hello there {name}"
+# <local:5000>/name/1
+# Hello there name/1
+
+@app.route("/username/<name>/<int:number>")
+def greet(name, number):
+    return f"Hello there {name}, you are {number} years old"
+#<local:5000>/name/2
+# Hello there name, you are 2 years old
+```
+
+Render HTML
+```python
+@app.route("/")
+def hello_world():
+    return "<h1 style='text-align: center'>Hello, World!</h1> \
+    <p>This is a paragraph</p> \
+    <img width=200px src='https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif'>"
+```
+
+Render HTML tags in decorators
+```python
+def make_bold(function):
+    def wrapper():
+        return f"<b>{function()}</b>"
+    return wrapper
+def make_emphasis(function):
+    def wrapper():
+        return f"<em>{function()}</em>"
+    return wrapper
+def make_underlined(function):
+    def wrapper():
+        return f"<u>{function()}</u>"
+    return wrapper
+
+@app.route("/bye")
+@make_bold
+@make_emphasis
+@make_underlined
+def say_bye():
+    return "Bye"
+```
+
+Advanced decorator - pass arguments as `*args` and/or `**kwargs` to wrapper function 
+```python
+class User:
+    def __init__(self, name):
+        self.name = name
+        self.is_logged_in = False
+
+def is_authenticated_decorator(function):
+    def wrapper(*args, **kwargs):
+        if args[0].is_logged_in == True:
+            function(args[0])
+    return wrapper
+
+@is_authenticated_decorator
+def create_blog_post(user):
+    print(f"This is {user.name}'s new blog post.")
+
+new_user = User("my_name")
+new_user.is_logged_in = True
+create_blog_post(new_user)
+```
+
+Another example
+```python
+# Create the logging_decorator() function
+def logging_decorator(function):
+    def wrapper(*args):
+        result = function(*args)
+        print(f"Function name: {function.__name__}, arguments: {args} ")
+        print(f"Result: {result}")
+    return wrapper
+
+# Use the decorator
+@logging_decorator
+def sum(n1, n2):
+    return n1 + n2
+# Call function
+sum(3,2)
+
+# Function name: sum, arguments: (3, 2)
+# Result: 5
+```
 
 ## Day 54 - Introduction to Flask
 
@@ -121,7 +227,7 @@ inner_function() # add parenthesis (calls variable as a function)
     # I'm inner
 ```
 
-Decorators
+Simple decorator
 ```python
 import time
 current_time = time.time()
