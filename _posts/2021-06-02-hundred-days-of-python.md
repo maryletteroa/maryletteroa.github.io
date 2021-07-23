@@ -13,6 +13,141 @@ My code repo is here 👉: [100DaysOfCode-Python](https://github.com/marylettero
 
 I document my progress in this post: programming tasks, and notes about things that made an impression.
 
+## Day 55 - Higher Lower Game
+
+## Day 54 - Introduction to Flask
+
+Starting code here 👉: [Introduction to Flask](https://replit.com/@maryletteroa/introduction-to-flask)
+
+Full Stack = Front-End + Back-End  
+Front: HTML, CSS, JS; Frameworks: Angular, React ...  
+Back-end: JS, Python, Ruby, etc..; Frameworks: Node, Flask ...  
+
+Frameworks: Tools with pre-built functionalities
+
+Examples of frameworks in Python:
+ - Flask
+ - Django
+ - Cherrypy
+ - Pyramid
+
+Backend:
+ - Client
+ - Server
+ - Datbase 
+
+
+`app.py`
+```python
+from flask import Flask
+app = Flask(__name__)
+
+@app.route("/")
+def hello_world():
+    return "Hello, World!"
+
+@app.route("/bye")
+def say_bye():
+    return "Bye"
+
+if __name__ == "__main__":
+    app.run()
+```
+
+Run as:
+```bash
+flask run
+```
+
+`__name__` is a Special Attribute in Python which corresponds to the current class or module name; `__main__` is the name of the scope in which the top-level code runs.
+
+Python functions can be treated as first-class objects - they can be passed around as arguments e.g. int/string/float etc
+
+```python
+def add(n1, n2):
+    return n1 + n2
+
+def subtract(n1, n2):
+    return n1 - n2
+
+def multiply(n1, n2):
+    return n1 * n2
+
+def divide(n1, n2):
+    return n1 / n2
+```
+
+Functions as first-class objects
+```python
+def calculate(calc_function, n1, n2):
+    return calc_function(n1, n2)
+
+result = calculate(add, 2, 3)
+print(result)
+    # 5
+```
+
+Nested functions
+```python
+def outer_function():
+    print("I'm outer")
+
+    def nested_function():
+        print("I'm inner")
+
+    nested_function()
+
+outer_function()
+
+    # I'm outer
+    # I'm inner
+```
+
+Functions can be returned from other functions
+```python
+def outer_function():
+    print("I'm outer")
+
+    def nested_function():
+        print("I'm inner")
+
+    return nested_function
+
+inner_function = outer_function()
+inner_function() # add parenthesis (calls variable as a function)
+    # I'm outer
+    # I'm inner
+```
+
+Decorators
+```python
+import time
+current_time = time.time()
+print(current_time)
+
+def speed_calc_decorator(function):
+    def wrapper_function():
+        start_time = time.time()
+        function()
+        end_time = time.time()
+        print(f"{function.__name__} run speed: {end_time - start_time}s")
+    return wrapper_function
+
+@speed_calc_decorator
+def fast_function():
+    for i in range(10000000):
+        i * i
+        
+@speed_calc_decorator
+def slow_function():
+    for i in range(100000000):
+        i * i
+
+fast_function()
+slow_function()
+```
+
+
 ## Day 53 (Capstone) - Data Entry Automation
 
 Automated data entry 🏦: [Data entry automation](https://replit.com/@maryletteroa/data-entry-automation)
