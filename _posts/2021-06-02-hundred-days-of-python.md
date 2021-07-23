@@ -13,6 +13,42 @@ My code repo is here 👉: [100DaysOfCode-Python](https://github.com/marylettero
 
 I document my progress in this post: programming tasks, and notes about things that made an impression.
 
+## Day 56 - Name Card
+
+How to render HTML and statifiles:
+
+HTML files should be inside the folder `templates`.
+
+Static files like images, CSS, videos etc should be in the folder `static` and linked accordingly in the HTML files e.g. `static/<image_name>.png` 
+```python
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+
+@app.route("/")
+def home():
+    return render_template("index.html")
+
+if __name__ == "__main__":
+    app.run()
+```
+
+Chrome tends to cache static files so in order to view changes in CSS, need to do a hard reload: `Shift + Reload`
+
+Free templates: [HTML5](https://html5up.net)
+
+How to trigger editing a webpage in Chrome developer: 
+
+In console (JS):
+```javascript
+document.body.contentEditable = true
+```
+Then save the webpage.
+
+Resource for images: [Unsplash](https://unsplash.com)
+
+
 ## Day 55 - Higher Lower Web Game
 
 Higher-lower game in web form: [Higher Lower Web Game](https://replit.com/@maryletteroa/higher-lower-game-web)
