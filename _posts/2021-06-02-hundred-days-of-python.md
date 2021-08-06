@@ -13,6 +13,61 @@ My code repo is here 👉: [100DaysOfCode-Python](https://github.com/marylettero
 
 I document my progress in this post: programming tasks, and notes about things that made an impression.
 
+## Day 58 - Tindog
+
+<small>I've come around to front-end web development (again!) and, admittedly, I sat on this for <em>days</em>... But here it is! 🌞</small> 👇
+
+Landing page for a dating site for dogs 🐶: [Tindog](https://maryletteroa.github.io/tindog)
+
+CDN - Content Delivery Network; Instead of hosting a website in just one location, there are multiple locations that can deliver the website; Cuts down on the latency i.e. how long the website will load up
+
+Boostrap uses `maxcdn`; Look for the shortest route to download the CSS file; Browser caches (saves local copy) so browser does not have to download it again which further cuts down the latency
+
+Workflow: 
+1. Plan first! 
+2. Wireframe - low-fidelity representation of a website  
+3. Mockup (optional) - high-fidelity representation of the your app or web design  
+4. Prototype (optional) - animated version of your website
+
+Resources:
+- [Awwwards](https://www.awwwards.com/websites/com)
+- [UI Patterns](http://ui-patterns.com/patterns)
+- [Dribble](https://dribbble.com/search/website)
+- [Sneak Peek It](https://sneakpeekit.com)
+- [Balsamiq](https://sneakpeekit.com)
+- [Fonts](https://fonts.google.com)
+- [Font awesome](https://fontawesome.com)
+- [Bootstrap examples](https://getbootstrap.com/docs/4.5/examples)
+- [Bootsnipp](https://bootsnipp.com)
+- [Mobile-friendly](https://search.google.com/test/mobile-friendly)
+
+[How to install boostrap](https://getbootstrap.com/docs/4.5/getting-started/introduction)
+
+Javascript is responsible for the behaviour of the website; CSS for the appearance.
+
+Responsive does not means fast; it means that the website response to the size of the viewport i.e. desktop, tablet, or phone.
+
+Positioning:
+- Sequential (top is closer to the back)
+- Heirarchical (child sits over parents)
+- `position`
+    - absolute - take divs outside of the flow, bottom div at the top
+    - z-index - positive: forwards; negative: backwards; only works with `position` at the parent div; by default all elements have a z-index of 0
+
+Refactoring: neat, tidy, readable code
+By order of importance
+- Readability
+- Modularity
+- Efficiency
+- Length
+
+[Code Golf](https://codegolf.stackexchange.com/questions/157546/create-a-magic-8-ball)
+
+`.container.title` - targets an element with two classes `class="container title"`
+`.container .title` - targets an element with class `.title` inside another element with class `.container`
+
+Consider using classes for specific styling rather than targetting a tag itself.
+
 ## Day 57 (Capstone Part 1) - Blog
 
 Simple blog template 📝: [Blog](https://replit.com/@maryletteroa/blog)
