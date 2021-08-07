@@ -13,11 +13,45 @@ My code repo is here 👉: [100DaysOfCode-Python](https://github.com/marylettero
 
 I document my progress in this post: programming tasks, and notes about things that made an impression.
 
+## Day 59 (Capstone) - Blog
+
+Stub Blog using Flask / Jinja and deployed using Heroku: 📝[Blog](https://dawn-leaf-1474.herokuapp.com)
+
+
+The repo for this project is here: [my-blog-flask](https://github.com/maryletteroa/my-blog-flask)
+
+
+Ways to serve static files:
+{% raw %}
+```python
+url({{ url_for('static', filename='assets/img/home-bg.jpg')}})
+```
+{% endraw %}
+also
+```python
+app = Flask(__name__,
+        static_url_path = "",
+        static_folder = "static",
+        templates_folder = "templates")
+```
+
+Resources:
+- [Bootstrap Made](https://bootstrapmade.com/)
+- [Creative Tim Bootstrap Themes](https://www.creative-tim.com/bootstrap-themes/free)
+
+
+Useful resource on how to setup a flask app to deploy in Heroku:
+- [Deploying Flask app on Heroku using GitHub](https://dev.to/lordofdexterity/deploying-flask-app-on-heroku-using-github-50nh)
+- [Flask Heroku example](https://github.com/franccesco/flask-heroku-example)
+
+
 ## Day 58 - Tindog
 
 <small>I've come around to front-end web development (again!) and, admittedly, I sat on this for <em>days</em>... But here it is! 🌞</small> 👇
 
 Landing page for a dating site for dogs 🐶: [Tindog](https://maryletteroa.github.io/tindog)
+
+The repo for this project is here: [tindog](https://github.com/maryletteroa/tindog)
 
 CDN - Content Delivery Network; Instead of hosting a website in just one location, there are multiple locations that can deliver the website; Cuts down on the latency i.e. how long the website will load up
 
