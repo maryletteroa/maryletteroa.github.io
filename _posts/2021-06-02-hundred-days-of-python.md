@@ -13,6 +13,35 @@ My code repo is here 👉: [100DaysOfCode-Python](https://github.com/marylettero
 
 I document my progress in this post: programming tasks, and notes about things that made an impression.
 
+## Day 60 - Contact Form
+
+Added functionality to the contact form for the blog: 📝[Blog](https://dawn-leaf-1474.herokuapp.com)
+
+Using Flask `request`
+
+```python
+from flask import request
+
+@app.route("/login", methods=["POST"])
+def received_data():
+    username = request.form["username"]
+    password = request.form["password"]
+    return f"<h1>Name: {username}, Password: {password}</h1>"
+
+```
+
+In the HTML file, add `action="<redirect>" method=<"get" or "post">`. Add value for name in input tag: `name="username"`
+
+```html
+<form action="/login" method="post">
+    <labe >Name</label>
+    <input type="text" placeholder="name" name="username">
+    <label >Pasword</label>
+    <input type="text" placeholder="password" name="password">
+    <button type="submit">Ok</button>    
+</form>
+```
+
 ## Day 59 (Capstone) - Blog
 
 Stub Blog using Flask / Jinja and deployed using Heroku: 📝[Blog](https://dawn-leaf-1474.herokuapp.com)
@@ -55,7 +84,7 @@ The repo for this project is here: [tindog](https://github.com/maryletteroa/tind
 
 CDN - Content Delivery Network; Instead of hosting a website in just one location, there are multiple locations that can deliver the website; Cuts down on the latency i.e. how long the website will load up
 
-Boostrap uses `maxcdn`; Look for the shortest route to download the CSS file; Browser caches (saves local copy) so browser does not have to download it again which further cuts down the latency
+Bootstrap uses `maxcdn`; Look for the shortest route to download the CSS file; Browser caches (saves local copy) so browser does not have to download it again which further cuts down the latency
 
 Workflow: 
 1. Plan first! 
@@ -75,11 +104,11 @@ Resources:
 - [Bootsnipp](https://bootsnipp.com)
 - [Mobile-friendly](https://search.google.com/test/mobile-friendly)
 
-[How to install boostrap](https://getbootstrap.com/docs/4.5/getting-started/introduction)
+[How to install bootstrap](https://getbootstrap.com/docs/4.5/getting-started/introduction)
 
 Javascript is responsible for the behaviour of the website; CSS for the appearance.
 
-Responsive does not means fast; it means that the website response to the size of the viewport i.e. desktop, tablet, or phone.
+Responsive does not mean fast; it means that the website respond to the size of the viewport i.e. desktop, tablet, or phone.
 
 Positioning:
 - Sequential (top is closer to the back)
