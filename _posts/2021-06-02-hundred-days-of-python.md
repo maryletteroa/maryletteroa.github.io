@@ -17,6 +17,8 @@ I document my progress in this post: programming tasks, and notes about things t
 
 Added functionality to the contact form for the blog: 📝[Blog](https://dawn-leaf-1474.herokuapp.com)
 
+Template contact form with some functions: [Contact Form](https://replit.com/@maryletteroa/contact-form)
+
 Using Flask `request`
 
 ```python
