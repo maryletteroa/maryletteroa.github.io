@@ -2,7 +2,7 @@
 layout: post
 title: Google Cloud Resource Management
 categories:
-- project
+- blog
 ---
 
 Taking steps to learn more about GCP (Google Cloud Platform) services and thinking about what I can do with it. Here are some notes. It's mostly based on [Qwiklab](https://google.qwiklabs.com) challenges.  
