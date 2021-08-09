@@ -13,6 +13,24 @@ My code repo is here 👉: [100DaysOfCode-Python](https://github.com/marylettero
 
 I document my progress in this post: programming tasks, and notes about things that made an impression.
 
+## Day 61 - Flask-WTForms
+
+Template code using Flask-WTForms and Flask-Bootstrap: [flask-wtforms](https://replit.com/@maryletteroa/flask-wtf-forms)
+
+Resources:
+- [Flask-WTF](https://flask-wtf.readthedocs.io/en/0.15.x)
+- [Flask-Bootstrap](https://pythonhosted.org/Flask-Bootstrap/)
+
+Quick form
+
+{% raw %}
+```html
+{% extends "bootstrap/base.html"%}
+{% import "bootstrap/wtf.html" as wtf %}
+{{ wtf.quick_form(form, novalidate=True) }}
+```
+{% endraw %}
+
 ## Day 60 - Contact Form
 
 Added functionality to the contact form for the blog: 📝[Blog](https://dawn-leaf-1474.herokuapp.com)
