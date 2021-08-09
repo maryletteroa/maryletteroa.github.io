@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Google Cloud Management
+title: Google Cloud Resource Management
 categories:
 - project
 ---
