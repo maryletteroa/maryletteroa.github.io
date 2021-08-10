@@ -13,12 +13,18 @@ My code repo is here 👉: [100DaysOfCode-Python](https://github.com/marylettero
 
 I document my progress in this post: programming tasks, and notes about things that made an impression.
 
+## Day 62 - Coffee & Wifi
+
+Cofee and Wifi ☕📶: [Coffee & WiFi](https://replit.com/@maryletteroa/coffee-and-wifi)
+
+Useful Jinja feature that I discovered while digging: [For loop index and attributes in Jinja](https://jinja.palletsprojects.com/en/3.0.x/templates/#for)
+
 ## Day 61 - Flask-WTForms
 
 Template code using Flask-WTForms and Flask-Bootstrap: [flask-wtforms](https://replit.com/@maryletteroa/flask-wtf-forms)
 
 Resources:
-- [Flask-WTF](https://flask-wtf.readthedocs.io/en/0.15.x)
+- [Flask-WTForm](https://flask-wtf.readthedocs.io/en/0.15.x)
 - [Flask-Bootstrap](https://pythonhosted.org/Flask-Bootstrap/)
 
 Quick form
