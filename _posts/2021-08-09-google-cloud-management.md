@@ -40,10 +40,10 @@ kubectl create deployment hello-server --image=gcr.io/google-samples/hello-app:2
 kubectl expose deployment hello-server --type=LoadBalancer --port 8080
 watch -n 1 kubectl get service ## check until an external ip has been assigned
 ```
+#### HTTP load balancer
 
 And a bit nuanced but here's how to set up an HTTP load balancer (e.g. on instances running nginx web server)
 
-#### HTTP load balancer
 ### Create startup script
 ```sh
 cat << EOF > startup.sh
