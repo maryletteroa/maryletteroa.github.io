@@ -13,6 +13,93 @@ My code repo is here 👉: [100DaysOfCode-Python](https://github.com/marylettero
 
 I document my progress in this post: programming tasks, and notes about things that made an impression.
 
+## Day 63 - Library
+
+A model using SQL Alchemy
+```python
+from flask import Flask, render_template, request, redirect, url_for, redirect
+from flask_sqlalchemy import SQLAlchemy
+
+app = Flask(__name__)
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:////tmp/ new-books-collection.db"
+app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+db = SQLAlchemy(app)
+
+
+class Books(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(250), unique=True, nullable=False)
+    author = db.Column(db.String(250), nullable=False)
+    rating = db.Column(db.Float, nullable=False)
+
+# create the database
+db.create_all()
+
+# output contents of the database
+Books.query.all()
+```
+
+CRUD functions:
+
+Create an entry
+```python
+def add():
+    if request.method == "POST":
+        book = Books(title = request.form["title"], 
+            author = request.form["author"], 
+            rating = request.form["rating"])
+        db.session.add(book)
+        db.session.commit()
+        return redirect(url_for("home"))
+    return render_template("add.html")
+```
+
+Update an entry
+```python
+@app.route("/edit/<id>", methods=["GET", "POST"])
+def edit_rating(id):
+    book_to_update = Books.query.get(id)
+    if request.method == "POST":
+        book_to_update.rating = request.form["rating"]
+        db.session.commit()
+        return redirect(url_for("home"))
+```
+
+Read
+{% raw %}
+```python
+Books.query.all()
+```
+then in the HTML, use curly braces and dot notation
+```html
+<form action="{{ url_for('edit_rating', id=book.id) }}", method="post">
+    <h1>Book name: {{ book.title }}</h1>
+    <h1>Current rating: {{book.rating }} </h1>
+    <input type="text" placeholder="New Rating" name="rating">
+    <button>Change Rating</button>
+</form>
+```
+{% endraw %}
+
+
+Delete an entry
+{% raw %}
+```html
+<a href="{{ url_for('delete', id=book.id) }}">Delete </a>
+```
+{% endraw %}
+
+```python
+id = request.args.get("id")
+book_to_delete = Books.query.get(id)
+db.session.delete(book_to_delete)
+db.session.commit()
+```
+
+Flask with SQL functionality using SQL Alchemy 📚: [Library](https://replit.com/@maryletteroa/library)
+
+- [Flask-SQLAlchemy](https://flask-sqlalchemy.palletsprojects.com/en/2.x/quickstart)
+
 ## Day 62 - Coffee & Wifi
 
 Cofee and Wifi ☕📶: [Coffee & WiFi](https://replit.com/@maryletteroa/coffee-and-wifi)
