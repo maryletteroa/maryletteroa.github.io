@@ -13,7 +13,36 @@ My code repo is here 👉: [100DaysOfCode-Python](https://github.com/marylettero
 
 I document my progress in this post: programming tasks, and notes about things that made an impression.
 
+## Day 64 - My Top Movies
+
+Here is the app 📽: [My top Movies - Deployed](https://damp-meadow-5145.herokuapp.com/)
+
+Features:
+- Displays movies according to rating, top-rated first
+- Can edit both rating and review
+- Can delete entries
+- Movie details populated through the [The Movie Database (TMDB) API](https://www.themoviedb.org/documentation/api)
+
+
+I populated it with my favorite movies (see below 👇) but the db might get deleted or changed overtime.
+
+The code in Replit: [My Top Movies](https://replit.com/@maryletteroa/my-top-movies) and the Github repo: [my-top-movies](https://github.com/maryletteroa/my-top-movies). In the deployed and the github repo, I changed the view of the cards to be in a responsive grid.
+
+This project has some interconnectedness that was a bit confiusing. So when I got stuck, I found that back-tracking and thinking about each connection one at a time helped. 
+
+Order database entries by column
+```python
+movies = Movie.query.order_by(Movie.rating).all()
+```
+
+My top movies! These are my go-to movies when I'm bored, sad, or just in general. I like animations (Studio Ghibli), horror (The Conjuring Universe), rom-com (yep!), and the Hunger Games!
+
+<img src="https://lh3.googleusercontent.com/Pv96FXfAUvwh5fySRleK2w68VqWP1KhgDg7J66qp62znLS4MHZOeJbOnBmFDpArg1IQ9nxUsdr4af4_V-OhMp9uvnPefmnj1leHc15xl4l4zpjN51Dp2Z7U4UMHcH0JmGuHolkGCK5mIL4sq2-XGrwYz4m-2TkthRK86bSwYJXocZlkaNzt0rRsPf97NaBBpi_fib65hgs8wnwAID6DLSSed9U1UzQIKmVyQIuSOT3vzjpv62XV5CDMLC1sR9Kfja451wjCcmsHnYqrSJRaygUNMpJjSXwjdHlwvG4rIHjMGfWuX7bUrzJrGaDbWpRt5pLXfKDot-Ixd_zDiuoEWsWiFFnf9XrNIbzg5u2g4Wqoen12Zf4Nc2WINVWsgQU4NY0X3WRjvuPTHPZrL9li3pc-NXNAK1vYcEZ0_Bb78PkXZz4QCmbIFtyB7WQWh0RM-2yATdqRg2d_Dq5dQXZjIMCpP32S10WnQohft1UuiTT0uccfIiEBPPLwEfOxODaJ-oKc1ttgTfxI3CDZTDkYxUrO8reUb15I8_5sBeKsTuUooE6g6tBSSoIYakqMwn0U8JLGapvzqzZ_9yfC9fKHjIEcuRaF0TNWLrScnfjZrBb5twgo2lmxspIPBon6czX9gVitE_axTwOQVZb4eDVPAAM_ahIP0kNFgM43dyvq4QAdyPZfRQBNsQ2uBpN02oSgFLEy4dIqOF3veXzqFxH4gBLZeSQ=w602-h881-no?authuser=2" height="500" alt="my top movies">
+
+
 ## Day 63 - Library
+
+Flask with SQL functionality using SQL Alchemy 📚: [Library](https://replit.com/@maryletteroa/library)
 
 A model using SQL Alchemy
 ```python
@@ -96,9 +125,10 @@ db.session.delete(book_to_delete)
 db.session.commit()
 ```
 
-Flask with SQL functionality using SQL Alchemy 📚: [Library](https://replit.com/@maryletteroa/library)
-
+Resources:
 - [Flask-SQLAlchemy](https://flask-sqlalchemy.palletsprojects.com/en/2.x/quickstart)
+
+Redirects are a bit confusing
 
 ## Day 62 - Coffee & Wifi
 
