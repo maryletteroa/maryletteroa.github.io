@@ -13,7 +13,29 @@ My code repo is here 👉: [100DaysOfCode-Python](https://github.com/marylettero
 
 I document my progress in this post: programming tasks, and notes about things that made an impression.
 
+## Day 63 - My Top Movies
+
+List of your top-rated movies 📽: [My Top Movies](https://replit.com/@maryletteroa/my-top-movies)
+
+Features:
+- Displays movies according to rating, top-rated first
+- Can edit both rating and review
+- Can delete entries
+- Movie details populated through the [The Movie Database (TMDB) API](https://www.themoviedb.org/documentation/api)
+
+
+This project has some interconnectedness that was a bit confiusing. So when I got stuck, I found that back-tracking and thinking about each connection one at a time helped. 
+
+
+Order database entries by column
+```python
+movies = Movie.query.order_by(Movie.rating).all()
+```
+
+
 ## Day 63 - Library
+
+Flask with SQL functionality using SQL Alchemy 📚: [Library](https://replit.com/@maryletteroa/library)
 
 A model using SQL Alchemy
 ```python
@@ -96,9 +118,10 @@ db.session.delete(book_to_delete)
 db.session.commit()
 ```
 
-Flask with SQL functionality using SQL Alchemy 📚: [Library](https://replit.com/@maryletteroa/library)
-
+Resources:
 - [Flask-SQLAlchemy](https://flask-sqlalchemy.palletsprojects.com/en/2.x/quickstart)
+
+Redirects are a bit confusing
 
 ## Day 62 - Coffee & Wifi
 
