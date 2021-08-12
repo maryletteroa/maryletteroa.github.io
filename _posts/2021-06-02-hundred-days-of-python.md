@@ -23,12 +23,12 @@ Features:
 - Can delete entries
 - Movie details populated through the [The Movie Database (TMDB) API](https://www.themoviedb.org/documentation/api)
 
-
 I populated it with my favorite movies (see below 👇) but the db might get deleted or changed overtime.
 
 The code in Replit: [My Top Movies](https://replit.com/@maryletteroa/my-top-movies) and the Github repo: [my-top-movies](https://github.com/maryletteroa/my-top-movies). In the deployed and the github repo, I changed the view of the cards to be in a responsive grid.
 
-This project has some interconnectedness that was a bit confiusing. So when I got stuck, I found that back-tracking and thinking about each connection one at a time helped. 
+This project has some interconnectedness that was a bit confusing. So when I got stuck, I found that back-tracking and thinking about each connection one at a time helped. 
+
 
 Order database entries by column
 ```python
