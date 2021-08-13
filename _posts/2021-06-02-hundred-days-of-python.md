@@ -29,8 +29,6 @@ The code in Replit: [My Top Movies](https://replit.com/@maryletteroa/my-top-movi
 
 This project has some interconnectedness that was a bit confiusing. So when I got stuck, I found that back-tracking and thinking about each connection one at a time helped. 
 
-This project has some interconnectedness that was a bit confiusing. So when I got stuck, I found that back-tracking and thinking about each connection one at a time helped. 
-
 Order database entries by column
 ```python
 movies = Movie.query.order_by(Movie.rating).all()
