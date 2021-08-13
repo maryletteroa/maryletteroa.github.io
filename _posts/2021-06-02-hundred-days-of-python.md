@@ -15,7 +15,7 @@ I document my progress in this post: programming tasks, and notes about things t
 
 ## Day 64 - My Top Movies
 
-Here is the app 📽: [My top Movies - Deployed](https://damp-meadow-5145.herokuapp.com/)
+List your top movies here 📽: [My Top Movies](https://replit.com/@maryletteroa/my-top-movies)
 
 Features:
 - Displays movies according to rating, top-rated first
@@ -23,9 +23,6 @@ Features:
 - Can delete entries
 - Movie details populated through the [The Movie Database (TMDB) API](https://www.themoviedb.org/documentation/api)
 
-I populated it with my favorite movies (see below 👇) but the db might get deleted or changed overtime.
-
-The code in Replit: [My Top Movies](https://replit.com/@maryletteroa/my-top-movies) and the Github repo: [my-top-movies](https://github.com/maryletteroa/my-top-movies). In the deployed and the github repo, I changed the view of the cards to be in a responsive grid.
 
 This project has some interconnectedness that was a bit confusing. So when I got stuck, I found that back-tracking and thinking about each connection one at a time helped. 
 
