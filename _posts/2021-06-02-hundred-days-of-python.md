@@ -13,6 +13,96 @@ My code repo is here 👉: [100DaysOfCode-Python](https://github.com/marylettero
 
 I document my progress in this post: programming tasks, and notes about things that made an impression.
 
+## Day 66 - Cafe and Wifi with REST API
+
+An update to the Cafe and Wifi Project ☕📶: [Cafe and Wifi with RESTful API](https://replit.com/@maryletteroa/cafe-and-wifi-restful-api)
+
+
+Skipped Day 65 on design since I've picked up that course a few months back. And also because I'm excited about this Day's topic 😅
+
+Analogy:
+- customer: client
+- order: request
+- api: language (can take many forms)
+- waiter: server
+
+Other examples of protocols are HTTP, HTTPS, and FTP.
+
+REST stands for REpresentational State Transfer and is the gold standard guidelines to communicate with a web API / A set of rules that web developers can follow when building web APIs. A RESTful website follows the REST principles.
+
+Serialization is the process of turning an SQL object into JSON -- the structure of the data returned by the endpoints.
+
+Two important features of REST:
+- Use HTTP Request Verbs
+    - GET, POST, PUT, PATCH (new!), DELETE
+- Use Specific Pattern of Routes/Endpoint URLs
+    - e.g. `/artiles`, `/articles/about-me` the latter is a specific article
+
+Resources: Postman to manage API calls and make documentations!
+- [Postman](https://www.postman.com)
+- [Learning Postman](https://learning.postman.com/)
+
+My take at the [Cafe & Wifi documentation](https://documenter.getpostman.com/view/17076610/Tzz7NxgS)
+
+I'm still confused about when to use `request.args.get()` and `request.form.get()`. The former is for parsing a URL e.g. `/search/?loc=Peckham` or `/update-cafe/<int:id>`.. `def update_cafe(id)`. The latter is for `POST` when a form is created even if it's implicit (e.g. when using Postman) e.g. `Cafe(location=request.form.get("location"))` where the equivalent HTML has an attribute `name` with value `location` as in `<input type="text" name="location"/>`.
+
+☝ Use of `request.form.get("key")` returns None if `key` is not present. This is preferrable to `request.form["key"]` which returns an error if `key` is not found.
+
+Get a variable from link e.g. `http://127.0.0.1:5000/search/?loc=Peckham`
+```python
+loc = request.args.get("loc")
+```
+
+A method to convert a Model to a dictionary 
+```python
+class Cafe ()
+    # more code here
+    
+    def to_dict(self):
+        cafe_dictionary = {column.name: getattr(self, column.name) for column in self.__table__.columns}
+        return cafe_dictionary
+```
+
+```python
+@app.route("/random", methods=["GET"]) # can also remove methods because all routes have GET
+def get_random_cafe():
+    cafes = Cafe().query.all()
+    random_cafe = choice(cafes)
+    return jsonify(cafe = random_cafe.to_dict())
+```
+
+For `POST`:
+```python
+from distutils.utils import strtobool
+    # strtobool converts a string to a boolean 
+        # (e.g. "false" and"False" are False or 0, "true" & "True" is True or 1)
+
+@app.route("/add", methods=["POST"])
+def post_new_cafe():
+    new_cafe = Cafe(
+        name=request.form.get("name"),
+        map_url=request.form.get("map_url")
+        has_sockets=strtobool(request.form.get("has_sockets")),
+        # more code
+    )
+```
+Example of a `PATCH`
+```python
+@app.route("/update-price/<int:cafe_id>", methods=["PATCH"])
+def path_update_price(cafe_id):
+    cafe = Cafe.query.get(cafe_id)
+    if cafe:
+        cafe.coffee_price = request.args.get("new_price")
+        db.session.commit()
+```
+
+Example of responses
+```python
+return jsonify(response={"success": "Successfully deleted the cafe."}), 200
+return jsonify(error={"Not Found": "Sorry a cafe with that id was not found in the database"}), 404
+return jsonify(error={"Forbidden": "Sorry, that's not allowed. Make sure you have the correct API key"}), 403
+```
+
 ## Day 64 - My Top Movies
 
 Here is the app 📽: [My top Movies - Deployed](https://damp-meadow-5145.herokuapp.com/)
