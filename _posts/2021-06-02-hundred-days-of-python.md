@@ -13,6 +13,85 @@ My code repo is here 👉: [100DaysOfCode-Python](https://github.com/marylettero
 
 I document my progress in this post: programming tasks, and notes about things that made an impression.
 
+## Day 67 (Capstone Part 3) - Blog with RESTful Routing
+
+Added SQL database and CRUD functionalities to the blog project 📝: [Blog](https://dawn-leaf-1474.herokuapp.com)
+
+New features:
+- Add new post
+- Edit post
+- Delete post
+
+Flask-CDKEditor renders styling toolbar in the body text area
+
+{% raw %}
+```python
+from flask_ckeditor import CKEditor, CKEditorField
+
+# more code ...
+
+app.config['CKEDITOR_PKG_TYPE'] = "basic"
+ckeditor = CKEditor(app)
+
+class CreatePostForm(FlaskForm):
+    # some code ..
+    body = CKEditorField("Blog Content", validators=[DataRequired()])
+
+```
+{% endraw %}
+
+And in the html
+{% raw %}
+```html
+{% import "bootstrap/wtf.html" as wtf %}
+
+#...more html code ..
+ 
+# Load ckeditor
+{{ ckeditor.load() }}
+
+# Configure the ckeditor to tell it which field in WTForm will need to be a CKEditor.
+{{ ckeditor.config(name="body") }}    
+
+# Add WTF quickfor
+# button_map to render "primary" button styling to the submit button
+{{ wtf.quick_form(form, novalidate=True, button_map={"submit": "primary"}) }}
+```
+{% endraw %}
+
+Remove HTML tags from CDK editor using the [Jinja filter: safe](https://jinja.palletsprojects.com/en/2.11.x/templates/#safe) 
+
+{% raw %} 
+```html
+{{ Jinja expression | Jinja filter }}
+```
+{% endraw %}
+
+as in 
+
+{% raw %}
+```html
+{{post.body|safe}}
+```
+{% endraw %}
+
+Write date with month as string
+```python
+from datetime import datetime
+
+date = datetime.now().strftime("%B %d, %Y"),
+    # August 14, 2021
+```
+
+Also `if form.validate_on_submit():` as opposed to `if request.method == "POST"`, and using `form.body.data` as opposed to `request.form.get("body")` when `form` is supplied in `render_template` as in:
+```python
+form = CreatePostForm()
+
+# more code ..
+
+return render_template("make-post.html", form=form)
+```
+
 ## Day 66 - Cafe and Wifi with REST API
 
 An update to the Cafe and Wifi Project ☕📶: [Cafe and Wifi with RESTful API](https://replit.com/@maryletteroa/cafe-and-wifi-restful-api)
