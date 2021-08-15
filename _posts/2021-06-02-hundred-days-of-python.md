@@ -13,6 +13,134 @@ My code repo is here 👉: [100DaysOfCode-Python](https://github.com/marylettero
 
 I document my progress in this post: programming tasks, and notes about things that made an impression.
 
+## Day 68 - Flask with Authentication
+
+Flask website with authentication 🔐: [Flask with Authentication](https://replit.com/@maryletteroa/flask-with-authentication)
+
+Why authenticate
+- Create / login users
+- Restrict access
+
+Levels of encryption
+- 1: Storing the password as plain text in the database
+- 2: Encryption - scrambling the original message with a key to decode it i.e. password + key (cipher method) -> cipher text; weak, easy to figure out the original text even without a key (think Mary, Queen of Scots but methaphorically. Still 🙅‍♀️)
+- 3: Hashing - removes the need for an encryption key; hash function turns the password into a hash and the hash is stored in the database; Hashes are mathematical equations that make it almost impossible (far too long) to turn a hash back to a password; e.g. MD5 or bcrypt (the latter takes longer to hash out; industry standard)
+- 4: Hashing and Salting - salt or random string of characters is appended to the password which generates different hashes for the same passwords; salt is stored in the database along with the hash; bcrypt has salt-rounds or how many times the password is salted e.g. hash from round 1 gets salted with the same salt then repeat; increase rounds to overcome Moore's Law (every year computing power increases)
+
+
+A hash table of passwords can be created from:
+- Common passwords
+- All words from a dictionary (approxo 150,000) -> dictionary attack
+- All numbers form a telephone book (approx 5,000,000)
+- All combinations of characters up to 6 places (19,770,609,664)
+
+❌ Total: 19,775,759,664 combinations which only takes 0.9s seconds to generate the hash for using one of the latest GPUs
+
+☝ But as the number of characters of your password increases, the combination of times it takes to crack it increases exponentialy.
+
+Hash password using [Werkzeug helper function](https://werkzeug.palletsprojects.com/en/1.0.x/utils/#module-werkzeug.security)
+```python
+from werkzeug.security import generate_password_hash
+
+new_user = User(
+    email = request.form.get("email"),
+    password = generate_password_hash(request.form.get("password"), \
+        method='pbkdf2:sha256', salt_length=8),
+    name = request.form.get("name")
+```
+
+Login authentication using [Flask_Login package](https://flask-login.readthedocs.io/en/latest/). The User class is implemented with UserMixin. Mixin is a way to provide multiple inheritance in Python
+```python
+class User(UserMixin, db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    email = db.Column(db.String(100), unique=True)
+    password = db.Column(db.String(100))
+    name = db.Column(db.String(1000))
+```
+
+Configure the flask app to use Flask_login
+```python
+app = Flask(__name__)
+
+# more configs ...
+
+login_manager = LoginManager()
+login_manager.init_app(app)
+```
+
+Create a user loader function. Flask_Login creates a cookie 🍪 that contains the `user.id`. Flask uses this to create a `User` object to access information in the succeeding pages. eg. printing the user's name `secrets.html`. This function is in fact used in every page even though it was not explicitly called in `main.py`
+```python
+@login_manager.user_loader
+def load_user(user_id):
+    return User.get(int(user_id))
+```
+
+Check password agains the database. Unhash using `check_password_hash`
+```python
+@app.route('/login', methods=["GET", "POST"])
+def login():
+    if request.method == "POST":
+        email = request.form.get("email")
+        password = request.form.get("password")
+        user = User.query.filter_by(email=email).first()
+        if check_password_hash(user.password, password):
+            login_user(user)
+            return redirect(url_for("secrets"))
+    return render_template("login.html")
+```
+
+Some pages are only viewable when authenticated using `@login_required`. Loggin user is identified by `current_user.is_authenticated`. `current_user ` is imported from `flask_login`. `is_authenticated` is from the Mixin
+
+[`send_from_directory()`](https://flask.palletsprojects.com/en/1.1.x/api/#flask.send_from_directory) method is used to download files
+
+```python
+@app.route('/secrets')
+@login_required
+def secrets():
+    return render_template("secrets.html", name=current_user.name, \
+        logged_in=current_user.is_authenticated)
+
+@app.route('/download')
+@login_required
+def download():
+    return send_from_directory("static", filename="files/cheat_sheet.pdf")
+```
+
+Immediately login user after registration using `login_user()`
+```python
+# add new_user to the db...
+
+db.session.add(new_user)
+db.session.commit()
+login_user(new_user)
+```
+
+Use `flash` to display feedback on forms
+```python
+flash("Password incorrect, please try again")
+```
+and in the HTML code
+{% raw %}
+```html
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+  {% for message in messages %}
+    <p>{{ message }}<p>
+  {% endfor %}
+{% endif %}
+{% endwith %}
+```
+{% endraw %}
+Resources
+- [Cryptii](https://cryptii.com); works just like the Caesar Cipher (Letter substitution by shifting the letters)
+- [How the Enigma Machine Works](https://www.youtube.com/watch?v=G2_Q9FoD-oQ)
+- [The Flaw in the Enigma Machine](https://www.youtube.com/watch?v=V4V2bpZlqx8)
+- [Plain Text Offenders](https://plaintextoffenders.com)
+- [Have I been Pawned Passwords](https://haveibeenpwned.com/Passwords)
+- [Most common passwords](https://en.wikipedia.org/wiki/List_of_the_most_common_passwords); usually gleaned from attacks
+- [Password complexity checker](http://password-checker.online-domain-tools.com); also gives the time it takes for the password to be cracked (brute force)
+- [Hacker Typer](https://hackertyper.net)
+
 ## Day 67 (Capstone Part 3) - Blog with RESTful Routing
 
 Added SQL database and CRUD functionalities to the blog project 📝: [Blog](https://dawn-leaf-1474.herokuapp.com)
@@ -196,7 +324,7 @@ I populated it with my favorite movies (see below 👇) but the db might get del
 
 The code in Replit: [My Top Movies](https://replit.com/@maryletteroa/my-top-movies) and the Github repo: [my-top-movies](https://github.com/maryletteroa/my-top-movies). In the deployed and the github repo, I changed the view of the cards to be in a responsive grid.
 
-This project has some interconnectedness that was a bit confiusing. So when I got stuck, I found that back-tracking and thinking about each connection one at a time helped. 
+This project has some interconnectedness that was a bit confusing. So when I got stuck, I found that back-tracking and thinking about each connection one at a time helped. 
 
 Order database entries by column
 ```python
