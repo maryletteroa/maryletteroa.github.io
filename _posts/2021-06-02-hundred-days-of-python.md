@@ -13,6 +13,85 @@ My code repo is here 👉: [100DaysOfCode-Python](https://github.com/marylettero
 
 I document my progress in this post: programming tasks, and notes about things that made an impression.
 
+## Day 69 (Capstone Part 4) - Blog with Users
+
+Added authentication and users to blog 📝: [Blog](https://dawn-leaf-1474.herokuapp.com)
+
+Multiple databases declared in Flask
+```python
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///blog.db'
+app.config["SQLALCHEMY_BINDS"] = {
+        'db2': 'sqlite:///users.db'
+    }
+
+class User(UserMixin, db.Model):
+    __bind_key__ = "db2"
+    __tablename__ = "users"
+    id = db.Column(db.Integer, primary_key=True)
+    email = db.Column(db.String(100), unique=True)
+    password = db.Column(db.String(100))
+    name = db.Column(db.String(1000))
+```
+
+Create an `admin_only` decorator. Patterned from the [`login_required` decorator](https://flask.palletsprojects.com/en/1.1.x/patterns/viewdecorators/#login-required-decorator). Error pages using [`abort()`](https://flask.palletsprojects.com/en/1.1.x/patterns/errorpages)
+
+```python
+from functools import wraps
+from flask import abort
+def admin_only(function):
+    @wraps(function)
+    def wrapper(*args, **kwargs):
+        if current_user.id != 1:
+            return abort(403)
+        return function(*args, **kwargs)
+    return wrapper
+```
+
+Define a one-to-many relationship between user (author) and posts using `relationship()`
+
+```python
+class User(UserMixin, db.Model):
+    __bind_key__ = "db2"
+    __tablename__ = "users"
+    id = db.Column(db.Integer, primary_key=True)
+    email = db.Column(db.String(100), unique=True)
+    password = db.Column(db.String(100))
+    name = db.Column(db.String(1000))
+    posts = relationship("BlogPost", back_populates="author") 
+            # connection
+
+class BlogPost(db.Model):
+    __tablename__ = "blog_posts"
+    id = db.Column(db.Integer, primary_key=True)
+    author_id = db.Column(db.Integer, db.ForeignKey("users.id")) 
+            # Foreign Key to user.id
+    author = relationship("User", back_populates="posts") 
+            # connection
+    title = db.Column(db.String(250), unique=True, nullable=False)
+    subtitle = db.Column(db.String(250), nullable=False)
+    date = db.Column(db.String(250), nullable=False)
+    body = db.Column(db.Text, nullable=False)
+    img_url = db.Column(db.String(250), nullable=False)
+
+```
+
+Since `post.author` is now a `User` object, access author name as `post.author.name`
+{% raw %}
+```html
+  <p class="post-meta">Posted by
+    <a href="#">{{post.author.name}}</a>
+    on {{post.date}}
+```
+{% endraw %}
+
+[Flask gravatar](https://pythonhosted.org/Flask-Gravatar) to show image by email
+{% raw %}
+```html
+<img src="{{ post.author.email | gravatar }}"/>
+```
+{% endraw %}
+
+
 ## Day 68 - Flask with Authentication
 
 Flask website with authentication 🔐: [Flask with Authentication](https://replit.com/@maryletteroa/flask-with-authentication)
@@ -480,7 +559,7 @@ In the HTML file, add `action="<redirect>" method=<"get" or "post">`. Add value 
 </form>
 ```
 
-## Day 59 (Capstone) - Blog
+## Day 59 (Capstone Part 2) - Blog with Styling
 
 Stub Blog using Flask / Jinja and deployed using Heroku: 📝[Blog](https://dawn-leaf-1474.herokuapp.com)
 
