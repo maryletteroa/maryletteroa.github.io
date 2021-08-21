@@ -15,11 +15,43 @@ I document my progress in this post: programming tasks, and notes about things t
 
 ## Day 70 - Deployed blog in Heroku
 
-Deployed blog 📝: [Blog](https://dawn-leaf-1474.herokuapp.com)
+Deployed blog 📝: [Blog](https://dawn-leaf-1474.herokuapp.com).
+
+The Github repo is here 👉: [my-blog-flask](https://github.com/maryletteroa/my-blog-flask)
 
 Since I've done this part ahead, it's only a matter of changing the underlying database from SQLite to PostgreSQL. This ensures that the data will not be wiped out periodically. More information [here](https://devcenter.heroku.com/articles/sqlite3).
 
-I'm actually getting an error when switching to PostGres: `(psycopg2.errors.UndefinedTable) relation does not exist` so using SQLite for now. So far, the database has not been removed.
+A Postgres database was added from the Resources in Heroku. Databases can be viewed in [Heroku Data](https://data.heroku.com). The Postgres database URL (`DATABASE_URL`) is automatically added as a variable in Config Vars; hence the script should be modified as:
+
+```python
+app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("DATABASE_URL", "sqlite:///blog.db")
+```
+
+The second argument in `os.environ.get` is the default value if `DATABASE_URL` is not available, i.e. in the local deployment.
+
+I also removed the SQLAlchemy binding for the two other tables since these tables will be created in the Postgres database and not in separate databases (unlike in SQLite which is text based). Not doing so resulted in this error `(psycopg2.errors.UndefinedTable) relation "table_name" does not exist`. (This actually took a while to figure out 😅)
+
+I also learned how to write a [custom flask CLI command](https://flask.palletsprojects.com/en/1.0.x/cli/#application-context) while digging around for a solution to this error. 
+```python
+import click
+from flask.cli import with_appcontext
+
+@click.command(name="create_tables")
+@with_appcontext
+def create_tables():
+    db.create_all()
+    
+app.cli.add_command(create_tables)
+```
+
+Rename `main.py` to `app.py`.
+
+In Heroku, run the custom Flask CLI command using the console:
+```bash
+flask create_tables
+```
+
+This turned out unnecessary but convenient when doing multiple deploys; I don't have to comment and uncomment `db.create_all()` in the script since I can just do this using the Heroku commandline.
 
 
 ## Day 69 (Capstone Part 4) - Blog with Users
