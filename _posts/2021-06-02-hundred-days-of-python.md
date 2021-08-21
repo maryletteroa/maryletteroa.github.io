@@ -13,6 +13,15 @@ My code repo is here 👉: [100DaysOfCode-Python](https://github.com/marylettero
 
 I document my progress in this post: programming tasks, and notes about things that made an impression.
 
+## Day 70 - Deployed blog in Heroku
+
+Deployed blog 📝: [Blog](https://dawn-leaf-1474.herokuapp.com)
+
+Since I've done this part ahead, it's only a matter of changing the underlying database from SQLite to PostgreSQL. This ensures that the data will not be wiped out periodically. More information [here](https://devcenter.heroku.com/articles/sqlite3).
+
+I'm actually getting an error when switching to PostGres: `(psycopg2.errors.UndefinedTable) relation does not exist` so using SQLite for now. So far, the database has not been removed.
+
+
 ## Day 69 (Capstone Part 4) - Blog with Users
 
 Added authentication and users to blog 📝: [Blog](https://dawn-leaf-1474.herokuapp.com)
