@@ -4,7 +4,10 @@ title: Data Handling and Data Modeling Best Practice
 categories:
 - blog
 ---
+
 Reference: [Microsoft Power BI Desktop for Business Intelligence ](https://www.udemy.com/course/microsoft-power-bi-up-running-with-power-bi-desktop/)
+
+The following are lifted from materials in the Udemy Course above 👆. I found this course really helpful in covering the basics of working with PowerBI. Of course, practice and experience are also vital as new features in this software are frequently rolled out.  Since there are plenty of nuances in PowerBI, it's important to keep some sort of best practice guidelines, specially as data and developments scale.
 
 Connecting and Shaping Data
 1. Get yourself organized, before loading the data into Power BI
@@ -27,4 +30,26 @@ Creating Relationships and Data Models
 7. Hide fields from report view to prevent invalid filter context
 - Recommend hiding foreign keys from data tables, so that users can only access valid fields
 
-And more! Keep posted!
+Calculated Columns & Measures
+
+8. Don't use a calculated column when a measure will do the trick
+- Only use calculated columns to "stamp" static, fixed values to each row in a table
+- Use measures when aggregation is necessary, or to create dynamic values in a report
+9. Write measures for even the simplest calculations (i.e. Sum of Sales)
+- Once you create a measure it can be used to anywhere in the report and as an input to other, more complex calculations (no implicit measures)
+10. Break measures down into simple, component parts
+- DAX is a difficult language to master; focus on practicing and understanding simple components at first, then assemble them into more advanced formulas
+11. Reference columns with the table name, and measure alone
+- Using "fully qualified" column references (preceeded by the table name)hepls mae formulas more readanble and intuitive, and differentiates them from measure references
+
+Speed and Peformance
+
+12. Eliminate redundat columns; keep data tables narrow
+- Data tables should ideally only contain only quantitative values and foreign keys; any extra descriptive columns can usually live in a related lookup table
+13. Imported columns are better than calculated columns
+- When possible, create calculated columns at the source (i.e. in your raw database) or within the Query Editor; this is more efficient than processing those calculations in the Data Model
+14. Minimize iterator functions (FILTER, SUMX, etc.)
+- Functions that cycle through each row in a tabe are "expensive", meaning that they take time and consume processing power
+
+
+And more! Still not done.
