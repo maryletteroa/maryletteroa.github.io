@@ -7,7 +7,7 @@ categories:
 
 Reference: [Microsoft Power BI Desktop for Business Intelligence ](https://www.udemy.com/course/microsoft-power-bi-up-running-with-power-bi-desktop/)
 
-The following are lifted from materials in the Udemy Course above 👆. I found this course really helpful in covering the basics of working with PowerBI. Of course, practice and experience are also vital as new features in this software are frequently rolled out.  Since there are plenty of nuances in PowerBI, it's important to keep in mind some sort of best practice guidelines, specially as data and developments scale.
+The following are lifted from materials in the Udemy Course above 👆. I found this course really helpful in covering the basics of working with PowerBI. Of course, practice and experience are also vital as new features in this software are frequently rolled out.  Since there are plenty of nuances in PowerBI, it's important to keep some sort of best practice guidelines in mind, specially as data and developments scale.
 
 Connecting and Shaping Data
 1. Get yourself organized, before loading the data into Power BI
