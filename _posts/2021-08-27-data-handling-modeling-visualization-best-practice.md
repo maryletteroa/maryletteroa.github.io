@@ -1,15 +1,16 @@
 ---
 layout: post
-title: Data Handling and Data Modeling Best Practice
+title: Best Practice for Data Handling, Data Modeling, and Visualization
 categories:
 - blog
 ---
 
 Reference: [Microsoft Power BI Desktop for Business Intelligence ](https://www.udemy.com/course/microsoft-power-bi-up-running-with-power-bi-desktop/)
 
-The following are lifted from materials in the Udemy Course above 👆. I found this course really helpful in covering the basics of working with PowerBI. Of course, practice and experience are also vital as new features in this software are frequently rolled out.  Since there are plenty of nuances in PowerBI, it's important to keep some sort of best practice guidelines in mind, specially as data and developments scale.
+The following are lifted from the Udemy course above 👆, which I found really helpful when learning PowerBI. Since new features in this software are frequently rolled out, experience and constant practice are also vital. It's also important to keep some sort of best practice guidelines in mind, specially as data and developments scale.
 
 Connecting and Shaping Data
+
 1. Get yourself organized, before loading the data into Power BI
 - Define clear and intuitive names (no spaces!) from the start; updating them later can be a headache, specially if you've referenced them in multiple places
 - Establish a file/folder structure that makes sense from the start, to avoid having to modify data source settings if file names or locations changes
@@ -52,4 +53,15 @@ Speed and Peformance
 - Functions that cycle through each row in a tabe are "expensive", meaning that they take time and consume processing power
 
 
-And more! Still not done.
+Data Visualization Best Practices
+
+15. Strive for clarity & simplicity, above all else
+- Aim to maximize impact and minimize noise; it's all about balancing design and function
+
+16. Don't just build charts and graphs; create a narrative
+- Without context, data is meaningless; use filters, bookmarks, and effective visualizations to translate raw data into powerful insights and implications
+
+17. Always ask yourself the three key questions:
+- What **type of data** are you visualizing? (Integer, categorical, time-series, geo-spatial, etc)
+- What are you trying to **communicate**? (Relationships, compositions, trending, etc)
+- Who is the **end user** consuming this information? (Analyst, CEO, client, intern, etc)
