@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Best Practice for Data Handling, Data Modeling, and Visualization
+title: Power BI Best Practice
 categories:
 - blog
 ---
