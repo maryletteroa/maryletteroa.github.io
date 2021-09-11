@@ -69,10 +69,10 @@ Data Visualization Best Practices
 Here are screenshots of the finished dashboards:
 
 Executive summary - features the top products by orders and revenue, and key KPIs: overall revenue, orders, and returns
-<img src= "{{ site.url }}/assets/images/aw-01-exec-summary.png"/>
+<img src= "{{ site.url }}/assets/images/aw-01-exec-summary.PNG"/>
 
 Product detail - drill-through information for each produt; includes visuals about targets, price adjustments, and profit forecast
-<img src= "{{ site.url }}/assets/images/aw-02-product-detail.png"/>
+<img src= "{{ site.url }}/assets/images/aw-02-product-detail.PNG"/>
 
 Customer detail - information about customer demographics
-<img src= "{{ site.url }}/assets/images/aw-03-customer-detail.png"/>
+<img src= "{{ site.url }}/assets/images/aw-03-customer-detail.PNG"/>
