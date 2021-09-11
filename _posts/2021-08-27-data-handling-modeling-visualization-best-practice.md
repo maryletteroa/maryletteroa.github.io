@@ -65,3 +65,14 @@ Data Visualization Best Practices
 - What **type of data** are you visualizing? (Integer, categorical, time-series, geo-spatial, etc)
 - What are you trying to **communicate**? (Relationships, compositions, trending, etc)
 - Who is the **end user** consuming this information? (Analyst, CEO, client, intern, etc)
+
+Here are screenshots of the finished dashboards:
+
+Executive summary - features the top products by orders and revenue, and key KPIs: overall revenue, orders, and returns
+<img src= "{{ site.url }}/assets/images/aw-01-exec-summary.png"/>
+
+Product detail - drill-through information for each produt; includes visuals about targets, price adjustments, and profit forecast
+<img src= "{{ site.url }}/assets/images/aw-02-product-detail.png"/>
+
+Customer detail - information about customer demographics
+<img src= "{{ site.url }}/assets/images/aw-03-customer-detail.png"/>
