@@ -41,16 +41,16 @@ Calculated Columns & Measures
 10. Break measures down into simple, component parts
 - DAX is a difficult language to master; focus on practicing and understanding simple components at first, then assemble them into more advanced formulas
 11. Reference columns with the table name, and measure alone
-- Using "fully qualified" column references (preceeded by the table name)hepls mae formulas more readanble and intuitive, and differentiates them from measure references
+- Using "fully qualified" column references (preceded by the table name) helps make formulas more readable and intuitive, and differentiates them from measure references
 
-Speed and Peformance
+Speed and Performance
 
-12. Eliminate redundat columns; keep data tables narrow
+12. Eliminate redundant columns; keep data tables narrow
 - Data tables should ideally only contain only quantitative values and foreign keys; any extra descriptive columns can usually live in a related lookup table
 13. Imported columns are better than calculated columns
 - When possible, create calculated columns at the source (i.e. in your raw database) or within the Query Editor; this is more efficient than processing those calculations in the Data Model
 14. Minimize iterator functions (FILTER, SUMX, etc.)
-- Functions that cycle through each row in a tabe are "expensive", meaning that they take time and consume processing power
+- Functions that cycle through each row in a table are "expensive", meaning that they take time and consume processing power
 
 
 Data Visualization Best Practices
