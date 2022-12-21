@@ -13,6 +13,22 @@ My code repo is here 👉: [100DaysOfCode-Python](https://github.com/marylettero
 
 I document my progress in this post: programming tasks, and notes about things that made an impression.
 
+## Day 71 - Data Exploration with Pandas
+
+Continuing on this challenge (as if I did not take a break for a looong time i.e. > 1 year bec life happened and also I forgot 👉👈), this day starts the Data Analytics exercises.
+
+Pandas 🐼
+
+The notebook is here [Data Exploration Pandas College Major](https://github.com/maryletteroa/100DaysOfCode-Python/blob/main/71/Data_Exploration_Pandas_College_Major.ipynb)
+
+Noteworthy Pandas function include: 
+
+- `.findna()` - Looks for NaN (not a number)
+- `.dropna()` - drops the NaN
+- `df[['col1','col2']]` - access multiple columns
+- `.idxmax()` - gets row index of the max value
+- `.idxmin()` - gets row index of the min value
+
 ## Day 70 - Deployed blog in Heroku
 
 Deployed blog 📝: [Blog](https://dawn-leaf-1474.herokuapp.com).
