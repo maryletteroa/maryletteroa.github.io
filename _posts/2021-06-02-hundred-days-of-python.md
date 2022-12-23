@@ -13,6 +13,38 @@ My code repo is here 👉: [100DaysOfCode-Python](https://github.com/marylettero
 
 I document my progress in this post: programming tasks, and notes about things that made an impression.
 
+
+## Day 72 - Visualization
+
+[Programming Languages](https://github.com/maryletteroa/100DaysOfCode-Python/blob/main/72/Programming_Languages.ipynb)
+
+Converting string to date 
+
+`pd.to_datetime(df.DATE)`
+
+Pivot pandas dataframe
+
+`df.pivot(index = 'DATE', columns = 'TAG', values = 'POST')`
+
+
+Data visualization with matplotlib
+
+```py
+plt.figure(figsize=(16,20))
+plt.xticks(fontsize=14)
+plt.yticks(fontsize=14)
+plt.xlabel('Date', fontsize=14)
+plt.ylabel('Number of post', fontsize=14)
+plt.ylim(0, 35000)
+
+for column in df.columns:
+    plt.plot(df.index, df[column],
+        linewidth=3, label=df[column].name)
+
+plt.legend(fontsize=16)
+```
+
+
 ## Day 71 - Data Exploration with Pandas
 
 Continuing on this challenge (as if I did not take a break for a looong time i.e. > 1 year bec life happened and also I forgot 👉👈), this day starts the Data Analytics exercises.
@@ -21,7 +53,7 @@ Pandas 🐼
 
 The notebook is here [Data Exploration Pandas College Major](https://github.com/maryletteroa/100DaysOfCode-Python/blob/main/71/Data_Exploration_Pandas_College_Major.ipynb)
 
-Noteworthy Pandas function include: 
+Noteworthy Pandas functions include: 
 
 - `.findna()` - Looks for NaN (not a number)
 - `.dropna()` - drops the NaN
