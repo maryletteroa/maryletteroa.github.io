@@ -47,7 +47,7 @@ plt.legend(fontsize=16)
 
 ## Day 71 - Data Exploration with Pandas
 
-Continuing on this challenge (as if I did not take a break for a looong time i.e. > 1 year bec life happened and also I forgot 👉👈), this day starts the Data Analytics exercises.
+This day starts the Data Analytics exercises.
 
 Pandas 🐼
 
