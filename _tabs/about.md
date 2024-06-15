@@ -4,9 +4,8 @@ icon: fas fa-info-circle
 order: 4
 ---
 
-> This site is currently a work-in-progress as I'm transitioning from an old site. Please bear with the changes, and WELCOME nonetheless! Thanks for stopping by! 
-{: .prompt-tip }
+Hello! 
 
-Hi I'm Marylette. 
+This website is my personal website wherein I write about things I learn, my thoughts, as well as showcase some of my personal projects. 
 
-A data engineer / analyst, doodler, and programmer. I mostly write about what I learn here. ☕ 
+Thanks for stopping by. 
