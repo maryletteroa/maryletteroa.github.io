@@ -3,6 +3,8 @@ layout: post
 title: Consumer Complaints Dashboard
 categories: [project]
 tags: [powerbi]
+image:
+  path: /assets/images/banner-consumer-complaints.png
 ---
 
 Here's my take on visualizing the "Financial Consumer Complaints" dataset from [Maven Analytics](https://mavenanalytics.io).
