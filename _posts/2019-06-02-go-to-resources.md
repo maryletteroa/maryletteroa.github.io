@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Learning resources
-categories:
-- blog
+categories: [blog, resources]
+tags: [resources]
 ---
 
 Here is a non-exhaustive, most-likely-to-evolve list of my favorite books and materials. I often find my self going through these resources as a way to learn or refresh my memory, so it is a small list at best. However, I'd most likely be going over this list again in the future if I find other useful materials.

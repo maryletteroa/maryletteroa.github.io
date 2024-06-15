@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Pip is configured with locations that require TLS/SSL, however the ssl module in Python is not available
-categories:
-- blog
+categories: [blog]
+tags: [python]
 ---
 
 ```

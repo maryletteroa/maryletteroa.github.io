@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Targetted 16S Metagenomic Analysis using Qiime
-categories:
-- blog
+categories: [blog, bioinformatics]
+tags: [qiime, 16s, metagenomics]
 ---
 
 This was from a workshop I have given in the lab, but could be used as a guide for future analysis as well.*

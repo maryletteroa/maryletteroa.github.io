@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Retrieving records using Europe PMC API
-categories:
-- blog
+categories: [blog]
+tags: [europmc]
 ---
 
 
