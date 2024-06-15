@@ -14,9 +14,9 @@ timezone: Asia/Singapore
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: Hi! I'm Marylette # the main title
+title: maryletteroa # the main title
 
-tagline: A data engineer / analyst, doodler, and programmer. I mostly write about what I learn here. ☕ # it will display as the sub-title
+tagline: Personal website. Portfolio. Thoughts. In-betweens. # it will display as the sub-title
 
 description: >- # used by seo meta and the atom feed
   Personal website. Portfolio. Thoughts. In-betweens.
