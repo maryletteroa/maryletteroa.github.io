@@ -29,4 +29,8 @@
 
 - type: google-scholar
   icon: 'fa-brands fa-google-scholar'
+  url:  'https://www.instagram.com/drawmesheeps'
+
+- type: google-scholar
+  icon: 'fa-brands fa-instagram'
   url:  'https://scholar.google.com/citations?user=muDojwEAAAAJ'
