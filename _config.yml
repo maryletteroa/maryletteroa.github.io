@@ -16,7 +16,7 @@ timezone: Asia/Singapore
 
 title: Hi! I'm Marylette # the main title
 
-tagline: A data engineer / analyst, doodler, and programmer. I mostly write about what I learn here. ☕  # it will display as the sub-title
+tagline: A data engineer / analyst, doodler, and programmer. I mostly write about what I learn here. # it will display as the sub-title
 
 description: >- # used by seo meta and the atom feed
   Personal website. Portfolio. Thoughts. In-betweens.
