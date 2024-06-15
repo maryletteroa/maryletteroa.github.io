@@ -3,6 +3,8 @@ layout: post
 title: Pokemon Legends Arceus Dashboard
 categories: [project]
 tags: [powerbi]
+image:
+  path: /assets/images/legends-arceus-dashboard/summary.png
 ---
 
 Here's a quick follow up to the [first Pokemon dashboard](https://maryletteroa.github.io/blog/2024/04/20/pokemon-dashboard-(first-generation).html) I've made. (I keep doing this because this has been so much fun for me 😁). I discussed some aspects about the game in this post so 📢 SPOILER ALERT! up ahead.
