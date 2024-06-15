@@ -10,15 +10,15 @@ Here are some of the things I learned and how I devised my 'workflow' when writi
 * Set up the environment using `virtualenv -p python3.6` outside the working directory. This could just be in my case but I ran into conflict error with a dependency when [deleting migrations files](https://simpleisbetterthancomplex.com/tutorial/2016/07/26/how-to-reset-migrations.html) and this was my work around. 
 * Set the `SECRET_KEY` as an environmental variable in the virtual environment using:
 
-    ```python
-    import os 
-    SECRET_KEY = os.environ['SECRET_KEY']
+```python
+import os 
+SECRET_KEY = os.environ['SECRET_KEY']
 ```
 instead of leaving it inside the settings file. This is a secure way of handling the secret key just remember to load it into the environment variables of the platform you're launching on (e.g. inside `~/.bashrc`) or in Heroku using 
 
-    ```
-    heroku config:set SECRET_KEY="<this-is-the-secret>"
-    ```
+```
+heroku config:set SECRET_KEY="<this-is-the-secret>"
+```
 
 <!--more-->
 

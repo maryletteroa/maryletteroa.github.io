@@ -1382,7 +1382,7 @@ This was a lot of fun to make and certainly challenging in terms of reading docu
 
 API resources:
  - [Nutritionix](https://www.nutritionix.com/business/api)
- - [Sheety](sheety.co)
+ - [Sheety](https://sheety.co/)
 
 Storing `.env` in Replit: [Storing secrets in .env](https://docs.replit.com/archive/secret-keys)
 
