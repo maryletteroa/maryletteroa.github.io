@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Pokemon Dashboard (First Generation)
-categories:
-- blog
+categories: [project]
+tags: [powerbi]
 ---
 
 Recently, I picked up my console and started playing Pokemon Fire Red again. At this point, I can't count how many times I've played and re-played that game. It's kind of nostalgic having been born in that era of video games. And of course, First Gen Pokemons are still close to my heart and used to be able to name all 100+ Pokemons. (Now, I've forgotten and I can't find the original series!)

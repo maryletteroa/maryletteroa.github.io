@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Ways to write better Python codes
-categories:
-- blog
+categories: [blog]
+tags: [python]
 ---
 
 Source: [11 Tips And Tricks To Write Better Python Code](https://www.youtube.com/watch?v=8OKTAedgFYg)

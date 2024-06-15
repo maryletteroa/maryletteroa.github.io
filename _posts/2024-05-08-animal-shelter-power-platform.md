@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Animal Shelter (Power Platform)
-categories:
-- project
+categories: [project]
+tags: [powerbi]
 ---
 
 A couple of months ago, I applied to Microsoft's [Power Up](https://powerup.microsoft.com/) training. Luckily, I was picked as one of the participants in the March 2024 cohort.

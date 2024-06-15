@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Notes on setting up MAKER2
-categories: [blog, bioinformatics]
-tags: [maker2]
+categories: [blog]
+tags: [maker2, bioinformatics]
 ---
 
 This is a quick reference for installing the parallel version of [Maker2](https://www.yandell-lab.org/software/maker.html). I wrote this a while back (about 3 years) but could be useful still. Some of the tools could have undergone major updates in that timeframe.

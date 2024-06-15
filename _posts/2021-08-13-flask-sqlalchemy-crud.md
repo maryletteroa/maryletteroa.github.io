@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Flask-SQLAlchemy CRUD examples
-categories:
-- blog
+categories: [blog]
+tags: [flask, python, web-development]
 ---
 
 Examples of CRUD operations because I always forget the syntax!

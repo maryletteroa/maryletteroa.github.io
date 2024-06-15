@@ -1,8 +1,8 @@
 ---
 layout: post
 title: GATK pipeline, at a glance
-categories: [blog, bioinformatics]
-tags: [gatk]
+categories: [blog]
+tags: [gatk, bioinformatics]
 ---
 
 Examples to serve as a guide for analyses using [GATK](https://software.broadinstitute.org/gatk/). Version used is 3.2.2. It is best to consult the tool documentation for in-depth discussion of the parameters and outputs.

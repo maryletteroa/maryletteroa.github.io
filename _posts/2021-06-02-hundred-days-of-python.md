@@ -1,8 +1,8 @@
 ---
 layout: post
 title: 100 Days of Code
-categories:
-- project
+categories: [project]
+tags: [python]
 ---
 
 <!-- I've finally gotten around to doing the 100 Days of Code Challenge. This was popular a few years back, and as usual, I caught up with the trend just now. 😅 

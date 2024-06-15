@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Sklearn core code snippet
-categories:
-- blog
+categories: [blog]
+tags: [machine-learning]
 ---
 
 Core code snippet for [scikit-learn](https://scikit-learn.org) machine learning applications using the [iris dataset](https://en.wikipedia.org/wiki/Iris_flower_data_set) and [k-Nearest Neighbor classifier](https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm)

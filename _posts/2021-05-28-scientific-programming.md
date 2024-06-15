@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Scientific Programming with Python
-categories:
-- project
+categories: [project]
+tags: [python]
 ---
 
 I've finished the [Scientific Programming with Python](https://www.freecodecamp.org/learn/scientific-computing-with-python/) course in [freeCodeCamp](https://www.freecodecamp.org) and earned a [Certificate](https://www.linkedin.com/redir/redirect?url=https%3A%2F%2Ffreecodecamp%2Eorg%2Fcertification%2Ffcc58a47023-eefd-4bab-9957-2e31f614ba97%2Fscientific-computing-with-python-v7&urlhash=YwDK&trk=public_profile-settings_see-credential)! 

@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Create a virtual environment using a new version of Python
-categories:
-- blog
+categories: [blog]
+tags: [virtual-environment]
 ---
 
 Install the version e.g. Python version 3.9:

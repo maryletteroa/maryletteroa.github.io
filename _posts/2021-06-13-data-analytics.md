@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Data Analytics
-categories:
-- blog
+categories: [blog]
+tags: [data-analytics]
 ---
 
 Here is a repository containing template projects and exercises involving data analytics 👉 [Data Analytics](https://github.com/maryletteroa/data_analytics)

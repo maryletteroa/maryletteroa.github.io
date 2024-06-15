@@ -2,8 +2,8 @@
 layout: post
 title: "Installing Python from source (Ubuntu)"
 date: 2019-08-08
+categories: [blog]
 tags: [python]
-categories: [misc]
 ---
 
 Get the link for the source code from the [Python Software Foundation](https://www.python.org/downloads/release).

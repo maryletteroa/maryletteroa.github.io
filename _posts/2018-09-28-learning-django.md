@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Learning Django
-categories: [blog, web-development]
-tags: [django]
+categories: [blog]
+tags: [django, web-development]
 ---
 
 Here are some of the things I learned and how I devised my 'workflow' when writing a Django project. *This is really a braindump for myself in the future.*

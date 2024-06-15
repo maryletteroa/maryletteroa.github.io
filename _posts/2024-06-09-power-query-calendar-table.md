@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Power Query Calendar Table
-categories:
-- blog
+categories: [blog]
+tags: [powerquery]
 ---
 
 Here's a Power Query snippet to create a Calendar in Power BI

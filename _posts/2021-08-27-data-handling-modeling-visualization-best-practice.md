@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Power BI Best Practice
-categories:
-- blog
+categories: [blog]
+tags: [powerbi]
 ---
 
 Reference: [Microsoft Power BI Desktop for Business Intelligence ](https://www.udemy.com/course/microsoft-power-bi-up-running-with-power-bi-desktop/)
