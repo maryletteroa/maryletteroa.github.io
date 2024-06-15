@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Learning resources
-categories: [blog]
+categories: [blog, resources]
 tags: [resources]
 ---
 
