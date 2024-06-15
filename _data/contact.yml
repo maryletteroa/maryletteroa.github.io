@@ -26,7 +26,7 @@
 
 - type: google-scholar
   icon: 'fa-brands fa-google-scholar'
-  url:  'https://www.instagram.com/drawmesheeps'
+  url:  'https://scholar.google.com/citations?user=muDojwEAAAAJ'
 
 
 - type: twitter
@@ -34,4 +34,4 @@
 
 - type: google-instagram
   icon: 'fa-brands fa-instagram'
-  url:  'https://scholar.google.com/citations?user=muDojwEAAAAJ'
+  url:  'https://www.instagram.com/drawmesheeps'
