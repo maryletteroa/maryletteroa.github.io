@@ -26,3 +26,7 @@
 # - type: stack-overflow
 #   icon: 'fab fa-stack-overflow'
 #   url:  ''                  # Fill with your stackoverflow homepage
+
+- type: google-scholar
+  icon: 'fa-brands fa-google-scholar'
+  url:  'https://scholar.google.com/citations?user=muDojwEAAAAJ'
