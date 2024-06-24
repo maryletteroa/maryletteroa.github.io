@@ -34,7 +34,7 @@ Suppose a dataset looks something like this, with no overlapping keys:
 ]
 ```
 
-A single [`BaseMpodel`](https://docs.pydantic.dev/latest/api/base_model) can be created
+A single [`BaseModel`](https://docs.pydantic.dev/latest/api/base_model) can be created
 
 
 ```python
@@ -49,7 +49,7 @@ Example(BaseModel):
 
 ```
 
-Instead of iterating on each key or defining the parent and child into separate data classes, the parent and child can be read as dictionaries, merged, and then unpacked into `Example`:
+Instead of iterating on each key or defining the parent and child into separate data classes, both can be read as dictionaries, merged, and then unpacked into `Example`:
 
 ```python
 data = list()
