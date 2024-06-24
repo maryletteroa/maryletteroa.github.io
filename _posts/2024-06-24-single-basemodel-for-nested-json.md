@@ -8,7 +8,7 @@ tags: [python, pydantic]
 Suppose a dataset looks something like this, with no overlapping keys:
 
 ```json
-rows = [
+"rows": [
     {
         "a": "1234ABC",
         "b": 5.768,
@@ -49,7 +49,7 @@ Example(BaseModel):
 
 ```
 
-Insted of iterating on each key or defining the parent and child into separate data classes, the parent and child can be read as dictionaries, merged, and then unpacked into `Example`:
+Instead of iterating on each key or defining the parent and child into separate data classes, the parent and child can be read as dictionaries, merged, and then unpacked into `Example`:
 
 ```python
 data = list()
