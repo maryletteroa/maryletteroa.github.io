@@ -125,4 +125,4 @@ Total rows quarantined: 1
  [('100s,kim,jan@example.com', [{'type': 'int_parsing', 'loc': ('id',), 'msg': 'Input should be a valid integer, unable to parse string as an integer', 'input': '100s', 'url': 'https://errors.pydantic.dev/2.7/v/int_parsing'}])]
 ```
 
-This example can be further extended for more complex data.
+This example can be further extended to process more complex data.
