@@ -8,7 +8,7 @@ tags: [python, pydantic, data]
 
 Here's a demo on how `pydantic` can be used to validate, correct, and quarantine data.
 
-Access the code and demo file [here](https://github.com/maryletteroa/maryletteroa.github.io/tree/main/assets/code/2024-06-29-pydantic-validate-correct-quarantine).
+Access the code and demo file [here](https://github.com/maryletteroa/data_analytics/tree/main/demo/blog/2024-06-29-pydantic-validate-correct-quarantine).
 
 Given a csv file `users.csv` containing the following records
 ```txt
