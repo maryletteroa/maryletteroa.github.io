@@ -11,7 +11,7 @@ Here's a demo on how `pydantic` can be used to validate, correct, and quarantine
 Access the code and demo file [here](https://github.com/maryletteroa/data_analytics/tree/main/demo/blog/2024-06-29-pydantic-validate-correct-quarantine).
 
 Given a csv file `users.csv` containing the following records
-```txt
+```
 id,name,email
 1001,ana,ana@example.com
 1002,isabel,isabel@example.com
