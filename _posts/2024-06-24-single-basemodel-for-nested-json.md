@@ -57,7 +57,7 @@ for row in rows:
 	for child in row.get("d"):
 		_d = {
 			**{k: row[k] for k in row if k != "d"},
-			**detail
+			**d
 		}
 		data.append(Example(**_d))
 ```
