@@ -6,7 +6,7 @@ tags: [python, pydantic, data]
 ---
 
 
-Here's a demon on how `pydantic` can be used to validate, correct, and quarantine data.
+Here's a demo on how `pydantic` can be used to validate, correct, and quarantine data.
 
 Access the code and demo file [here](assets/code/2024-06-29-pydantic-validate-correct-quarantine).
 
