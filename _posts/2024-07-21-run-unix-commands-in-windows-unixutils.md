@@ -22,7 +22,7 @@ Here's how to setup UnxUtils:
 
 If these commands ran without issues, Unix commands are now available in Windows CMD.
 
-This isn't the point of this post but the BSOD incident also makes me think how global tech infrastructure is concernedly fragile - despite all the discussions around cloud computing (replication zones), blockchain and AGI for years. There's only a handful of tech companies that dominate the industry which, unfortunately in this case, includes infrastructures in critical services such as healthcare. Tech has had its fair number of issues such as layoffs, and tools in the internet somehow still manage to blame DEI. Yet incidents like this goes to show that there's so much invisible work to make modern digital infrastructure sound.
+The BSOD incident also makes me think how global tech infrastructure is concernedly fragile - despite all the discussions around cloud computing (replication zones), blockchain and AGI for years. There's only a handful of tech companies that dominate the industry which, unfortunately in this case, includes infrastructures in critical services such as healthcare. Tech has had its fair number of issues such as mass layoffs, and tools in the internet somehow still managing to blame DEI. Yet incidents like this goes to show that there's so much invisible work to make modern digital infrastructure sound.
 
 
 ![Xkcd Dependency](https://imgs.xkcd.com/comics/dependency.png){" .normal}
