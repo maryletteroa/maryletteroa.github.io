@@ -26,7 +26,6 @@ This isn't the point of this post but the BSOD incident also makes me think how 
 
 
 ![Xkcd Dependency](https://imgs.xkcd.com/comics/dependency.png){" .normal}
-
 _Reference: [xkcd](https://xkcd.com/2347/)_
 
 #### References
