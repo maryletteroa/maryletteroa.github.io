@@ -1,15 +1,15 @@
 ---
 layout: post
-title: Run Unix commands in Windows CMD using UnixUtils
+title: Run Unix commands in Windows CMD using UnxUtils
 categories: [blog]
-tags: [cmd, commandline, unix, unixutils]
+tags: [cmd, commandline, unix, unxutils]
 ---
 
 With the recent [blue screen of death incident](https://www.nytimes.com/live/2024/07/19/business/global-tech-outage/crowdstrike-outage-flights-banks), I kind of thought about how much I missed working in Linux. 
 
 I've also been mentally resisting to learn more CMD commands for a while now. That said, using UnxUtils is a way to use Unix commands in Windows *without the need to activate or install Windows Subsystem for Linux (WSL)*.
 
-Here's how to setup UnixUtils:
+Here's how to setup UnxUtils:
 
 1. Download the [zip file](https://sourceforge.net/projects/unxutils).
 2. Unzip the file to a desired location in the local machine.
@@ -29,6 +29,6 @@ This isn't the point of this post but the BSOD incident also makes me think how 
 _Reference: [xkcd](https://xkcd.com/2347/)_
 
 #### References
-- [UnixUtils](https://unxutils.sourceforge.net/)
+- [UnxUtils](https://unxutils.sourceforge.net/)
 - [Use unix commands in Windows](https://www.techlila.com/use-unix-commands-windows/)
 - [VS Code Refresh Integrated Terminal](https://stackoverflow.com/questions/54653343/vs-code-refresh-integrated-terminal-environment-variables-without-restart-logout?rq=1)
