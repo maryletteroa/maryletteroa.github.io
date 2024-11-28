@@ -35,3 +35,7 @@
 - type: google-instagram
   icon: 'fa-brands fa-instagram'
   url:  'https://www.instagram.com/drawmesheeps'
+
+- type: bluesky
+  icon: 'fa-brands fa-bluesky'
+  url:  'https://bsky.app/profile/maryletteroa.bsky.social'
