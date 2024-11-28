@@ -5,12 +5,16 @@ categories: [blog]
 tags: [data-engineering, cummulative-table, data, data-modelling, postgres, sql]
 ---
 
-I've recently learned about [Cumulative tables](https://github.com/DataExpert-io/cumulative-table-design) which is a powerful table design to do historical tracking. The timeframe (however it is defined), are "accumulated" at certain time-partitions, which eliminates the need to do group by or even sorting. This is very useful for tracking states in a dimensional table.
+I've recently learned about [Cumulative tables](https://github.com/DataExpert-io/cumulative-table-design) which is a powerful table design to do historical tracking. The timeframe (however it is defined), are "accumulated" at certain time-partitions, which eliminates the need to do group by or even sorting (as inserts are done sequentially). This is very useful for tracking states in a dimensional table.
 
-Here's a code snippet of how it's set up. I also learned that PostgresSQL can natively create and handle complex types such as arrays and enums.
+The downside of this design is that tables can get large fast (thus the need to maintain and remove old rows), and because inserts depend on last time frame's data, it can only be done sequentially (backfilling can be a pain).
+
+However, it is a powerful table design that enables fast data analysis.
+
+Here's a code snippet of how I understood it can be set up. I also learned that PostgresSQL can natively create and handle complex types such as arrays and enums.
 
 
-Set up tables
+Set up example tables
 
 ```sql
  create type records as (
@@ -28,7 +32,7 @@ create type class as enum(
 create table cumulative_table (
 	id  text,
 	name text,
-	arr records[],
+	records records[],
 	class class ,
 	is_active boolean,
 	current_year integer,
@@ -52,6 +56,8 @@ begin
 
 insert into cumulative_table
 
+
+---having pre-aggregated data in a CTE here eliminates a lot of redunduncies in the later outer joins
 with agg as (
 select id
 	, name
@@ -106,3 +112,12 @@ $$
 
 ```
 
+Sample analysis is as straightfoward as
+
+```sql
+select * from cumulative_table
+where current_year = 2001
+and name = 'Abcd'
+```
+
+No need to add a group by or sorting as the row would contain all of `Abcd`'s records in an array (`records` array) from start to 2001 in sequential order.
