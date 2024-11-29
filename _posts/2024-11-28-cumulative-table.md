@@ -107,7 +107,7 @@ group by id, name, year
 	on l.id = t.id;
 
 end loop;
-end;
+end
 $$
 
 ```
