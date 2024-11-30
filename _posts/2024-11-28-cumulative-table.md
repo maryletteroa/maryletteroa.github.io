@@ -45,7 +45,7 @@ Populate cumulative table. `table1` is the source table
 
 ```sql
 
-do $$
+
 declare y1 int := (select min(year) from table1);
 		y2 int := (select max(year) + 1 from table1);
 		y int := 0;
@@ -108,7 +108,6 @@ group by id, name, year
 
 end loop;
 end;
-$$
 
 ```
 
