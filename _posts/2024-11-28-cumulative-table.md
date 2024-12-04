@@ -7,7 +7,7 @@ tags: [data-engineering, cummulative-table, data, data-modelling, postgres, sql]
 
 I've recently learned about [Cumulative tables](https://github.com/DataExpert-io/cumulative-table-design) which is a powerful table design to do historical tracking. The timeframe (however it is defined), are "accumulated" at certain time-partitions, which eliminates the need to do group by or even sorting (as inserts are done sequentially). This is very useful for tracking states in a dimensional table.
 
-The downside of this design is that tables can get large fast (thus the need to maintain and remove old rows), and because inserts depend on last time frame's data, it can only be done sequentially (backfilling can be a pain).
+The downside of this design is that tables can get large fast (thus the need to maintain and remove old rows), and because inserts depend on last time frame's data, it can only be done sequentially (backfilling can be a pain specially if errors get propagated).
 
 However, it is a powerful table design that enables fast data analysis.
 
@@ -71,13 +71,13 @@ from table1
 group by id, name, year 
 
 )
-
+--- look back on last time frame in the cumulative table
 , last_year as (
 	select * from cumulative_table
 		where current_year = y-1
 		
 	)
-
+--- incoming data from the source table in the current timeframe
 ,this_year as (
 	select id 
 		, name 
@@ -89,10 +89,11 @@ group by id, name, year
 
 )
 
-
 	select
+		--- if present descriptive cols are missing, get last date's value
 		coalesce(t.id, l.id) as id
 		, coalesce(t.name, l.name) as name
+		--- accmulate records sequentially by concatenating to array[]
 		, case when l.arr is null
 			then t.records
 			when t.year is not null then l.records || t.records
@@ -100,8 +101,11 @@ group by id, name, year
 		, case when t.year is not null then t.class
 			else l.class end as class 
 		, case when t.year is not null then true else false end as is_active
+		--- compute current year
 		, coalesce(t.year, l.current_year + 1) as current_year
-		
+
+
+	--- use full other join is always used
 	from last_year l
 	full outer join this_year t
 	on l.id = t.id;
