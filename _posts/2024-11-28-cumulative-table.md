@@ -5,7 +5,7 @@ categories: [blog]
 tags: [data-engineering, cummulative-table, data, data-modelling, postgres, sql]
 ---
 
-I've recently learned about [Cumulative tables](https://github.com/DataExpert-io/cumulative-table-design) which is a powerful table design to do historical tracking. The timeframe (however it is defined), are "accumulated" at certain time-partitions, which eliminates the need to do group by or even sorting (as inserts are done sequentially). This is very useful for tracking states in a dimensional table.
+I've recently learned about [Cumulative tables](https://github.com/DataExpert-io/cumulative-table-design), a table design to do historical tracking. The timeframe (however it is defined), are inserted sequentially at every time partition, which eliminates the need to do group by or even sorting. Each time partition holds historical data up to the current time. This is very useful for tracking states in a dimensional table.
 
 The downside of this design is that tables can get large fast (thus the need to maintain and remove old rows), and because inserts depend on last time frame's data, it can only be done sequentially (backfilling can be a pain specially if errors get propagated).
 
