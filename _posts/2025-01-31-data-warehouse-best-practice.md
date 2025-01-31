@@ -5,6 +5,9 @@ categories: [learning-log]
 tags: [data-engineering]
 ---
 
+Here are some points[^1] on DW Best Practices. Good points to keep in mind but admittedly warrants more concrete examples and unpacking (more in the future, so this could be an evolving note).
+
+[1:] Written with CoPilot, and I've added more notes and edited the text based on experience
 
 ## Table Design Best Practices
 
@@ -22,7 +25,8 @@ tags: [data-engineering]
     - Define *primary keys* to uniquely identify each row
     - *Foreign keys* to maintain referential integrity between tables.
 - **Surrogate Keys**
-    - Consider using surrogate keys (e.g., auto-increment integers, hash keys) instead of natural keys for primary keys to avoid issues with changing natural key values.
+    - Consider using *surrogate keys* (e.g., auto-increment integers, hash keys) instead of natural keys for primary keys
+    - Avoid issues with changing natural key values.
 - **Column Data Types**
     - Choose appropriate data types for each column to optimize storage and performance.
     - Avoid using large data types unless necessary.
@@ -38,7 +42,7 @@ tags: [data-engineering]
     - Use default values where applicable.
 
 
-## Data Warehouse Design Best Practices
+## Data Warehouse Design Guidelines
 
 - **Understand Business Goals**
     - Clearly define the business objectives and requirements that the data warehouse aims to address
