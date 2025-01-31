@@ -46,6 +46,9 @@ Here are some notes[^1] on DW Best Practices. Good points to keep in mind but ad
     - Clearly define the business objectives and requirements that the data warehouse aims to address
 - **Data Governance**
     - Establish strong data governance policies to ensure data quality, security, and compliance
+    - An Medium article about securing PII [Secure PII in Data Warehouse using BigQuery, Dataplex, MS Entra ID](https://medium.com/@tarik.sm/all-you-need-to-know-to-secure-pii-in-a-data-wharehouse-using-bigquery-dataplex-ms-entra-id-and-98ed31ac22d5)
+    - [Using Iceberg data format in Athena to implement GDPR use-cases](https://aws.amazon.com/blogs/big-data/build-a-real-time-gdpr-aligned-apache-iceberg-data-lake/
+    )
 - **Metadata Management**
     - Properly manage metadata to organize and document data assets, making them easily accessible
 - **Scalability**
@@ -64,5 +67,5 @@ Here are some notes[^1] on DW Best Practices. Good points to keep in mind but ad
     - Define strategies for data archival and purging to keep the data warehouse lean and efficient
 
 #### Footnotes
-[^1]: Written with CoPilot, and I've added more notes and edited the text based on experience
+[^1]: Written with CoPilot, I've added more notes and edited the text.
 
