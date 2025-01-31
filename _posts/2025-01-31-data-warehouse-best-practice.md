@@ -5,9 +5,7 @@ categories: [learning-log]
 tags: [data-engineering]
 ---
 
-Here are some points[^1] on DW Best Practices. Good points to keep in mind but admittedly warrants more concrete examples and unpacking (more in the future, so this could be an evolving note).
-
-[^1]: Written with CoPilot, and I've added more notes and edited the text based on experience
+Here are some notes[^1] on DW Best Practices. Good points to keep in mind but admittedly warrants more concrete examples and unpacking (more in the future, so this could be an evolving note).
 
 ## Table Design Best Practices
 
@@ -64,4 +62,7 @@ Here are some points[^1] on DW Best Practices. Good points to keep in mind but a
     - Implement robust data cleansing and validation processes to ensure high data quality
 - **Data Lifecycle Management**
     - Define strategies for data archival and purging to keep the data warehouse lean and efficient
+
+#### Footnotes
+[^1]: Written with CoPilot, and I've added more notes and edited the text based on experience
 
