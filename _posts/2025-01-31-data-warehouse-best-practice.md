@@ -7,7 +7,7 @@ tags: [data-engineering]
 
 Here are some points[^1] on DW Best Practices. Good points to keep in mind but admittedly warrants more concrete examples and unpacking (more in the future, so this could be an evolving note).
 
-[1:] Written with CoPilot, and I've added more notes and edited the text based on experience
+[^1]: Written with CoPilot, and I've added more notes and edited the text based on experience
 
 ## Table Design Best Practices
 
