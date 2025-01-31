@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Data Warehousing Best Practices
-categories: [learning-log]
+categories: [blog]
 tags: [data-engineering]
 ---
 
