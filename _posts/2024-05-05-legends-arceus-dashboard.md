@@ -7,7 +7,7 @@ image:
   path: /assets/images/legends-arceus-dashboard/summary.png
 ---
 
-Here's a quick follow up to the [first Pokemon dashboard](https://maryletteroa.github.io/blog/2024/04/20/pokemon-dashboard-(first-generation).html) I've made. (I keep doing this because this has been so much fun for me 😁). I discussed some aspects about the game in this post so 📢 SPOILER ALERT! up ahead.
+Here's a quick follow up to the [first Pokemon dashboard](_posts/2024-04-20-pokemon-dashboard (first generation).md) I've made. (I keep doing this because this has been so much fun for me 😁). I discussed some aspects about the game in this post so 📢 SPOILER ALERT! up ahead.
 
 I've finally picked up **Pokemon Legends: Arceus** in the Nintendo Switch. This game was released in 2022 and is the first Pokemon game that features an open world. (I'm a big fan of *Zelda: Breath of the Wild* and this game kind of reminds me of that). 
 
