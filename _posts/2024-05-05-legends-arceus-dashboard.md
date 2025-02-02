@@ -21,7 +21,7 @@ I was hooked for several days and made straigth progress in the main storyline (
 
 <center><img src="/assets/images/legends-arceus-dashboard/whos-that-pokemon.png" alt="whos-that-pokemon.png" width="250"/><small>Photo Credit: Pro Game Guides / The Pokemon Company</small></center>
 
-Since I've made a Pokemon dashboard before [inspired by Fire Red](https://maryletteroa.github.io/blog/2024/04/20/pokemon-dashboard-(first-generation).html), I thought why not try an exclusive dashboard for Legends: Arceus. 
+Since I've made a Pokemon dashboard before [inspired by Fire Red]({% link _posts/2024-04-20-pokemon-dashboard (first generation).md %}), I thought why not try an exclusive dashboard for Legends: Arceus. 
 
 I also got insipired by this build [Who’s that Pokemon](https://www.linkedin.com/feed/update/urn:li:activity:7191116307323346944/). It’s miles away from what I’m capable of, I’m afraid, but one thing that made quite an impression on me is the Evolution Chart. I thought it could be an interesting challenge to set that up for the next Pokemon Dashboard. I also wanted to revisit the PowerBI model, specially improve the many-to-many relationships between Pokemons and moves, types, or abilities.
 
