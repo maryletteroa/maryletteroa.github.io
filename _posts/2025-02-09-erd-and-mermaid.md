@@ -8,7 +8,7 @@ mermaid: true
 
 This is an extension of my [2025 Learning Log]({% link _posts/2025-01-24-2025-learning-log.md %}). 
 
-I've reviewed ERDs (Entity Relation Diagrams) and Mermaid - a tool that to create diagrams using code.
+I've reviewed ERDs (Entity Relation Diagrams) and Mermaid - a tool to create diagrams using code.
 
 ### ERD
 
