@@ -10,6 +10,12 @@ This is an extension of my [2025 Learning Log]({% link _posts/2025-01-24-2025-le
 
 I've reviewed ERDs (Entity Relation Diagrams) and Mermaid - a tool to create diagrams using code.
 
+References:  
+(Then and now, I find the Lucid chart explanations of ERD to be a good resource on this)
+- [Entity Relationship Diagram (ERD) Tutorial - Part 1 ](https://www.youtube.com/watch?v=xsg9BDiwiJE&t=25s)
+- [ Entity Relationship Diagram (ERD) Tutorial - Part 2 ](https://www.youtube.com/watch?v=hktyW5Lp0Vo)
+
+
 ### ERD
 
 Entity Relationship Diagram (ERD)
@@ -26,7 +32,7 @@ Components
   
 Primary key
 - An attribute or field that uniquely identifies every record within a certain table
-- Only on PK per Entity
+- Only one PK per Entity
 - Rules
     - Has to be unique and identify with only one record in the table
     - Needs to be never changing (e.g. name, street can change for a User entity but userId does not)
@@ -52,12 +58,6 @@ Bridge Tables
 - Example: Order breaks up the relationship between Customer and Product
 
 <center><img src="/assets/images/learning-log/erd-example.png" alt="tables-graph" width="500"/></center>
-
-
-Reference:  
-(Then and now, I find the Lucid chart explanations of ERD to be a good resource on this)
-- [Entity Relationship Diagram (ERD) Tutorial - Part 1 ](https://www.youtube.com/watch?v=xsg9BDiwiJE&t=25s)
-- [ Entity Relationship Diagram (ERD) Tutorial - Part 2 ](https://www.youtube.com/watch?v=hktyW5Lp0Vo)
 
 
 ### Mermaid
