@@ -10,13 +10,15 @@ This is an extension of my [2025 Learning Log]({% link _posts/2025-01-24-2025-le
 
 I've reviewed ERDs (Entity Relation Diagrams) and Mermaid - a tool to create diagrams using code.
 
-References:  
-(Then and now, I find the Lucid chart explanations of ERD to be a good resource on this)
+
+
+### ERD
+
+Then and now, I find the Lucid chart explanations of ERD to be a good resource on this
 - [Entity Relationship Diagram (ERD) Tutorial - Part 1 ](https://www.youtube.com/watch?v=xsg9BDiwiJE&t=25s)
 - [ Entity Relationship Diagram (ERD) Tutorial - Part 2 ](https://www.youtube.com/watch?v=hktyW5Lp0Vo)
 
 
-### ERD
 
 Entity Relationship Diagram (ERD)
 - provides a visual way to understand how information in a database are related
