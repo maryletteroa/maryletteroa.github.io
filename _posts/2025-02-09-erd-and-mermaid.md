@@ -8,7 +8,7 @@ mermaid: true
 
 This is an extension of my [2025 Learning Log]({% link _posts/2025-01-24-2025-learning-log.md %}). 
 
-I've reviewed ERDs (Entity Relation Diagrams) and Mermaid - a tool to create diagrams using code.
+I've reviewed ERDs (Entity Relationship Diagrams) and Mermaid - a tool to create diagrams using code.
 
 
 
@@ -42,7 +42,7 @@ Primary key
 
 Foreign Key
 - The same as a primary key but located in another Entity
-- Used to better understand how Entities related to one another
+- Used to better understand how Entities relate to one another
 - Rules
     - Unlike a PK, an FK does not have to be unique. It can be repeated inside a table.
     - It's possible to have multiple FKs in one Entity
@@ -146,5 +146,5 @@ erDiagram
 
 Some observations while trying Mermaid out: 
 - Seems like relationship description is a required field
-- Once a column already contains a type, the rest should have types too.
+- Once a column already contains a type, the rest of the Entity as well as the other Entities should have types too.
 - I also encountered an interesting error while I was trying Mermaid in another model: [`u` can't be used as alias](https://github.com/mermaid-js/mermaid/issues/5093). To get around this, use quotes `"u"`
