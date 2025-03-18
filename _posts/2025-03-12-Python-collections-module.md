@@ -5,6 +5,8 @@ categories: [learning-log]
 tags: [python]
 ---
 
+This is an extension of my [2025 Learning Log]({% link _posts/2025-01-24-2025-learning-log.md %}). 
+
 > Python [collections](https://docs.python.org/3/library/collections.html#module-collections) module contains specialized container datatypes that provide alternatives to Python’s general purpose built-in containers: dict, list, set, and tuple.
 
 ### namedtuple
