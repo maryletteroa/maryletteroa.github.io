@@ -12,7 +12,7 @@ This is an extension of my [2025 Learning Log]({% link _posts/2025-01-24-2025-le
 
 Install `pip install pyautogui`
 
-Mouse functions
+## Mouse functions
 ```python
 import pyautogui
 
@@ -38,7 +38,7 @@ pyautogui.mouseDown(500, 100, button="left")
 
 ```
 
-Scroll functions
+## Scroll functions
 ```python
 # scroll 500 px up
 pyautogui.scroll(500)
@@ -46,11 +46,11 @@ pyautogui.scroll(500)
 pyautogui.scroll(-500)
 ```
 
-Failsafe
+## Failsafe
 - scroll to the corner of the screen to trigger Fail Safe
 - tip: add `time.sleep(n)` to have n seconds to move the mouse to the Fail safe position
 
-Keyboard functions
+## Keyboard functions
 
 ```python
 pyautogui.write("hello") # hello
@@ -59,6 +59,6 @@ pyautogui.press("space") # will press space button
 ```
 More functionalities in the [docs](https://pyautogui.readthedocs.io/en/latest/)
 
-Reference
+## Resources
 - [Python Automation with PyAutoGUI](https://www.youtube.com/watch?v=3PekU8OGBCA&t=1011s)
 - [PyAutoGUI Docs](https://pyautogui.readthedocs.io/en/latest/)
