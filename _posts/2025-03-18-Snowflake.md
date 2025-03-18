@@ -4,7 +4,6 @@ title: Snowflake
 categories: [learning-log]
 tags: [data-engineering, snowflake]
 mermaid: true
-pin: true
 ---
 
 I've recently studied Snowflake through this course: [Snowflake masterclass](https://www.udemy.com/course/snowflake-masterclass). Here's my [certificate](https://www.udemy.com/certificate/UC-815019cf-596a-4b6c-8b1a-9c3f5138eeba). This course covered a lot of topics, and it's been a fulfilling couple of weeks learning the ins and outs of this tool.
