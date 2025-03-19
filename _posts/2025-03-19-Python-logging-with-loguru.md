@@ -69,14 +69,14 @@ Output
 
 Contextual data include other relevant information that may be useful for filtering, correlating, or tracing information in the logs
 
-In loguru, these are contained within the `{extract}` directive
+In loguru, these are contained within the `{extra}` directive
 
 ```python
 logger.add(sys.stderr, format="{time:MMMM D, YYYY > HH:mm:ss} | {level} | {message} | {extra}")
 
 ```
 
-Either `bind()` or `contextualize` can be used to log contextual information
+Either `bind()` or `contextualize()` method can be used to log contextual information
 
 Using `bind()` creates a child logger that inherits contextual data from its parent. It does not affect the original `logger`
 
@@ -132,6 +132,8 @@ August 12, 2022 > 11:00:52 | INFO | A user requested a service. | {'seller_id': 
 
 ## Example usage
 
+Here are some of the ways loguru can be used. This script contains combined examples.
+
 ```python
 import sys
 from loguru import logger
@@ -140,7 +142,7 @@ from loguru import logger
 logger.remove()
 
 # create a handler that has a custom format
-# items in curly brances {...} are called directives 
+# items in curly braces {...} are called directives 
 # by default, logs are sent to the sys.stderr
 # sys.stdout outputs to terminal
 # <level> directive uses different colors for different levels
@@ -148,11 +150,11 @@ logger.remove()
 logger.add(
 	sys.stdout, 
 	format = "{time:MMMM D, YYYY} {level} --- <level>{message}</level> {extra}",
-	serialize = True, # outputs log in JSON
+	serialize = True, # outputs log in JSON format
 	level = "WARNING" # any level below this will not be outputted
 )
 
-# possible to setup more than one handlers
+# possible to setup more than one handler
 logger.add(
 	"app.log" # output log to file,
 	serialize = True,
@@ -162,7 +164,8 @@ logger.add(
 
 # ------------ #
 ## add contextual data
-# can pass as many key-values as you want
+# using bind()
+# can pass as many key-values as needed
 child_logger = logger.bind(user_id = 1, ip_adress = "192.158.1.38")
 # these will now contain the {extra} dictionary
 child_logger.info("An info message!!!")
@@ -231,7 +234,7 @@ Output
 
 As logging can affect the performance of an application, it is important to be mindful of how much and how often logging is used. It should be enough to enable diagnosing potential issues but not impact the application performance.
 
-Rotate log files periodically to manage log file size, avoid performance issues, and simplify debugging. Rotating log files means periodically creating new log file, archiving or deleting old ones.
+Rotate log files to manage log file size, avoid performance issues, and simplify debugging. Rotating log files means periodically creating new log file, archiving or deleting old ones.
 
 Write meaningful log messages. These include
 - Being clear and concise - be on point and avoid jargon
