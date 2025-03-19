@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Python logging using loguru
+title: Python logging with loguru
 categories: [learning-log]
 tags: [python]
 ---
