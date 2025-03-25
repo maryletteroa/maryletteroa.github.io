@@ -363,7 +363,7 @@ If the Zookeeper in a single Zookeeper system fails, the whole system will be do
 ## Zookeeper ensemble
 
 ```mermaid
-flowchart TB
+flowchart LR
     subgraph BrokerCluster
         B["Broker"]
         C["Broker"]
