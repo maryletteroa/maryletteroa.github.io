@@ -3,6 +3,7 @@ layout: post
 title: Apache Kafka
 categories: [learning-log]
 tags: [kafka]
+mermaid: true
 ---
 
 This is an extension of my [2025 Learning Log]({% link _posts/2025-01-24-2025-learning-log.md %}). 
@@ -275,3 +276,142 @@ mesagge -------- Offsets
 >London ---------- 0
 >Sydney ---------- 0
 ```
+
+
+## How Apache Kafka works
+
+### Apache Kafka
+Apache Kafka is a *distributed publish-subscribe messaging system*. It stores messages created by Producers, and makes them available to Consumers. Producers and Consumers operate independent of one another.
+
+Distributed means it is a fault-tolerant, resilient system with the ability to create large clusters with many different servers; when one or more servers fail, other servers may continue operation to serve publishers and consumers, and when all are set up correctly even one message will not be lost.
+
+### Broker
+Producers produce messages to Kafka brokers. Consumers consume messages from Kafka brokers
+
+```mermaid
+flowchart LR;
+	Producer --> Broker --> Consumer
+```
+
+Broker responsibilities include
+- receiving messages from Producers
+- storing those messages
+- giving ability for consumers to consume those message
+
+Brokers store messages into files, Producers append messages to those files, Consumers are able to read from those files
+
+It's possible to have multiple Producers, and multiple Consumers. Multiple Producers are able to produce multiple messages to Broker, multiple Consumers are able to consume messages from Broker.
+
+
+```mermaid
+flowchart LR
+	Producer1 --> Broker --> Consumer1
+	Producer2 --> Broker --> Consumer2
+	Producer3 --> Broker --> Consumer3
+	
+```
+
+
+
+Messages may be produced and consumed asynchronously at different moments of time.
+
+For a single broker system, if the broker fails nothing will be able to produce or consume messages - that's why it's best to create broker clusters.
+
+A single Kafka server can run multiple Kafka brokers called a *broker cluster*
+
+
+```mermaid
+flowchart LR
+    subgraph BrokerCluster
+        B["Broker"]
+        C["Broker"]
+        D["Broker"]
+        E["Broker"]
+    end
+    Producer1 --> BrokerCluster --> Consumer1
+    Producer2 --> BrokerCluster --> Consumer2
+    Producer3 --> BrokerCluster --> Consumer3
+
+```
+
+Different Producers, and different Consumers are able to interact with different Brokers in the cluster. Every Producer can send messages to different Kafka brokers, and each Kafka broker will store part of the messages - all messages from the Producers will be spread to different servers. Kafka consumers might read messages from different Kafka brokers. If one of the brokers fail, other brokers will take over and continue operation of the clusters.
+
+Zookeeper is responsible for broker synchronization.
+
+### Zookeeper
+Also used in Apache Hadoop, Apache Solr
+
+```mermaid
+flowchart LR
+    subgraph BrokerCluster
+        B["Broker"]
+        C["Broker"]
+        D["Broker"]
+        E["Broker"]
+    end
+    Zookeeper <--> BrokerCluster
+    Producer1 --> BrokerCluster --> Consumer1
+    Producer2 --> BrokerCluster --> Consumer2
+    Producer3 --> BrokerCluster --> Consumer3
+
+```
+
+
+Zookeeper maintains a list of active brokers. It knows, at a given moment, which brokers are active, and which have failed. 
+
+It elects a controller among brokers in a cluster; there's only one controller in each cluster. 
+
+Lastly, it manages configuration of the topics and partitions. When a topic is created in the cluster, it is created in Zookeeper, Zookeeper distributes this configuration to all brokers in the cluster
+
+If the Zookeeper in a single Zookeeper system fails, the whole system will be down. Hence, it is also possible to create a cluster of Zookeepers.
+
+### Zookeeper ensemble
+
+```mermaid
+flowchart TB
+    subgraph BrokerCluster
+        B["Broker"]
+        C["Broker"]
+        D["Broker"]
+        E["Broker"]
+    end
+    subgraph ZookeeperEnsemble
+	    F["Zookeeper"]
+        G["Zookeeper"]
+        H["Zookeeper"]
+	end
+    ZookeeperEnsemble <--> BrokerCluster
+    Producer1 --> BrokerCluster --> Consumer1
+    Producer2 --> BrokerCluster --> Consumer2
+    Producer3 --> BrokerCluster --> Consumer3
+
+```
+
+A cluster of Zookeepers is called a *Zookeeper ensemble*.
+
+In every Zookeeper cluster, a quorum should be set. *Quorum* is the minimum quantity of the servers that should be running in order to have an operational cluster. Otherwise, Zookeeper cluster will be down as well as all connected brokers i.e. entire Apache Kafka server will be down as well
+
+It is recommended to have an odd number of servers in Zookeeper ensemble (e.g. 1, 3, 5 , 7 etc) and the quorum set to `(n+1)/2` where n is the quantity of servers. This prevents just half of servers managing an actually broken cluster (example a quorum of 2 of 4 servers hosted in a different zone will keep on working even if the other half of the cluster is already inactive. This leads to broken messages).
+
+
+### Multiple Kafka clusters
+
+It is possible to setup several clusters of Apache Kafka. To facilitate synchronization (e.g. when clusters are hosted in different zones), setup mirroring between the different clusters. No mirroring creates completely different clusters in different regions
+
+
+### Default ports of Zookeeper and Broker
+The default ports are the following:
+- Zookeeper localhost:2181
+- Kafka server (broker) localhost:9092
+
+If launching multiple Zookeepers or broker servers in the same computer, assign different ports to each, create different configuration files with different ports, and it's also a good idea to create separate local folders for every instance
+
+
+e.g. Zookeeper localhost:2181, :2182, :2183
+server (broker) localhost:90921, :9093, :9094
+
+If running Zookeepers and Brokers on different computers, there is no need to change ports
+
+If Brokers should be publicly accessible, `advertised.listeners` property in Broker config should be adjusted as localhost is not accessible by outside network.
+
+
