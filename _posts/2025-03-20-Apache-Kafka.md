@@ -277,15 +277,12 @@ mesagge -------- Offsets
 >Sydney ---------- 0
 ```
 
-
-## How Apache Kafka works
-
-### Apache Kafka
+## Apache Kafka
 Apache Kafka is a *distributed publish-subscribe messaging system*. It stores messages created by Producers, and makes them available to Consumers. Producers and Consumers operate independent of one another.
 
 Distributed means it is a fault-tolerant, resilient system with the ability to create large clusters with many different servers; when one or more servers fail, other servers may continue operation to serve publishers and consumers, and when all are set up correctly even one message will not be lost.
 
-### Broker
+## Broker
 Producers produce messages to Kafka brokers. Consumers consume messages from Kafka brokers
 
 ```mermaid
@@ -338,7 +335,7 @@ Different Producers, and different Consumers are able to interact with different
 
 Zookeeper is responsible for broker synchronization.
 
-### Zookeeper
+## Zookeeper
 Also used in Apache Hadoop, Apache Solr
 
 ```mermaid
@@ -365,7 +362,7 @@ Lastly, it manages configuration of the topics and partitions. When a topic is c
 
 If the Zookeeper in a single Zookeeper system fails, the whole system will be down. Hence, it is also possible to create a cluster of Zookeepers.
 
-### Zookeeper ensemble
+## Zookeeper ensemble
 
 ```mermaid
 flowchart TB
@@ -394,12 +391,12 @@ In every Zookeeper cluster, a quorum should be set. *Quorum* is the minimum quan
 It is recommended to have an odd number of servers in Zookeeper ensemble (e.g. 1, 3, 5 , 7 etc) and the quorum set to `(n+1)/2` where n is the quantity of servers. This prevents just half of servers managing an actually broken cluster (example a quorum of 2 of 4 servers hosted in a different zone will keep on working even if the other half of the cluster is already inactive. This leads to broken messages).
 
 
-### Multiple Kafka clusters
+## Multiple Kafka clusters
 
 It is possible to setup several clusters of Apache Kafka. To facilitate synchronization (e.g. when clusters are hosted in different zones), setup mirroring between the different clusters. No mirroring creates completely different clusters in different regions
 
 
-### Default ports of Zookeeper and Broker
+## Default ports of Zookeeper and Broker
 The default ports are the following:
 - Zookeeper localhost:2181
 - Kafka server (broker) localhost:9092
