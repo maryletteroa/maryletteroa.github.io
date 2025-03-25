@@ -308,8 +308,6 @@ flowchart LR
 	
 ```
 
-
-
 Messages may be produced and consumed asynchronously at different moments of time.
 
 For a single broker system, if the broker fails nothing will be able to produce or consume messages - that's why it's best to create broker clusters.
