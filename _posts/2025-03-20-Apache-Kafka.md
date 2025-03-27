@@ -409,4 +409,12 @@ If running Zookeepers and Brokers on different computers, there is no need to ch
 
 If Brokers should be publicly accessible, `advertised.listeners` property in Broker config should be adjusted as localhost is not accessible by outside network.
 
+## Kafka Topic
 
+Every topic has its own unique name. 
+
+Messages are contained in each topic, and each message has its own unique number called offset.
+
+Producer may append only to the end of the log. Every number / log record is immutable.
+
+The Broker may delete messages from the other side. By default the retention period is 168 hours or 7 days.
