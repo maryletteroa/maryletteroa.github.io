@@ -418,3 +418,24 @@ Messages are contained in each topic, and each message has its own unique number
 Producer may append only to the end of the log. Every number / log record is immutable.
 
 The Broker may delete messages from the other side. By default the retention period is 168 hours or 7 days.
+
+## Message structure
+- Timestamp
+	- can be assigned by Kafka broker or producer (configurable)
+- Offset number
+	- unique *only* in a partition in a specific topic
+- Key (optional)
+	- used as additional grouping mechanism of messages inside a topic
+	- created on producers and sent to Kafka brokers
+	- if several messages have the same key, they will be sent to the same partition
+- Value
+	- sequence of bytes
+	- the message body
+
+Keep messages as small as possible to achieve maximum efficiency of Kafka cluster
+
+## Topics and partitions
+
+Same topic can be located in different brokers for fault tolerance. E.g. Given topic A in broker 0 and broker 1. If broker 0 fails, topic A is still present in broker 1 and can still accept new messages from producers, and new read requests from consumers.
+
+Topics can have one or more partitions, which can be located in one or more brokers. Different partitions spread across multiple brokers (computers) can write partitions quicker.
