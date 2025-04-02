@@ -439,3 +439,33 @@ Keep messages as small as possible to achieve maximum efficiency of Kafka cluste
 Same topic can be located in different brokers for fault tolerance. E.g. Given topic A in broker 0 and broker 1. If broker 0 fails, topic A is still present in broker 1 and can still accept new messages from producers, and new read requests from consumers.
 
 Topics can have one or more partitions, which can be located in one or more brokers. Different partitions spread across multiple brokers (computers) can write partitions quicker.
+
+## Spreading messages across partitions
+
+If topic (e.g. cities) is created with default configuration (single partition), Broker will create a folder e.g. cities-0 for a single partition.
+
+Every partition is a separate folder with files. If there are multiple partitions spread across different brokers, each broker may have one or more folders for each partition e.g. cities-0, cities-1, cities-2,...
+
+If there are multiple partitions on multiple computers, users may write messages into different partitions.
+
+Partition number is from 0.
+
+Offsets are also given to messages in each partition (0,1,2,3,...)
+
+Each partition must have a unique number across a topic even if that topic is in multiple brokers. Offset number can repeat as long as they are in different partitions.
+
+If Broker 1 containing Partition 1 fails, the messages inside that Partition will be lost and will no longer be consumed -  unless replication is set up in different brokers.
+
+## Partition Leader and Followers
+
+Create a leader and follower partitions when creating replicas.
+
+Followers are partitions that get messages from the Leader partition and replicate them; they don't accept read or write requests from consumers or producers.
+
+If Leader partition fails, one of the followers will become the new leader, and messages in the failing partition will not be lost.
+
+Plan resources of the brokers accordingly.
+
+Recommended to create at least 2 replicas (3 brokers). Configure replication factor on topic-level basis; by default this is set to 1 (every message is stored once in one broker). Recommended to set to 3 in production.
+
+Falling partitions can be set in addition, which are passive partitions in case of active follower failure.
