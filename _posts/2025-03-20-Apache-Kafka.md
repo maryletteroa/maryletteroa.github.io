@@ -469,3 +469,30 @@ Plan resources of the brokers accordingly.
 Recommended to create at least 2 replicas (3 brokers). Configure replication factor on topic-level basis; by default this is set to 1 (every message is stored once in one broker). Recommended to set to 3 in production.
 
 Falling partitions can be set in addition, which are passive partitions in case of active follower failure.
+
+## Controller and it's responsibilities
+
+Who decides which broker becomes leader of the particular partition? Who decides Partition 0 resides in Broker 0, Partition-1 in Broker 1. Who reassigns a partition when a broker fails? Job of one broker assigned as controller
+
+One of the brokers serves as the controller which is responsible for managing the states of partitions and replicas and for performing administrative tasks like reassigning partitions. Controller is elected automatically by Zookeeper. 
+
+Controller decides which broker becomes leader of the particular partition, and which become followers. It also decides which partition resides in which broker and reassigns partitions in case of broker failure.
+
+
+## How producers write messages to the topic
+
+Producers can produce messages into different partitions in different brokers. They can also be setup to write only into specific partitions e.g. when using keys since messages with the same key needs to be in the same partition. Otherwise, messages can be written in round-robin fashion across partitions of a topic. New messages are only added after older messages.
+
+Existing messages are immutable and producers are not able to change these existing messages.
+
+Multiple producers can write messages to the same topic and partition in parallel.
+
+## How consumers read messages from the topic
+
+It's possible for consumers to consume messages from one or more topics, in one or more partitions.
+
+It's also possible to have multiple consumers consume from the same topic. These consumers are in a consumer group. In such case, every message may be consumed by only one consumer in the consumer group.
+
+Consumers can consume messages from beginning, actively wait for new messages, or specify an offset from which to start consuming. 
+
+Messages in brokers remain there independent of the read status of the consumers.
