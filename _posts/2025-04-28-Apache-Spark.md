@@ -100,6 +100,7 @@ Lazy evalution - it doesn't do anything until it is asked to produce results; cr
 Components of Spark
 
 - Spark core
+
     - Spark streaming
     - Spark SQL
     - MLLib
