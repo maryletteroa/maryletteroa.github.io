@@ -57,3 +57,62 @@ To test
 ```bash
 spark-submit test.py
 ```
+
+## Spark 3.5 and Spark 4 features
+
+Here are some of the new features in Spark 3.5 or Spark 4
+
+- Spark Connect
+    - Client / Server architecture for Apache Spark
+	- allows control of remote cluster
+- Expanded SQL functionality
+    - e.g. UDTF's, optimized UDFs, more SQL functions
+- English SDK
+    - e.g.
+
+```python
+transformed_df = revenue_df.ai.transform('What are the best-selling and the second best-selling products in every category')
+```
+
+- Debugging features 
+    - e.g. enhanced error messages, testing API
+- DeepSpeed Distributor
+    - distributed training for PyTorch models
+- ANSI mode by default
+    - i.e. better error handling in SQL-style queries
+- Variant Data type
+    - better support for semi-structured data
+- Collation support
+    - for sorting and comparisons e.g. case sensitivity, unicode-support
+- Data source APIs (Python)
+    - read or write to custom data sources or sinks, respectively
+- RDD interface at legacy, instead DataFrame API is emphasized
+- Delta Lake 4.0 support
+
+## Introduction to Spark
+
+Spark is a fast and general engine for large-scale data processing.
+
+It is characterized by its scalability and fault-tolerance features.
+
+Lazy evalution - it doesn't do anything until it is asked to produce results; creates DAGs (direct acyclic graph) of steps to produce said results, and figures out the optimal path; reason why Spark is fast
+
+Components of Spark
+
+- Spark core
+    - Spark streaming
+    - Spark SQL
+    - MLLib
+    - GraphX
+
+## Introduction to RDDs
+RDD is Spark's original dataset structure - under the hood, it is the core object that everything in Spark revolves around
+
+Dataset - abstraction for a giant set of data
+Distributed - distribute processing of data; spread out across clusters of computer; may or may not be local
+Resilient - handle failures, redistribute load when failure occurs
+
+Use the RDD object to do actions on the dataset
+
+Spark Context - responsible for making RDDs resilient and distributed
+
