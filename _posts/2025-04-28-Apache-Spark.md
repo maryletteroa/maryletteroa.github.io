@@ -106,6 +106,7 @@ Components of Spark
     - GraphX
 
 ## Introduction to RDDs
+
 RDD is Spark's original dataset structure - under the hood, it is the core object that everything in Spark revolves around
 
 Dataset - abstraction for a giant set of data
