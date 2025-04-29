@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Spark
+title: Apache Spark
 categories: [learning-log]
 tags: [spark, pyspark]
 mermaid: true
