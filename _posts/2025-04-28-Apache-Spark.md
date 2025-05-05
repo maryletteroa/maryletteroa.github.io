@@ -118,3 +118,25 @@ Use the RDD object to do actions on the dataset
 
 Spark Context - responsible for making RDDs resilient and distributed
 
+## Filtering RDDs
+
+snippet
+- `.filter()`
+- `.reduceByKey`
+
+```python
+# minimum temperature
+minTemps = parsedLines.filter(lambda x: "TMIN" in x[1])
+stationTemps = minTemps.map(lambda x: (x[0], x[2]))
+minTemps = stationTemps.reduceByKey(lambda x, y: min(x, y))
+results = minTemps.collect()
+
+# max temperature
+
+lines = sc.textFile("data/1800.csv")
+parsedLines = lines.map(parseLine)
+maxTemps = parsedLines.filter(lambda x: "TMAX" in x[1])
+stationTemps = maxTemps.map(lambda x: (x[0], x[2]))
+maxTemps = stationTemps.reduceByKey(lambda x, y: max(x, y))
+results = maxTemps.collect()
+```
