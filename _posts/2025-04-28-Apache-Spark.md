@@ -140,3 +140,26 @@ stationTemps = maxTemps.map(lambda x: (x[0], x[2]))
 maxTemps = stationTemps.reduceByKey(lambda x, y: max(x, y))
 results = maxTemps.collect()
 ```
+
+## Map vs Flatmap
+
+`map()` - transforms each element of an RDD to one new element; i.e. 1:1
+`flatmap()` - can create many new elements from each
+
+
+```python
+# flat map and countByValue()
+words = input.flatMap(lambda x: x.split())
+wordCounts = words.countByValue()
+
+# using Regex
+def normalizeWords(text):
+    return re.compile(r"\W+", re.UNICODE).split(text.lower())
+...
+words = input.flatMap(normalizeWords)
+
+# sorting using sortByKey()
+words = input.flatMap(normalizeWords)
+wordCounts = words.map(lambda x: (x, 1)).reduceByKey(lambda x, y: x + y)
+wordCountsSorted = wordCounts.map(lambda x: (x[1], x[0])).sortByKey()
+```
