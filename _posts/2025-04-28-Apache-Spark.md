@@ -163,3 +163,63 @@ words = input.flatMap(normalizeWords)
 wordCounts = words.map(lambda x: (x, 1)).reduceByKey(lambda x, y: x + y)
 wordCountsSorted = wordCounts.map(lambda x: (x[1], x[0])).sortByKey()
 ```
+
+## Spark SQL
+RDD's can be extended to Dataframe objects
+
+Dataframe
+- trend in Spark is to use RDD's less, and dataframes more
+- contains row objects
+- can run SQL queries
+- can have a schema (leads to efficient storage)
+- can read and write to JSON, Hive, parquet, csv etc file formats
+- communicates with JDBC/ODBC, Tableau
+- allows for better interoperability
+    - MLLib and Spark Streaming are moving towards using dataframes instead of RDD's for their primary API
+- simplifies development
+    - can just perform SQL operations on a dataframe with one line
+- can also set up Shell access
+
+
+Dataframes vs Datasets
+- In Spark 2+, a DataFrame is really a DataSet of Row objects
+- Not very relevant in Python as it is untyped, but in Scala, use Datasets whenever possible
+    - because they are typed, they can be stored more efficiently
+    - can also be optimized at compile time
+
+Using Spark SQL in Python
+
+```python
+from pyspark.sql import SparkSession, Row
+
+spark = SparkSession.builder.appName("SparkSQL").getOrCreate()
+
+inputData = spark.read.json(dataFile)
+inputData.createOrReplaceTempView("myStructuredStuff")
+
+myResultDataFrame = spark.sql("SELECT food from bar ORDER BY foobar")
+```
+
+Alternatively, methods can be used instead of SQL statements
+
+```python
+myResultDataFrame.show()
+myResultDataFrame.select("someFieldName")
+myResultDataFrame.filter(myResultDataFrame("someFieldName" > 200))
+myResultDataFrame.groupBy(myResultDataFrame("someFieldName")).mean()
+
+#convert dataframe to RDD
+myResultDataFrame.rdd().map(mapperFunction)
+```
+
+User-defined functions (UDF's)
+
+```python
+from pyspark.sql.types import IntegerType
+
+def square(x):
+    return x*x
+
+spark.udf.register("square", square, IntegerType())
+df = spark.sql("SELECT square('someNumericField') FROM tableName")
+```
