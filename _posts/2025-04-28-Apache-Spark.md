@@ -223,3 +223,105 @@ def square(x):
 spark.udf.register("square", square, IntegerType())
 df = spark.sql("SELECT square('someNumericField') FROM tableName")
 ```
+
+Data without a header
+
+```python
+from pyspark.sql import Row, SparkSession
+
+# Create a SparkSession
+spark = SparkSession.builder.appName("SparkSQL").getOrCreate()
+
+
+def mapper(line):
+    fields = line.split(",")
+    return Row(
+        ID=int(fields[0]),
+        name=str(fields[1].encode("utf-8")),
+        age=int(fields[2]),
+        numFriends=int(fields[3]),
+    )
+
+
+lines = spark.sparkContext.textFile("data/fakefriends.csv")
+people = lines.map(mapper)
+
+# Infer the schema, and register the DataFrame as a table.
+schemaPeople = spark.createDataFrame(people).cache()
+schemaPeople.createOrReplaceTempView("people")
+```
+
+Data with header, and using infer schema
+
+```python
+from pyspark.sql import SparkSession
+
+spark = SparkSession.builder.appName("SparkSQL").getOrCreate()
+
+people = (
+    spark.read.option("header", "true")
+    .option("inferSchema", "true")
+    .csv("data/fakefriends-header.csv")
+)
+
+print("Here is our inferred schema:")
+people.printSchema()
+```
+
+Aggregate, sort, alias 
+
+```python
+friendsByAge.groupBy("age").agg(func.round(func.avg("friends"), 2).alias("friends_avg")).sort("age").show()
+```
+
+Unstructured data
+
+`func.explode()` - similar to flatmap; explodes columns into rows
+
+```python
+from pyspark.sql import SparkSession
+from pyspark.sql import functions as func
+
+spark = SparkSession.builder.appName("WordCount").getOrCreate()
+
+# Read each line of my book into a dataframe
+inputDF = spark.read.text("data/book.txt")
+
+# Split using a regular expression that extracts words
+words = inputDF.select(func.explode(func.split(inputDF.value, "\\W+")).alias("word"))
+wordsWithoutEmptyString = words.filter(words.word != "")
+
+# Normalize everything to lowercase
+lowercaseWords = wordsWithoutEmptyString.select(
+    func.lower(wordsWithoutEmptyString.word).alias("word")
+)
+```
+
+Using custom schema
+
+```python
+from pyspark.sql import SparkSession
+from pyspark.sql import functions as func
+from pyspark.sql.types import (
+    FloatType,
+    IntegerType,
+    StringType,
+    StructField,
+    StructType,
+)
+
+spark = SparkSession.builder.appName("MinTemperatures").getOrCreate()
+
+schema = StructType(
+    [
+        StructField("stationID", StringType(), True),
+        StructField("date", IntegerType(), True),
+        StructField("measure_type", StringType(), True),
+        StructField("temperature", FloatType(), True),
+    ]
+)
+
+# // Read the file as dataframe
+df = spark.read.schema(schema).csv("data/1800.csv")
+df.printSchema()
+```
