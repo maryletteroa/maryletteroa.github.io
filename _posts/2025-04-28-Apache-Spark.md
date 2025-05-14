@@ -325,3 +325,151 @@ schema = StructType(
 df = spark.read.schema(schema).csv("data/1800.csv")
 df.printSchema()
 ```
+
+## Pandas on Spark
+- Pandas is often used for prototyping or transforming small data but it doesn't scale well
+- Pandas integration in Spark allows scaling up of Pandas up to big data
+- Can move DataFrames between Pandas and Spark
+- Or apply Pandas-style operations on Spark DataFrames
+
+
+```python
+# Must set this env variable to avoid warnings
+import os
+
+from pyspark.sql import SparkSession
+import pandas as pd
+import pyspark.pandas as ps  # Alias for pandas API on Spark
+
+...
+
+# Create a Pandas DataFrame
+pandas_df = pd.DataFrame(
+    {
+        "id": [1, 2, 3, 4, 5],
+        "name": ["Alice", "Bob", "Charlie", "David", "Emma"],
+        "age": [25, 30, 35, 40, 45],
+    }
+)
+
+print("Pandas DataFrame:")
+print(pandas_df)
+
+# Convert Pandas DataFrame to Spark DataFrame
+spark_df = spark.createDataFrame(pandas_df)
+
+print("\nSchema of Spark DataFrame:")
+spark_df.printSchema()
+
+filtered_spark_df = spark_df.filter(spark_df.age > 30)
+
+# Convert Spark DataFrame back to Pandas DataFrame
+converted_pandas_df = filtered_spark_df.toPandas()
+print("\nConverted Pandas DataFrame:")
+print(converted_pandas_df)
+
+# Use pandas-on-Spark for scalable Pandas operations
+ps_df = ps.DataFrame(pandas_df)
+ps_df["age"] = ps_df["age"] + 1
+
+# Convert pandas-on-Spark DataFrame to Spark DataFrame
+converted_spark_df = ps_df.to_spark()
+converted_spark_df.show()
+```
+
+`DataFrame.transform()`
+    - must return same length as input
+
+`DataFrame.apply()`
+    - return might be a different length
+
+```python
+# Using `transform()` for element-wise operations
+ps_df["age_in_10_years"] = ps_df["age"].transform(lambda x: x + 10)
+
+#  Using `apply()` on columns
+# Define a custom function to categorize salary levels
+def categorize_salary(salary):
+    if salary < 60000:
+        return "Low"
+    elif salary < 100000:
+        return "Medium"
+    else:
+        return "High"
+
+
+# Apply the function to the 'salary' column
+ps_df["salary_category"] = ps_df["salary"].apply(categorize_salary)
+```
+
+
+
+## UDF and UDFT
+
+UDFs
+- User-defined functions
+- allow custom logic to be applied row by row in SparkSQL or DataFrame
+- one row at a time, each row must be serialized / deserialize
+- used when built-in Spark functions are not sufficient
+
+UDTFs
+- User-defined table functions
+- one input row may return multiple output rows and columns
+- Useful for transforming nested or structured data (e.g. expanding JSON, arrays, hierarchical data)
+- More efficient on large tables
+
+
+```python
+import re
+
+from pyspark.sql import SparkSession
+from pyspark.sql.functions import udf, udtf
+from pyspark.sql.types import IntegerType
+
+# ----------------------------
+# User-Defined Table Function (UDTF)
+# ----------------------------
+@udtf(returnType="hashtag: string")
+class HashtagExtractor:
+    def eval(self, text: str):
+        """Extracts hashtags from the input text."""
+        if text:
+            hashtags = re.findall(r"#\w+", text)
+            for hashtag in hashtags:
+                yield (hashtag,)
+
+
+# ----------------------------
+# User-Defined Function (UDF)
+# ----------------------------
+@udf(returnType=IntegerType())
+def count_hashtags(text: str):
+    """Counts the number of hashtags in the input text."""
+    if text:
+        return len(re.findall(r"#\w+", text))
+    return 0
+
+...
+# Register the UDTF for use in Spark SQL
+spark.udtf.register("extract_hashtags", HashtagExtractor)
+
+# Register the UDF for use in Spark SQL
+spark.udf.register("count_hashtags", count_hashtags)
+
+# ----------------------------
+# Example: Using the UDTF in SQL
+# ----------------------------
+print("\nUDTF Example (Extract Hashtags):")
+spark.sql(
+    "SELECT * FROM extract_hashtags('Welcome to #ApacheSpark and #BigData!')"
+).show()
+
+# ----------------------------
+# Example: Using the UDF in SQL
+# ----------------------------
+print("\nUDF Example (Count Hashtags):")
+spark.sql(
+    "SELECT count_hashtags('Welcome to #ApacheSpark and #BigData!') AS hashtag_count"
+).show()
+
+```
