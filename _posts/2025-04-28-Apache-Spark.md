@@ -473,3 +473,38 @@ spark.sql(
 ).show()
 
 ```
+
+## Spark Connect
+- Client/Server architecture for Spark
+- Dataframes only (does not support RDDs, SparkContext API)
+- With Spark Connect, there's no need to run the script in the same server as the Spark Driver
+- There's a Spark Connect API that sits in between the app and the Spark driver
+- Language agnostic
+- Less likely for an application to bring down the whole Spark server
+- Apps will also require less memory, and start faster
+
+Example steps
+
+```bash
+# install pyspark connect package
+pip install pyspark[connect]==4.0.0.dev2
+
+# start spark connect
+./sbin/start-connect-server.sh --packages org.apache.spark:spark-connect_2.13:4.0.0-preview2
+
+# run the python script (no need to run spark-submit)
+python3 spark_script.py
+```
+
+In the Spark script, `SparkSession` is constructed like this
+
+```python
+from pyspark.sql import SparkSession
+
+spark = (
+    SparkSession.builder.remote("sc://localhost:15002")
+    .appName("MovieSimilarities")
+    .getOrCreate()
+)
+```
+
