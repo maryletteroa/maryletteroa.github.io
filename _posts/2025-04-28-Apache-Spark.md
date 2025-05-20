@@ -508,3 +508,24 @@ spark = (
 )
 ```
 
+## Elastic MapReduce (Amazon EMR)
+
+- A way to run Spark remotely in an Amazon cluster
+- Default Spark configuration on top of Hadoop
+- when submitting a script, leave out config details so it is run remotely with default EMR configuration
+
+```python
+conf = SparkConf()
+sc = SparkContext(conf=conf)
+```
+
+## Partitioning
+- Spark does not automatically optimize on its own; think about how the data can be partitioned e.g. some joins like self-joins are expensive
+- Use `.partitionBy()` before running a large operation that benefits from partitioning
+    - `join()`, `cogroup()`, `groupWith()`, `leftOuterJoin()`, `rightOuterJoin()`, `groupByKey()`, `combineByKey()`, `lookup()`
+    - these operations will also preserve the partitioning
+
+
+
+
+
