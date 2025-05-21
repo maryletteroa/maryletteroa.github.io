@@ -525,7 +525,28 @@ sc = SparkContext(conf=conf)
     - `join()`, `cogroup()`, `groupWith()`, `leftOuterJoin()`, `rightOuterJoin()`, `groupByKey()`, `combineByKey()`, `lookup()`
     - these operations will also preserve the partitioning
 
+## Troubleshooting Spark
 
+In Amazon EMR, access
+- Spark history server
+- YARN timeline server
+- Tez UI
+- logs
 
+Don't rely on Hadoop fault tolerance - no such guarantee from poorly structured code, low memory
 
+Logs
+- in standalone mode, found in the web UI 
+- in YARN, collect the logs `yarn logs -applicationID <appID>` since the logs are distributed
 
+Failing to issue heartbeats
+- you're asking too much of each executor
+- add more executor i.e. more machines in the cluster
+- or each executor might need more memory
+- or use `partitionBy()` to demand less work from individual executors by using smaller partitions
+
+Dependencies
+- use broadcast variables to share data outside of RDD's
+- set a step in EMR to run pip for what is needed on each working machine
+- or use -py-files with spark-submit to add individual libraries that are on the master
+- try to avoid obscure packages that are not really needed
