@@ -550,3 +550,32 @@ Dependencies
 - set a step in EMR to run pip for what is needed on each working machine
 - or use -py-files with spark-submit to add individual libraries that are on the master
 - try to avoid obscure packages that are not really needed
+
+## Spark ML
+
+- Spark made ML distributed
+- MLLib used RDD's and some specialized structures; deprecated in Spark 3
+- Newer ML library uses dataframes 
+
+ML Capabilities
+- feature extraction
+    - term frequency / inverse document frequency useful for search
+- basic statistics
+    - Chi-squared test, Pearson or Spearman correlation, min, max, mean, variance
+- linear regression, logistic regression
+- support vector machines
+- Naive Bayes classifier
+- decision trees
+- k-means clustering
+- principal component analysis, singular value decomposition
+- recommendations using alternating least squares
+
+```python
+ratings = spark.read.option("sep", "\t").schema(moviesSchema).csv("data.csv")
+
+# hyperparameter tuning
+als = ALS().setMaxIter(5).setRegParam(0.01).setUserCol("userID").setItemCol("movieID").setRatingCol("rating")
+
+# model fitting
+model = als.fit(ratings)
+```
