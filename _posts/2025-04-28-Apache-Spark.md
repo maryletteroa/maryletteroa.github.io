@@ -579,3 +579,62 @@ als = ALS().setMaxIter(5).setRegParam(0.01).setUserCol("userID").setItemCol("mov
 # model fitting
 model = als.fit(ratings)
 ```
+
+## Spark Streaming
+- For analyzing continual streams of data e.g. log data from website server
+- Data is aggregated and analyzed at some given interval
+- two modes
+    - "micro-batch" processing
+        - 100 ms latency
+        - Exactly-once fault tolerance guarantees
+    - Continuous processing
+        - 1ms latency
+        - At-least once guarantees
+        - Mostly for Kafka
+- Models streaming as dataframes that just keep on expanding
+
+e.g. word count
+
+```python
+spark = SparkSession.builder.appName("StructuredNetworkWordCount").getOrCreate()
+
+# Create DataFrame representing the stream of input lines from connections to localhost:9999
+lines = spark \
+	.readStream \
+	.format("socket") \
+	.option("host", "localhost") \
+	.option("port", 9999) \
+	.load()
+
+# Split the lines into words
+words = lines.select(
+	explode(
+		split(lines.value," ")
+		).alias("word")
+)
+
+# Generate running word count
+wordCounts = words.groupBy("word").count()
+
+# Start running the query that prints the running counts to the console
+query = wordCounts.writeStream.outputMode("complete").format("console").start()
+
+query.awaitTermination()
+```
+
+Streaming formats
+- socket
+    - no fault-tolerance; useful for testing only
+- rate
+    - also for testing only
+    - simulates data arriving at a constant rate/second
+- file
+    - reads files in a directory as a stream (could be S3)
+    - processed in order of modification time
+    - e.g. CSV, JSON, ORC, Parquet format
+
+## GraphX
+- graphs of social network
+- currently Scala-only
+- can measure things like "connectedness", degree distribution, average path length, triangle counts - high-level measures of a graph
+- can also join graphs together and transform graphs quickly
