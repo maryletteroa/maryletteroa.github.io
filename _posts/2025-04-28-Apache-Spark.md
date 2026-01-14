@@ -6,8 +6,6 @@ tags: [spark, pyspark]
 mermaid: true
 ---
 
-This is an extension of my [2025 Learning Log]({% link _posts/2025-01-24-2025-learning-log.md %}).
-
 Reviewing Spark (PySpark) through this course [Taming Big Data With Apache Spark](https://www.udemy.com/course/taming-big-data-with-apache-spark-hands-on/)
 
 ## Setting up

@@ -8,7 +8,7 @@ mermaid: true
 
 I've recently studied Snowflake through this course: [Snowflake masterclass](https://www.udemy.com/course/snowflake-masterclass). Here's my [certificate](https://www.udemy.com/certificate/UC-815019cf-596a-4b6c-8b1a-9c3f5138eeba). This course covered a lot of topics, and it's been a fulfilling couple of weeks learning the ins and outs of this tool.
 
-Here are some of my notes and ideas I've learned. This is a part of my learning goals for this year, which I've written about here: [learning log for this year (2025)]({% link _posts/2025-01-24-2025-learning-log.md %})
+Here are some of my notes and ideas I've learned. 
 
 ## Setup, architecture overview, loading data
 

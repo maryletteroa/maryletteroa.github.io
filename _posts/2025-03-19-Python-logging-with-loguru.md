@@ -5,8 +5,6 @@ categories: [learning-log]
 tags: [python]
 ---
 
-This is an extension of my [2025 Learning Log]({% link _posts/2025-01-24-2025-learning-log.md %}). 
-
 ## About
 Loguru is a python package for logging. It is intended to make logging simpler, less painful, and enjoyable. 
 

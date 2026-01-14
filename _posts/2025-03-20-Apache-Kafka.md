@@ -6,8 +6,6 @@ tags: [kafka]
 mermaid: true
 ---
 
-This is an extension of my [2025 Learning Log]({% link _posts/2025-01-24-2025-learning-log.md %}). 
-
 I started learning Apache Kafka. I wanted to study Flink actually but since it comes downstream of Kafka, I figured I might as well learn a bit more about Kafka first.
 
 I am learning through this course [The Complete Apache Kafka Practical Guide](https://www.udemy.com/course/apache_kafka/). The version used in the videos is a bit older and still uses [Zookeeper](https://zookeeper.apache.org/). So I'm going back and forth between this course and other materials I find in the [official docs](https://kafka.apache.org), the interwebs, and/or YouTube.
