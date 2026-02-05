@@ -17,7 +17,7 @@ Suppose a dataset looks something like this, with no overlapping keys:
             {
                 "e": "GHT5678",
                 "f": "F0000123",
-                " g": 1
+                "g": 1
             },
             {
                 "e": "GHT5679",
@@ -57,8 +57,62 @@ for row in rows:
 	for child in row.get("d"):
 		_d = {
 			**{k: row[k] for k in row if k != "d"},
-			**d
+			**child
 		}
 		data.append(Example(**_d))
 ```
 
+
+
+Full example:
+
+```python
+from pydantic import BaseModel
+
+class Example(BaseModel):
+    a: str
+    b: float
+    c: int
+    e: str
+    f: str
+    g: int
+
+
+
+rows = {"rows": [
+    {
+        "a": "1234ABC",
+        "b": 5.768,
+        "c": 1,
+        "d": [
+            {
+                "e": "GHT5678",
+                "f": "F0000123",
+                "g": 1
+            },
+            {
+                "e": "GHT5679",
+                "f": "F0000124",
+                "g": 2
+            },
+            {
+                "e": "GHT5680",
+                "f": "F0000125",
+                "g": 3
+            },
+        ]
+    }
+] }
+
+
+
+data = list()
+for row in rows.get("rows"):
+	for child in row.get("d"):
+		_d = { **{k: row[k] for k in row if k != "d"},
+			**child
+		}
+		data.append(Example(**_d))
+
+print(data)
+```
