@@ -3,8 +3,6 @@ layout: post
 title: Local Modern Data Stack Implementation
 categories: [project]
 tags: [data-engineering]
-image:
-    path: /assets/images/local-mds/books_dagster.png
 ---
 
 I tried implementing a simple local modern data stack (MDS) using the following tools:
