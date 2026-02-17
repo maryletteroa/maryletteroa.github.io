@@ -12,9 +12,8 @@ I tried implementing a simple local modern data stack (MDS) using the following 
 - **Dagster** as scheduler
 - **Streamlit** as visualizer
 
-The data is from the [Open Library API](https://openlibrary.org/developers/api).
-
-
 <center><img src="/assets/images/local-mds/books_dagster.png" alt="model" width="500"/></center>
+
+The data is from the [Open Library API](https://openlibrary.org/developers/api). 
 
 The Github repository is here: [books-etl](https://github.com/maryletteroa/books-etl)
